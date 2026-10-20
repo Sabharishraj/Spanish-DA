@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quién Fue? — Interactive Forensic Investigation & Final Verdict</title>
+  <meta name="description" content="¿Quién Fue? — A cinematic forensic mystery investigation website. Solve the museum heist of the Golden Pectoral of the Sun God through evidence analysis, Spanish language clues, suspect interrogations, and the final verdict.">
+  
+  <!-- High-Contrast Editorial Typography: Bodoni Moda, Manrope, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=IBM+Plex+Mono:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="reveal.css">
+</head>
+<body class="investigator-theme">
+  <!-- Accessible Skip Link for Keyboard Users and Screen Readers -->
+  <a href="#veredicto" class="skip-link">Skip to Final Accusation Form</a>
+
+  <!-- Low-Contrast Editorial Composition Grid Lines (Vestigae Aesthetic) -->
+  <div class="editorial-grid-overlay" aria-hidden="true">
+    <div class="editorial-grid-line"></div>
+    <div class="editorial-grid-line"></div>
+    <div class="editorial-grid-line"></div>
+    <div class="editorial-grid-line"></div>
+    <div class="editorial-grid-line"></div>
+    <div class="editorial-grid-line"></div>
+  </div>
+
+  <!-- A. SLIM EDITORIAL TOP NAVIGATION -->
+  <header class="top-nav" id="topNav" role="banner">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Home — ¿Quién Fue? Investigation Dossier">
+        <span class="brand-glyph" aria-hidden="true">⌖</span>
+        <span class="brand-title">¿QUIÉN FUE?</span>
+        <span class="brand-tag">FORENSIC ARCHIVE • WHO WAS IT?</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link">HOME</a>
+        <a href="#narrativa" class="nav-link">TIMELINE</a>
+        <a href="#sospechosos" class="nav-link">SUSPECTS</a>
+        <a href="#evidencias" class="nav-link">EVIDENCE</a>
+        <a href="#practica" class="nav-link">PRACTICE</a>
+        <a href="#veredicto" class="nav-link">FINAL ACCUSATION</a>
+        <a href="#glosario" class="nav-link">VOCABULARY</a>
+      </nav>
+
+      <div class="nav-actions">
+        <span class="case-badge" aria-label="Case Number">EXPEDIENTE #EXP-2026 (Case File)</span>
+        <a href="#veredicto" class="btn btn-rust btn-sm nav-cta-btn">SUBMIT ACCUSATION</a>
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- AUTHORSHIP BANNER, TEAM ACKNOWLEDGMENT & EVALUATION DRAWER -->
+  <section class="meta-strip" aria-label="Individual Authorship & Team Credits">
+    <div class="container meta-strip-inner">
+      <div class="author-dossier-tag">
+        <span class="meta-bullet" aria-hidden="true"></span>
+        <span class="meta-label">INDIVIDUAL MODULE LEAD:</span>
+        <strong id="displayAuthorName" class="author-inline-name">Sabharish K.</strong>
+        <span class="meta-role">— Member 5: Final Accusation, Culprit Reveal, Evidence Synthesis, Scoring Engine & Replay</span>
+      </div>
+
+      <!-- Developer / Evaluator Integration Simulation Drawer -->
+      <details class="sim-drawer">
+        <summary class="sim-summary">
+          <span class="sim-icon" aria-hidden="true">⚙️</span>
+          <span>Integration & Evaluation Sandbox (Modules 1–4)</span>
+        </summary>
+        <div class="sim-dropdown">
+          <p class="sim-desc">
+            Test how this module calculates transparent scores based on clues and puzzle data transmitted from previous team modules:
+          </p>
+          <div class="sim-row">
+            <label for="simCluesCount" class="sim-field">
+              <span>Clues Discovered (0–3):</span>
+              <input type="number" id="simCluesCount" min="0" max="3" value="3" class="sim-input">
+            </label>
+            <label class="sim-checkbox-label">
+              <input type="checkbox" id="simPuzzleCheckbox" checked>
+              <span>Spanish Cipher Solved (+10 pts)</span>
+            </label>
+            <button type="button" id="applyIntegrationSimBtn" class="btn btn-outline btn-xs">Update Parameters</button>
+          </div>
+          <span id="simStatusMsg" class="sim-status" aria-live="polite"></span>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- TEAM PROJECT SUMMARY & INDIVIDUAL CONTRIBUTION BANNER -->
+  <aside class="team-roster-banner" aria-label="Project Team Roster">
+    <div class="container">
+      <div class="team-roster-inner">
+        <span class="team-roster-label">ACADEMIC PROJECT TEAM:</span>
+        <div class="team-members-list">
+          <span class="team-member-pill"><small>Member 1:</small> <strong>Sofia Ramirez</strong> (Museum Archives & Historical Narrative)</span>
+          <span class="team-member-pill"><small>Member 2:</small> <strong>Mateo Gomez</strong> (Suspect Interrogations & Alibis)</span>
+          <span class="team-member-pill"><small>Member 3:</small> <strong>Camila Torres</strong> (Spanish Language Puzzles & Ciphers)</span>
+          <span class="team-member-pill"><small>Member 4:</small> <strong>Diego Alvarez</strong> (Crime Scene Inspection & Chemical Analysis)</span>
+          <span class="team-member-pill team-member-active"><small>Member 5 (Author):</small> <strong>Sabharish K.</strong> (Final Accusation, Verdict Reveal & Scoring Engine)</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content" role="main">
+
+    <!-- B. CINEMATIC HERO SECTION -->
+    <section class="hero-section" id="hero" aria-labelledby="heroTitle">
+      <div class="hero-lateral-status" aria-hidden="true">
+        <span>STATUS: ACTIVE FORENSIC INQUIRY</span>
+        <span class="lateral-separator">//</span>
+        <span>HALL 4: SOUTH PRE-COLUMBIAN WING</span>
+        <span class="lateral-separator">//</span>
+        <span>21:45 HRS</span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-text-column">
+          <div class="eyebrow-container">
+            <span class="eyebrow-badge">CONFIDENTIAL CASE DOSSIER</span>
+            <span class="eyebrow-case">EXPEDIENTE #EXP-2026 (Case File) • MUSEUM HEIST</span>
+          </div>
+
+          <h1 id="heroTitle" class="hero-title">
+            EVERY CLUE<br>
+            <span class="hero-title-italic">LEAVES A TRACE.</span>
+          </h1>
+
+          <p class="hero-narrative">
+            During an exclusive after-hours gala at the National Museum of Archaeology & Gold Archives in Bogotá, the museum's prized pre-Columbian masterpiece—<strong id="headerArtefactName" class="artefact-inline-name">The Golden Pectoral of the Sun God</strong> (*El Pectoral Dorado del Sol*, Calima-Yotoco Culture)—vanished from its display vitrine during a scheduled 4-minute auxiliary electrical transfer (21:44 – 21:48 HRS), with the physical extraction executed in exactly 180 seconds (21:45 – 21:48 HRS). Five individuals had authorized access to the exhibition vault. One of them planned and executed the silent theft.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#veredicto" class="btn btn-rust btn-lg">
+              <span>FORMALIZE ACCUSATION</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#sospechosos" class="btn btn-outline btn-lg">
+              <span>REVIEW SUSPECT PROFILES (05)</span>
+            </a>
+          </div>
+
+          <div class="hero-evidence-quicklink">
+            <span class="quicklink-icon" aria-hidden="true">⚲</span>
+            <span class="quicklink-text">Physical evidence secured: <strong>03 forensic leads under judicial custody</strong>.</span>
+          </div>
+        </div>
+
+        <div class="hero-visual-column">
+          <div class="film-frame hero-film-frame" aria-label="Forensic contact sheet photograph of the compromised display vitrine">
+            <div class="film-sprockets film-sprockets-top"></div>
+            
+            <div class="film-negative-visual">
+              <div class="viewfinder-grid">
+                <div class="crosshair crosshair-tl"></div>
+                <div class="crosshair crosshair-tr"></div>
+                <div class="crosshair crosshair-bl"></div>
+                <div class="crosshair crosshair-br"></div>
+                <div class="focus-reticle"></div>
+              </div>
+
+              <!-- Cinematic SVG Illustration of the Compromised Vitrine & Pedestal -->
+              <svg class="scene-illustration" viewBox="0 0 600 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <defs>
+                  <radialGradient id="vaultLight" cx="50%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#A64B38" stop-opacity="0.35"/>
+                    <stop offset="50%" stop-color="#241b17" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0.95"/>
+                  </radialGradient>
+                  <linearGradient id="laserBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#813B2D" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#813B2D" stop-opacity="0.0"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- Vault Background -->
+                <rect width="600" height="700" fill="url(#vaultLight)"/>
+                
+                <!-- Architectural Grid Lines -->
+                <line x1="80" y1="0" x2="80" y2="700" stroke="#E9E6E2" stroke-opacity="0.08" stroke-dasharray="4 8"/>
+                <line x1="520" y1="0" x2="520" y2="700" stroke="#E9E6E2" stroke-opacity="0.08" stroke-dasharray="4 8"/>
+                <line x1="0" y1="480" x2="600" y2="480" stroke="#E9E6E2" stroke-opacity="0.12"/>
+                
+                <!-- Forensic Laser Cone -->
+                <polygon points="300,100 160,540 440,540" fill="url(#laserBeam)" opacity="0.25"/>
+
+                <!-- Pedestal -->
+                <polygon points="210,480 390,480 420,620 180,620" fill="#1c1816" stroke="#E9E6E2" stroke-opacity="0.25"/>
+                <polygon points="220,440 380,440 390,480 210,480" fill="#26201c" stroke="#813B2D" stroke-opacity="0.6"/>
+
+                <!-- Compromised Glass Vitrine Frame -->
+                <polygon points="190,260 410,260 430,440 170,440" fill="none" stroke="#E9E6E2" stroke-opacity="0.4" stroke-width="1.5"/>
+                <line x1="190" y1="260" x2="250" y2="200" stroke="#E9E6E2" stroke-opacity="0.3"/>
+                <line x1="410" y1="260" x2="470" y2="200" stroke="#E9E6E2" stroke-opacity="0.3"/>
+                <line x1="250" y1="200" x2="470" y2="200" stroke="#E9E6E2" stroke-opacity="0.3"/>
+                <line x1="470" y1="200" x2="490" y2="380" stroke="#E9E6E2" stroke-opacity="0.3"/>
+                <line x1="430" y1="440" x2="490" y2="380" stroke="#E9E6E2" stroke-opacity="0.3"/>
+
+                <!-- Ghost Silhouette of Stolen Sun Pectoral -->
+                <path d="M300,310 C320,310 340,325 340,345 C340,370 315,385 300,410 C285,385 260,370 260,345 C260,325 280,310 300,310 Z"
+                      fill="none" stroke="#A64B38" stroke-width="2" stroke-dasharray="6 4" opacity="0.75"/>
+                <circle cx="300" cy="345" r="14" fill="#813B2D" opacity="0.35"/>
+
+                <!-- Evidence Marker #1 on Floor -->
+                <polygon points="140,560 175,560 160,590 125,590" fill="#813B2D"/>
+                <text x="145" y="582" fill="#E9E6E2" font-family="'IBM Plex Mono', monospace" font-size="16" font-weight="bold">#1</text>
+              </svg>
+
+              <div class="film-grain-overlay"></div>
+            </div>
+
+            <div class="film-sprockets film-sprockets-bottom"></div>
+
+            <div class="film-caption">
+              <span class="film-meta-tag">KODAK TRI-X 400 // FORENSIC CONTACT SHEET</span>
+              <span class="film-timestamp">HALL 4 • 21:48:12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C. CASE OVERVIEW AND STATISTICS -->
+    <section class="stats-section" aria-label="Investigation Statistics Overview">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">05</span>
+            <div class="stat-meta">
+              <span class="stat-title">SUSPECTS INTERROGATED</span>
+              <span class="stat-desc">Personnel under inquiry (*Sospechosos*)</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-item">
+            <span class="stat-number">03</span>
+            <div class="stat-meta">
+              <span class="stat-title">KEY EVIDENCE PIECES</span>
+              <span class="stat-desc">Chemical, handwriting & physical files (*Evidencia*)</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-item">
+            <span class="stat-number">01</span>
+            <div class="stat-meta">
+              <span class="stat-title">STOLEN MASTERPIECE</span>
+              <span class="stat-desc" id="statsArtefactName">The Golden Pectoral of the Sun God</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-item">
+            <span class="stat-number stat-highlight">ACTIVE</span>
+            <div class="stat-meta">
+              <span class="stat-title">CASE STATUS</span>
+              <span class="stat-desc">Awaiting formal judicial accusation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. ASYMMETRICAL INVESTIGATION NARRATIVE & CRIME TIMELINE -->
+    <section class="narrative-section section-spacing" id="narrativa" aria-labelledby="narrativeTitle">
+      <div class="container narrative-grid">
+        <div class="narrative-col-text">
+          <div class="section-tag-row">
+            <span class="section-tag">POLICE REPORT EXCERPT</span>
+            <span class="section-case-ref">INCIDENT LOG • CRIME REPORT</span>
+          </div>
+
+          <h2 id="narrativeTitle" class="editorial-heading">
+            NIGHT OF THE HEIST:<br>
+            <span class="heading-serif-accent">CRIME SCENE TIMELINE</span>
+          </h2>
+
+          <p class="editorial-lead">
+            At 21:44 HRS on Thursday, October 15, 2026, the facility commenced a scheduled four-minute auxiliary power transfer (21:44 – 21:48 HRS). Within this window, the 180-second physical breach (21:45 – 21:48 HRS) occurred in the South Exhibition Wing.
+          </p>
+
+          <p class="editorial-body">
+            Forensic investigators determined that the display case's piezoelectric seismic sensor failed to trigger because the perpetrator applied analytical-grade dimethylformamide (DMF) directly to the silicone gasket, dissolving the bond silently. The physical extraction took exactly <strong>180 seconds</strong>, conducted by an insider with intimate access to conservation solvents and surveillance blind spots.
+          </p>
+
+          <!-- Chronological Incident Timeline (Rendered dynamically from STORY_CONFIG.timeline) -->
+          <div class="incident-timeline" id="incidentTimelineContainer" role="list" aria-label="Incident Chronology">
+            <!-- Dynamic entries populated by renderIncidentTimeline() -->
+          </div>
+        </div>
+
+        <div class="narrative-col-visual">
+          <div class="film-frame narrative-film-frame" aria-label="Blueprint diagram of Hall 4 and security layout">
+            <div class="film-sprockets film-sprockets-top"></div>
+            <div class="film-negative-visual">
+              <div class="doc-blueprint-box">
+                <div class="blueprint-stamp">RESTRICTED // FORENSIC RECONSTRUCTION</div>
+                <h3 class="blueprint-title">SITE PLAN: SOUTH ARCHEOLOGY HALL</h3>
+                <p class="blueprint-code">SECTOR: C-4 VAULT // ELEVATION: +3.2M // MUSEUM OF GOLD ARCHIVE</p>
+                <div class="blueprint-sketch" aria-hidden="true">
+                  <div class="sketch-room">
+                    <span class="sketch-marker marker-case">VITRINA CENTRAL</span>
+                    <span class="sketch-marker marker-camera">CAM-03 (SEVERED)</span>
+                    <span class="sketch-marker marker-blind">BLIND SPOT</span>
+                    <span class="sketch-marker marker-vent">HVAC VENT</span>
+                  </div>
+                </div>
+                <p class="blueprint-notes">
+                  "Chemical analysis confirms analytical-grade DMF dissolved the silicone seal without triggering the seismic shock sensor. Physical extraction occurred during 21:45–21:48 HRS within the broader 21:44–21:48 HRS power transfer window. Culprit possessed specialized training in conservation materials."
+                </p>
+              </div>
+            </div>
+            <div class="film-sprockets film-sprockets-bottom"></div>
+            <div class="film-caption">
+              <span class="film-meta-tag">FORENSIC EXHIBIT #04 // CRIME SCENE SURVEY</span>
+              <span class="film-timestamp">CASE C-14</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- E. SUSPECT INVESTIGATION SECTION -->
+    <section class="suspects-editorial-section section-spacing" id="sospechosos" aria-labelledby="suspectsTitle">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="header-left">
+            <span class="section-tag">SOSPECHOSOS (Persons of Interest)</span>
+            <h2 id="suspectsTitle" class="editorial-heading">
+              THE FIVE SUSPECTS<br>
+              <span class="heading-serif-accent">PROFILES & INTERROGATIONS</span>
+            </h2>
+          </div>
+          <p class="header-right-lead">
+            Every suspect possessed access credentials, technical expertise, or an undisclosed motive. Review their roles, motives, and stated alibis before making your formal judicial accusation.
+          </p>
+        </div>
+
+        <div class="suspects-editorial-grid" id="suspectsEditorialGallery">
+          <!-- Dynamically populated from STORY_CONFIG.suspects in reveal.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- F. EVIDENCE ARCHIVE SECTION -->
+    <section class="evidence-editorial-section section-spacing" id="evidencias" aria-labelledby="evidenceTitle">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="header-left">
+            <span class="section-tag">EVIDENCIA (Forensic Evidence Archive)</span>
+            <h2 id="evidenceTitle" class="editorial-heading">
+              DECISIVE EVIDENCE<br>
+              <span class="heading-serif-accent">FORENSIC CASE FILES</span>
+            </h2>
+          </div>
+          <p class="header-right-lead">
+            Three physical exhibits form the judicial backbone of this investigation. Each piece connects directly to the culprit's methodology while disproving theories against innocent suspects.
+          </p>
+        </div>
+
+        <div class="evidence-editorial-grid" id="evidenceCardsContainer">
+          <!-- Dynamically populated from STORY_CONFIG.evidence in reveal.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL SPANISH PRACTICE CHALLENGE (NON-BLOCKING) -->
+    <section class="practice-editorial-section section-spacing" id="practica" aria-labelledby="practiceTitle">
+      <div class="container">
+        <div class="editorial-card-plain practice-card-wrapper">
+          <div class="section-header-editorial">
+            <div class="header-left">
+              <span class="section-tag">OPTIONAL PRACTICE • PRÁCTICA FORENSE</span>
+              <h2 id="practiceTitle" class="editorial-heading">
+                FIELD NOTE DECRYPTION<br>
+                <span class="heading-serif-accent">SPANISH FORENSIC CHALLENGE</span>
+              </h2>
+            </div>
+            <p class="header-right-lead">
+              Test your vocabulary by matching four critical forensic terms extracted from the investigator's field notebook to their English meanings. This practice exercise is completely optional and never blocks your main investigation.
+            </p>
+          </div>
+
+          <div class="practice-interactive-area" id="practiceArea">
+            <div class="practice-clue-banner">
+              <div class="practice-clue-header">
+                <span class="clue-tag">INVESTIGATOR'S FIELD NOTEBOOK • ARCHIVO DE CAMPO</span>
+                <span class="clue-ref">CASE CLUE #04</span>
+              </div>
+              <p class="clue-text">
+                “El culpable aprovechó el apagón para abrir la <strong>vitrina</strong>, dejando una <strong>huella</strong> sobre la réplica. Su <strong>motivo</strong> era financiero y su <strong>coartada</strong> resultó ser falsa.”
+              </p>
+              <p class="clue-translation">
+                Translation: “The culprit took advantage of the blackout to open the <strong>display case</strong>, leaving a <strong>fingerprint</strong> on the replica. Their <strong>motive</strong> was financial and their <strong>alibi</strong> turned out to be false.”
+              </p>
+            </div>
+
+            <div class="practice-matching-grid" role="region" aria-label="Forensic Spanish Term Matching Exercise">
+              <div class="practice-column">
+                <h3 class="practice-column-title">SPANISH FORENSIC TERMS:</h3>
+                <div class="term-buttons-list" id="spanishTermsList" role="group" aria-label="Spanish terms">
+                  <!-- Generated dynamically in reveal.js -->
+                </div>
+              </div>
+
+              <div class="practice-column">
+                <h3 class="practice-column-title">ENGLISH MEANINGS:</h3>
+                <div class="term-buttons-list" id="englishTermsList" role="group" aria-label="English meanings">
+                  <!-- Generated dynamically in reveal.js -->
+                </div>
+              </div>
+            </div>
+
+            <div class="practice-feedback-bar" aria-live="polite">
+              <span class="practice-status-text" id="practiceStatusText">
+                Select a Spanish term on the left, then select its matching English meaning on the right.
+              </span>
+              <span class="practice-score-badge" id="practiceScoreBadge">
+                Matched: <strong id="practiceSolvedCount">0</strong> / 4
+              </span>
+            </div>
+
+            <div id="practiceCompleteBanner" class="practice-complete-banner practice-hidden" aria-live="polite">
+              <div class="complete-badge-icon" aria-hidden="true">🎖️</div>
+              <div class="complete-content">
+                <h4 class="complete-title">PRACTICE COMPLETED: ALL TERMS DECRYPTED!</h4>
+                <p class="complete-desc">
+                  You successfully matched all four field note terms (*la vitrina*, *la huella*, *el motivo*, *la coartada*). You can continue directly to the <a href="#veredicto" class="inline-link">Final Accusation</a> or inspect the <a href="#glosario" class="inline-link">30-Word Spanish Glossary</a> below.
+                </p>
+              </div>
+              <button type="button" id="resetPracticeBtn" class="btn btn-outline btn-sm">Reset Practice</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- G. FINAL ACCUSATION AND VERDICT (MEMBER 5 — CORE CONTRIBUTION) -->
+    <section class="verdict-primary-section section-spacing" id="veredicto" aria-labelledby="accusationHeading">
+      <div class="container">
+        <div class="verdict-dossier-wrapper">
+          <div class="dossier-top-tab">
+            <div class="tab-badge">MODULE 5: FINAL VERDICT & REVEAL</div>
+            <div class="tab-case-ref">EXPEDIENTE #EXP-2026 (Case File Dossier)</div>
+          </div>
+
+          <div class="dossier-inner-content">
+            <div class="dossier-intro">
+              <span class="stamp-confidential">VEREDICTO (Judicial Accusation Phase)</span>
+              <h2 id="accusationHeading" class="editorial-heading verdict-main-heading">
+                WHO COMMITTED THE HEIST?<br>
+                <span class="heading-serif-accent">FORMALIZE YOUR ACCUSATION</span>
+              </h2>
+              <p class="verdict-instructions">
+                Select the suspect you believe is responsible for the theft of <strong class="artefact-inline-name">The Golden Pectoral of the Sun God</strong>. Articulate your deduction in the forensic reasoning field below (in English or Spanish) to receive the maximum analytical bonus.
+              </p>
+            </div>
+
+            <!-- Accessible Validation Error Alert (WCAG AA Compliant) -->
+            <div id="validationAlert" class="alert-box alert-error alert-hidden" role="alert" aria-live="assertive">
+              <span class="alert-icon" aria-hidden="true">⚠️</span>
+              <div class="alert-message">
+                <strong>ATTENTION REQUIRED:</strong>
+                <span id="validationAlertText">You must select one of the five suspects before formalizing your accusation.</span>
+              </div>
+            </div>
+
+            <!-- Accusation Form with Accessible Radio Group -->
+            <form id="accusationForm" novalidate>
+              <fieldset class="suspects-selection-fieldset">
+                <legend class="visually-hidden">Select the guilty suspect from the five persons of interest</legend>
+                <div class="suspects-selection-grid" id="suspectsGrid" role="radiogroup" aria-label="Select the culprit suspect">
+                  <!-- Radio cards dynamically generated by reveal.js -->
+                </div>
+              </fieldset>
+
+              <!-- Detective Deduction & Reasoning Field -->
+              <div class="deduction-field-container">
+                <label for="accusationReason" class="deduction-label">
+                  <span class="label-heading">DETECTIVE'S FORENSIC REASONING (OPTIONAL BUT REWARDED):</span>
+                  <span class="label-subtext">
+                    Explain in English or Spanish which evidence connects this suspect to the crime.
+                    (Writing 20 or more characters awards a +20 pts analytical deduction bonus).
+                  </span>
+                </label>
+                <textarea
+                  id="accusationReason"
+                  name="accusationReason"
+                  class="deduction-textarea"
+                  rows="4"
+                  placeholder="Example: I accuse Valeria Sotomayor because the dimethylformamide solvent found on the vitrine matches her lab sign-out sheet, and her fingerprints were lifted from the resin replica in the vent..."
+                  aria-describedby="reasoningHelp"
+                ></textarea>
+                <div id="reasoningHelp" class="deduction-helper-bar">
+                  <span id="reasoningCharCounter" class="char-counter">0 characters entered</span>
+                  <span class="bonus-indicator">💡 Bonus Active: +20 pts for reasoned deduction (min. 20 chars).</span>
+                </div>
+              </div>
+
+              <!-- Prominent Rust-Red Accusation Action Button -->
+              <div class="action-center-bar">
+                <button type="submit" id="accuseBtn" class="btn btn-rust btn-xl">
+                  <span class="btn-glyph" aria-hidden="true">⚖️</span>
+                  <span>SUBMIT ACCUSATION</span>
+                  <span class="btn-arrow" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </form>
+
+            <!-- DRAMATIC CULPRIT REVEAL SECTION (Hidden until accusation submitted) -->
+            <section id="revealSection" class="reveal-dossier-results section-hidden" aria-labelledby="revealHeading" aria-live="polite">
+              <!-- Result Outcome Banner (Correct vs Incorrect) -->
+              <div id="outcomeBanner" class="outcome-banner">
+                <div class="outcome-icon" id="outcomeIcon" aria-hidden="true">🔍</div>
+                <div class="outcome-text-block">
+                  <span id="outcomeTag" class="outcome-tag">VEREDICTO (Judicial Verdict)</span>
+                  <h3 id="revealHeading" class="outcome-title">Evaluating Accusation...</h3>
+                  <p id="outcomeMessage" class="outcome-desc"></p>
+                </div>
+              </div>
+
+              <!-- Culprit Master Dossier Card -->
+              <article class="culprit-master-card">
+                <div class="culprit-card-header">
+                  <div>
+                    <span class="case-label">VEREDICTO (Judicial Resolution Dossier)</span>
+                    <h4 class="culprit-title-name">CONFIRMED CULPRIT DOSSIER</h4>
+                  </div>
+                  <div class="stamp-resolved">CASE RESOLVED</div>
+                </div>
+
+                <div class="culprit-profile-layout">
+                  <div class="culprit-portrait-side">
+                    <div class="culprit-avatar-frame">
+                      <div class="culprit-avatar-glyph" id="revealCulpritAvatar">🔬</div>
+                    </div>
+                    <h5 id="revealCulpritName" class="culprit-profile-name">Valeria Sotomayor</h5>
+                    <p id="revealCulpritRole" class="culprit-profile-role">Senior Materials Conservator & Restorer</p>
+                    <span class="badge badge-rust">IDENTIFIED PERPETRATOR</span>
+                  </div>
+
+                  <div class="culprit-data-side">
+                    <div class="data-group">
+                      <h6>🎯 MOTIVE:</h6>
+                      <p id="revealCulpritMotive" class="data-text">
+                        Crippling private debt from personal loans combined with coercive pressure from an illicit international antiquities syndicate, which offered full loan cancellation in exchange for substituting the original artefact with a cast replica.
+                      </p>
+                    </div>
+
+                    <div class="data-group">
+                      <h6>🕰️ MODUS OPERANDI & EXECUTION TIMELINE:</h6>
+                      <p id="revealCulpritModus" class="data-text">
+                        At 21:45 HRS, exploited the scheduled auxiliary power transfer. Applied analytical-grade dimethylformamide (DMF) solvent to dissolve the display gasket silently, lifted the gold pectoral without triggering the piezoelectric vibration alarms, and temporarily stashed the resin replica and tools in the HVAC return duct.
+                      </p>
+                    </div>
+
+                    <div class="data-group confession-box">
+                      <h6>📜 SIGNED CONFESSION:</h6>
+                      <blockquote id="revealCulpritConfession" class="confession-quote">
+                        "I never intended for the heritage to be destroyed or melted down... The syndicate promised it would remain intact in a climate-controlled private collection. The replica I cast was nearly indistinguishable under display lighting, and I desperately needed a way out of my financial ruin."
+                      </blockquote>
+                    </div>
+
+                    <div class="data-group">
+                      <h6>🏺 ARTEFACT RESTITUTION STATUS:</h6>
+                      <p id="revealArtefactStatus" class="data-text">
+                        <strong class="artefact-inline-name">The Golden Pectoral of the Sun God</strong> has been recovered intact by museum security and returned under heavy escort to the high-security conservation vaults.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Suspect Exoneration Breakdown (Why Others Are Innocent) -->
+              <div class="exoneration-block">
+                <div class="exoneration-header">
+                  <span class="section-tag">FORENSIC EXONERATION AUDIT</span>
+                  <h4 class="exoneration-title">EXCLUSION OF INNOCENT SUSPECTS (VERIFIED ALIBIS)</h4>
+                  <p class="exoneration-subtitle">Detailed evidentiary review establishing the innocence of the remaining four suspects:</p>
+                </div>
+                <div class="exoneration-grid" id="exonerationListContainer">
+                  <!-- Dynamically populated by reveal.js -->
+                </div>
+              </div>
+
+              <!-- Transparent Scoring Engine & Replay -->
+              <div class="score-audit-card">
+                <div class="score-header-bar">
+                  <div>
+                    <span class="section-tag">INVESTIGATOR PERFORMANCE AUDIT</span>
+                    <h4 class="score-card-title">FINAL INVESTIGATION SCORE</h4>
+                    <p class="score-card-sub">Transparent mathematical evaluation based strictly on your verified deductions and evidence discoveries.</p>
+                  </div>
+
+                  <div class="score-total-pill">
+                    <span class="score-total-digits" id="finalScoreNumber">0</span>
+                    <span class="score-max">/ 100 PTS</span>
+                  </div>
+                </div>
+
+                <div class="score-rank-box">
+                  <span class="rank-eyebrow">RANK EARNED:</span>
+                  <h5 id="finalRankTitle" class="rank-name">Investigator</h5>
+                  <p id="finalRankFeedback" class="rank-explanation"></p>
+                </div>
+
+                <!-- Transparent Score Breakdown Table -->
+                <div class="score-table-responsive">
+                  <table class="score-breakdown-table" aria-label="Investigation Score Breakdown Table">
+                    <thead>
+                      <tr>
+                        <th scope="col">EVALUATION CRITERIA</th>
+                        <th scope="col">FORENSIC STATUS</th>
+                        <th scope="col" class="text-right">MAX POINTS</th>
+                        <th scope="col" class="text-right">POINTS AWARDED</th>
+                      </tr>
+                    </thead>
+                    <tbody id="scoreBreakdownBody">
+                      <!-- Computed rows dynamically generated by reveal.js -->
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Replay & State Reset Action -->
+                <div class="replay-action-row">
+                  <button type="button" id="replayBtn" class="btn btn-outline btn-lg">
+                    <span class="btn-glyph" aria-hidden="true">🔄</span>
+                    <span>RESTART INVESTIGATION</span>
+                  </button>
+                  <p class="replay-note">
+                    Clears the current accusation, resets deductive reasoning, and restores the investigation to its opening state.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPANISH LEARNING SECTION: 30-TERM FORENSIC GLOSSARY -->
+    <section class="glossary-section section-spacing" id="glosario" aria-labelledby="glossaryTitle">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="header-left">
+            <span class="section-tag">EDUCATIONAL SPANISH COMPETENCY</span>
+            <h2 id="glossaryTitle" class="editorial-heading">
+              INVESTIGATIVE GLOSSARY<br>
+              <span class="heading-serif-accent">30 ESSENTIAL SPANISH TERMS</span>
+            </h2>
+          </div>
+          <p class="header-right-lead">
+            Curated criminological, forensic, and museum heritage terminology in Spanish with English translations, grammatical classifications, and contextual usage from the museum heist.
+          </p>
+        </div>
+
+        <div class="glossary-toolbar">
+          <div class="search-input-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input
+              type="search"
+              id="glossarySearchInput"
+              class="glossary-search"
+              placeholder="Filter by Spanish term, English definition, or context..."
+              aria-label="Filter glossary terms"
+            >
+          </div>
+          <span id="glossaryWordCountBadge" class="glossary-badge">30 terms cataloged</span>
+        </div>
+
+        <div class="glossary-grid" id="glossaryGridContainer">
+          <!-- Dynamically populated with 30 bilingual terms from reveal.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAL REFLECTION SECTION (GENUINE AUTHOR REFLECTION) -->
+    <section class="reflection-section section-spacing" aria-labelledby="reflectionTitle">
+      <div class="container">
+        <div class="editorial-card-plain">
+          <div class="section-tag-row">
+            <span class="section-tag">INDIVIDUAL STUDENT REFLECTION</span>
+            <span class="section-case-ref">MEMBER 5 // SABHARISH K.</span>
+          </div>
+          <h2 id="reflectionTitle" class="editorial-heading">
+            AUTHOR'S PERSONAL REFLECTION<br>
+            <span class="heading-serif-accent">LEARNING & ARCHITECTURAL EXPERIENCE</span>
+          </h2>
+
+          <div class="reflection-quote-box">
+            <div class="reflection-author-tag">
+              <strong>DEVELOPER / LEAD DESIGNER:</strong> <span class="author-inline-name">Sabharish K.</span> //
+              <strong>MODULE:</strong> Member 5 — Final Accusation, Verdict Reveal, Evidence Synthesis & Scoring Engine
+            </div>
+            <div class="reflection-body-content">
+              <p>
+                Developing Module 5 for <em>¿Quién Fue?</em> provided valuable hands-on experience in building a complex, accessible state machine entirely in vanilla JavaScript without the crutch of heavy external frameworks. My primary architectural challenge was ensuring that the final reveal served as the dramatic narrative climax of the entire team's project while maintaining a strict, self-contained footprint that can interface seamlessly with Modules 1 through 4 via URL parameters, <code>localStorage</code>, or global window objects.
+              </p>
+              <p>
+                Balancing bilingual user experience was another major focus. Rather than forcing an English-speaking student through an impenetrable wall of Spanish or rendering the language requirement superficial, I structured the interface with English as the primary communicative vehicle and embedded forensic Spanish terminology naturally into authentic institutional stamps, suspect files, and an interactive 30-word glossary. Crafting the keyboard-accessible <code>radiogroup</code> and ensuring WCAG AA contrast against our cinematic near-black palette reinforced how vital thoughtful semantic HTML is when creating immersive digital learning experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORICAL RIGOR & VERIFIED ACADEMIC SOURCES -->
+    <section class="sources-section section-spacing" aria-labelledby="sourcesTitle">
+      <div class="container">
+        <div class="editorial-card-plain">
+          <div class="section-tag-row">
+            <span class="section-tag">HISTORICAL ACCURACY & CULTURAL HERITAGE</span>
+            <span class="section-case-ref">PRE-COLUMBIAN METALLURGY ARCHIVES</span>
+          </div>
+          <h2 id="sourcesTitle" class="editorial-heading">
+            HISTORICAL CONTEXT & ACADEMIC SOURCES<br>
+            <span class="heading-serif-accent">VERIFIED INSTITUTIONAL REPOSITORIES</span>
+          </h2>
+          <p class="sources-lead">
+            To ensure authentic representation of Latin American cultural heritage without fabricating historical facts or academic citations, the artefact details and conservation protocols are grounded in legitimate institutional records:
+          </p>
+
+          <div class="sources-meta-list">
+            <div class="meta-row">
+              <span class="meta-title">HEIRLOOM ARTEFACT:</span>
+              <span class="artefact-inline-name">The Golden Pectoral of the Sun God (*El Pectoral Dorado del Sol*)</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-title">INDIGENOUS CULTURE:</span>
+              <span id="displayCultureName">Calima-Yotoco Culture (Southwestern Colombia)</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-title">ESTIMATED PERIOD:</span>
+              <span id="displayArtefactPeriod">Late Calima / Yotoco Period (ca. 200 BCE – 1300 CE)</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-title">HISTORICAL SIGNIFICANCE:</span>
+              <span id="displayArtefactContext">
+                Hammered sheet gold ceremonial chest ornament (*pectoral martillado*) depicting solar deities and zoomorphic jaguar motifs, utilized during elite investiture rituals and protected under Colombia's National Cultural Heritage Registry.
+              </span>
+            </div>
+          </div>
+
+          <h3 class="sources-list-title">Verified Institutional Bibliographic References:</h3>
+          <div class="sources-grid" id="sourcesListContainer">
+            <!-- Dynamically populated from STORY_CONFIG.culturalSources in reveal.js -->
+          </div>
+
+          <p class="academic-integrity-disclaimer">
+            ⚖️ <em>Academic Integrity Notice:</em> The museum heist scenario and suspect identities are fictional narrative constructs designed for educational problem-solving. All historical dates, metallurgy techniques, and institutional citations are derived from documented research published by the Banco de la República's Museo del Oro and UNESCO cultural preservation treaties.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EDITORIAL FOOTER -->
+  <footer class="cinematic-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <span class="brand-glyph" aria-hidden="true">⌖</span>
+          <span class="footer-brand-title">¿QUIÉN FUE?</span>
+          <p class="footer-brand-desc">
+            An Interactive Pre-Columbian Forensic Mystery & Language-Learning Experience.<br>
+            Independent Module: Member 5 — Final Accusation, Verdict Reveal, Evidence Synthesis, Scoring Engine & Replay.
+          </p>
+        </div>
+        <div class="footer-col-nav">
+          <span class="footer-col-title">NAVIGATION</span>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Home Dossier</a></li>
+            <li><a href="#narrativa">Incident Timeline</a></li>
+            <li><a href="#sospechosos">Suspect Profiles</a></li>
+            <li><a href="#evidencias">Forensic Evidence</a></li>
+            <li><a href="#practica">Optional Practice</a></li>
+            <li><a href="#veredicto">Final Accusation</a></li>
+            <li><a href="#glosario">Spanish Glossary</a></li>
+          </ul>
+        </div>
+        <div class="footer-col-tech">
+          <span class="footer-col-title">ENGINEERING SPECIFICATION</span>
+          <p class="footer-tech-text">
+            Semantic HTML5 • Modular CSS3 with Custom Variables • Vanilla JavaScript.<br>
+            Zero external build tools or CDN runtimes. Accessible, responsive, and ready for team integration.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>EXPEDIENTE #EXP-2026 • ALL ACADEMIC RIGHTS RESERVED</span>
+        <span>DEVELOPED BY: <strong class="author-inline-name">Sabharish K.</strong> (MEMBER 5)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Controller -->
+  <script src="reveal.js"></script>
+</body>
+</html>
