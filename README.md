@@ -1,6 +1,6 @@
 
 # Spanish-DA
-=======
+
 # ¿Quién Fue? — Interactive Forensic Investigation & Final Verdict
 
 > **Project Role:** Member 5 — Final Accusation, Culprit Reveal, Evidence Synthesis, Scoring Engine & Replay  
