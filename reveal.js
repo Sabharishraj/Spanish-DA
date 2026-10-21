@@ -1,11 +1,11 @@
 /**
  * ==============================================================================
- * ¿QUIÉN FUE? — FORENSIC INVESTIGATION & VERDICT CONTROLLER
- * File: reveal.js
- * Lead Engineer & Designer: Sabharish K. (Member 5 — Final Reveal)
- * Architecture: Reactive state machine, accessible WAI-ARIA controls,
- *               bilingual educational dictionary, transparent scoring engine,
- *               and zero-dependency vanilla JavaScript.
+ * ¿QUIÉN FUE? (WHO WAS IT?) — FORENSIC INVESTIGATION & FINAL VERDICT
+ * Archivo: reveal.js
+ * Rol del Proyecto: Miembro 5 — Veredicto Final, Revelación de la Culpable, 
+ *                   Síntesis de Evidencias, Sistema de Puntuación y Reinicio.
+ * Autor: Sabharish Raj G K (En colaboración con Miembro 3: Shaik Annu — Página 1)
+ * Expediente: EXPEDIENTE CONFIDENCIAL · N.º 047 (El archivo de las identidades perdidas)
  * ==============================================================================
  */
 
@@ -13,489 +13,281 @@
 
 /**
  * ------------------------------------------------------------------------------
- * CENTRAL CASE CONFIGURATION (STORY_CONFIG)
+ * CONFIGURACIÓN CENTRAL DEL CASO (STORY_CONFIG)
  * ------------------------------------------------------------------------------
- * Grounded in verified pre-Columbian metallurgy records from Colombia's
- * Museo del Oro. All placeholders and template tokens have been replaced with
- * verified, logically coherent historical and fictional crime facts.
+ * Canon simplificado y directo, sincronizado con el Expediente 047 de Shaik Annu.
+ * Con traducciones claras al inglés para títulos, botones y conceptos clave.
  */
 const STORY_CONFIG = {
-  // Author & Team Configuration
+  // Configuración de Autoría y Equipo
   author: {
-    name: "Sabharish K.",
-    role: "Member 5 — Final Accusation, Verdict Reveal, Evidence Synthesis, Scoring Engine & Replay",
-    projectTitle: "¿Quién Fue? — The Mystery of the Stolen Sun Pectoral",
+    name: "Sabharish Raj G K",
+    role: "Miembro 5 — Veredicto Final, Revelación de la Culpable & Puntuación (Final Accusation & Scoring)",
+    projectTitle: "¿Quién Fue? — El archivo de las identidades perdidas (The Archive of Lost Identities)",
+    caseNumber: "EXPEDIENTE CONFIDENCIAL · N.º 047"
   },
 
-  // Complete Team Roster
+  // Roster del Equipo de Investigación
   team: [
-    { member: "Member 1", name: "Sofia Ramirez", role: "Museum Archives & Historical Narrative" },
-    { member: "Member 2", name: "Mateo Gomez", role: "Suspect Interrogations & Alibis" },
-    { member: "Member 3", name: "Camila Torres", role: "Spanish Language Puzzles & Ciphers" },
-    { member: "Member 4", name: "Diego Alvarez", role: "Crime Scene Inspection & Chemical Analysis" },
-    { member: "Member 5", name: "Sabharish K.", role: "Final Accusation, Verdict Reveal & Scoring Engine (Module Lead)" }
+    { member: "Miembro 1", name: "Sofia Ramirez", role: "Archivos del Museo (Museum Archives)" },
+    { member: "Miembro 2", name: "Mateo Gomez", role: "Interrogatorios y Coartadas (Suspect Alibis)" },
+    { member: "Miembro 3", name: "Shaik Annu", role: "Archivo de Evidencias y Fotografías (Evidence Archive · Página 1)" },
+    { member: "Miembro 4", name: "Diego Alvarez", role: "Inspección de la Escena (Crime Scene Inspection)" },
+    { member: "Miembro 5", name: "Sabharish Raj G K", role: "Veredicto Final & Revelación (Final Accusation & Verdict Reveal)" }
   ],
 
-  // Canonical Case Metadata (Single Source of Truth)
+  // Metadatos Canónicos del Caso
   caseMeta: {
-    museum: "The National Museum of Archaeology & Gold Archives (Bogotá, Colombia)",
-    theftDate: "Thursday, October 15, 2026",
-    incidentTime: "21:44 – 21:48 HRS (Facility Power Transfer: 240s; Physical Extraction: 180s)",
-    location: "Hall 4: Pre-Columbian Gold & Metallurgy Wing, Sector C-4 Vault",
-    powerTransferDuration: "4 minutes (240 seconds: 21:44:00 – 21:48:00 HRS)",
-    theftDuration: "180 seconds (3 minutes: 21:45:00 – 21:48:00 HRS)",
-    alarmBehavior: "Piezoelectric shock sensors bypassed via chemical DMF silicone dissolution. Secondary barometric sensor tripped at 22:10 HRS when the degraded seal collapsed under HVAC currents.",
-    cameraFootage: "Camera #03 offline from 21:40 HRS due to physical wire cut at Hall 4 junction box. Central server recorded zero digital tampering."
+    caseNumber: "EXPEDIENTE CONFIDENCIAL · N.º 047",
+    subtitle: "El archivo de las identidades perdidas (The Archive of Lost Identities)",
+    museum: "Museo de Historia y Cultura (Museum of History & Culture)",
+    theftDate: "14 de octubre (October 14)",
+    incidentTime: "10:05 – 10:30 HRS",
+    location: "Archivo Administrativo y Fondos Reservados (Administrative Archive Vault)",
+    theftDuration: "25 minutos (25-minute window: 10:05 to 10:30 HRS)",
+    incidentSummary: "Un valioso documento histórico y tesoro familiar desapareció del archivo del museo el 14 de octubre entre las 10:05 y las 10:30."
   },
 
-  // Incident Chronology (Single Source of Truth Timeline)
+  // Cronología Oficial de los Hechos (Historical Timeline)
   timeline: [
     {
-      time: "20:30 HRS",
-      title: "Diplomatic Escort & Hall 4 Clearance",
-      body: "Chief Curator Dr. Mateo Valenzuela escorts university benefactors to the North Portico. Biometric logs confirm his exit to the Grand Vestibule.",
-      badge: "ALIBI LOG"
+      time: "1932",
+      title: "Registro de Isabel Martín (First Record)",
+      body: "La sospechosa aparece registrada formalmente bajo el nombre de Isabel Martín (Fotografía A · 1932).",
+      badge: "1932 · ISABEL MARTÍN"
     },
     {
-      time: "21:15 HRS",
-      title: "Basement Acoustic Diversion",
-      body: "Night Guard Héctor Delgado receives an urgent dispatch to inspect reported water hammer vibrations in Sub-Level -2, leaving the South Wing unmonitored.",
-      badge: "DIVERSION"
+      time: "1941",
+      title: "Registro de Elena Castillo (Second Record)",
+      body: "Nueve años después, otro documento oficial utiliza el nombre de Elena Castillo con una fotografía idéntica (Fotografía B · 1941).",
+      badge: "1941 · ELENA CASTILLO"
     },
     {
-      time: "21:40 HRS",
-      title: "Physical Camera Sabotage",
-      body: "Surveillance Camera #03 drops offline due to a physical wire cut at the interior wall junction box inside Hall 4.",
-      badge: "SABOTAGE"
+      time: "14 OCT · 10:05 HRS",
+      title: "Entrada al Archivo (Suspect Enters Archive)",
+      body: "Elena Castillo ingresa al archivo del museo con pase de investigadora temporal.",
+      badge: "10:05 · ENTRADA"
     },
     {
-      time: "21:44 HRS",
-      title: "Auxiliary Power Transfer Commences (4-Min Total)",
-      body: "Facility switches to secondary diesel generators for scheduled 4-minute auxiliary transfer (21:44–21:48 HRS). Sector C-4 vault lighting extinguished.",
-      badge: "BLACKOUT"
+      time: "14 OCT · 10:20 HRS",
+      title: "Último Avistamiento (Treasure Last Seen)",
+      body: "El documento histórico y tesoro familiar se ve por última vez en la vitrina de custodia.",
+      badge: "10:20 · VISTO"
     },
     {
-      time: "21:45 HRS",
-      title: "Chemical Breach & Physical Extraction (180s Window)",
-      body: "Perpetrator applies analytical-grade DMF to dissolve silicone vitrine seal silently. Gold pectoral extracted and resin replica concealed in HVAC duct.",
-      badge: "THEFT EVENT"
+      time: "14 OCT · 10:30 HRS",
+      title: "Descubrimiento del Robo (Theft Discovered)",
+      body: "El personal administrativo detecta la vitrina abierta y la ausencia del documento histórico. Se activa la alerta.",
+      badge: "10:30 · DESAPARICIÓN"
     },
     {
-      time: "22:10 HRS",
-      title: "Atmospheric Alarm Trigger & Facility Lockdown",
-      body: "HVAC airflow causes the chemically compromised seal to collapse. Barometric pressure sensors trip emergency sirens; facility enters full lockdown.",
-      badge: "ALARM ENGAGED"
+      time: "14 OCT · 11:00 HRS",
+      title: "Fase de Veredicto (Final Verdict Phase)",
+      body: "Se abre el Expediente Confidencial 047 para interrogar a los cinco sospechosos y formalizar la acusación.",
+      badge: "11:00 · VEREDICTO"
     }
   ],
 
-  // Heritage Artefact Specifications (Verified Calima-Yotoco Culture)
+  // Bien Patrimonial Desaparecido
   artefact: {
-    name: "The Golden Pectoral of the Sun God",
-    spanishName: "El Pectoral Dorado del Sol",
-    originCulture: "Calima-Yotoco Culture (Valle del Cauca, Colombia)",
-    estimatedDate: "Late Calima / Yotoco Period (ca. 200 BCE – 1300 CE)",
-    catalogNumber: "MO-4521-COL (Banco de la República / Museo del Oro)",
-    historicalContext: "A ceremonial hammered sheet gold and copper alloy (tumbaga) chest ornament representing solar deities and zoomorphic jaguar motifs. Recovered from the Calima river basin, it reflects supreme ritual authority and is protected under Colombia's National Cultural Heritage Registry.",
-    significance: "Supreme ceremonial regalia representing the solar-jaguar pantheon and divine metallurgical mastery of the Calima-Yotoco peoples.",
-    fictionalNotice: "Fictional case artefact created for the investigative simulation. Historical metallurgical techniques, Calima-Yotoco cultural context, and provenance frameworks are factual and grounded in peer-reviewed Museo del Oro and ICANH literature."
+    name: "Documento Histórico y Tesoro Familiar (Family Heritage Document)",
+    spanishName: "Documento Patrimonial y Recuerdo Histórico Familiar",
+    originCulture: "Patrimonio Cultural de América Latina (Latin American Heritage)",
+    estimatedDate: "1932 – 1941",
+    catalogNumber: "EXP-047-DOC",
+    historicalContext: "Documento patrimonial que resguarda la genealogía y el secreto fundacional de una familia histórica. Su exhibición pública amenazaba con exponer un secreto celosamente protegido.",
+    significance: "Pieza clave del patrimonio cultural vinculada a la identidad histórica de la familia Castillo-Martín."
   },
 
-  // Prime Culprit Identifier (Matches 'suspect-3')
+  // Identificador de la Culpable Real
   culpritId: "suspect-3",
 
-  // Master Culprit Dossier
+  // Expediente Maestro de la Culpable
   culprit: {
-    name: "Valeria Sotomayor",
-    role: "Senior Materials Conservator & Restorer (*Restauradora de Arte*)",
-    avatar: "🔬",
-    motive: "Crippling private debts from personal loans combined with coercive pressure from an illicit international antiquities trafficking syndicate, which offered to erase her family's liabilities in exchange for substituting the original pectoral with an undetectable cast replica.",
-    modusOperandi: "Exploited the scheduled 4-minute auxiliary power transfer (21:44–21:48 HRS). Applied analytical-grade dimethylformamide (DMF) to dissolve the vitrine's silicone gasket silently, lifted the gold pectoral without triggering the piezoelectric vibration sensors during the 180-second physical window (21:45–21:48 HRS), and temporarily concealed the cast replica and tools in the HVAC exhaust duct.",
-    confession: "I never intended for the heritage to be destroyed or melted down... The syndicate promised it would remain intact in a climate-controlled private collection. The replica I cast was nearly indistinguishable under display lighting, and I desperately needed a way out of my financial ruin."
+    name: "Elena Castillo (Alias: Isabel Martín)",
+    role: "Investigadora Visitante e Historiadora Familiar (Visiting Researcher & Family Descendant)",
+    avatar: "🕵️‍♀️",
+    motive: "Proteger el secreto ancestral de su linaje familiar para que el pasado no saliera a la luz pública (To protect her ancestral family secret and legacy from being exposed by the museum exhibition).",
+    modusOperandi: "Ingresó al archivo a las 10:05 HRS. Aprovechó la breve ausencia del supervisor a las 10:20 HRS para extraer el documento y retirarse antes de las 10:30 HRS. El cotejo fotográfico de 1932 (Isabel Martín) y 1941 (Elena Castillo) demostró su doble identidad.",
+    confession: "“Debemos proteger este recuerdo y la herencia de nuestra familia. El pasado histórico no debe salir a la luz... No busqué lucrarme ni dañar el patrimonio; solo quería proteger a mi familia de la exposición pública. Ahora que el archivo fotográfico ha revelado la verdad, devuelvo el documento intacto al museo.”"
   },
 
-  // Five Persons of Interest (Interrogations, Testimonies & Alibis)
+  // Los Cinco Sospechosos (Interrogatorios y Coartadas Simplificadas)
   suspects: [
     {
       id: "suspect-1",
       name: "Dr. Mateo Valenzuela",
-      role: "Chief Antiquities Curator (*Curador Principal*)",
-      avatar: "👤",
-      snippet: "Held physical master keys to Hall 4 vitrines. Escorted university donors to the North Portico at 20:30 and remained in the main reception until sirens engaged.",
-      motive: "Frustration over budgetary reallocations away from pre-Columbian catalog conservation.",
-      alibi: "Grand Vestibule CCTV logs confirm his exit to the reception hall at 20:30 with diplomatic attachés.",
-      testimony: "I have dedicated twenty-eight years to cataloging the Banco de la República collection. My master keys never left my lapel pocket during the North Portico reception. If I appeared hurried at 20:30, it was solely to settle an uncouth dispute with the banquet caterers regarding champagne service in the gallery foyer.",
-      redHerring: "Carrying physical master keys and witnessed moving hurriedly near Hall 4 twenty minutes prior to the gala opening.",
-      redHerringExplanation: "Master keys were required to verify display mounts before VIP arrival. His hurry was administrative catering management, and biometric turnstiles prove he stayed in the Grand Vestibule throughout the blackout.",
-      access: "Level-3 physical master keys for exhibition cabinets; no conservation lab chemical clearances.",
-      opportunity: "In North Portico and Grand Vestibule from 20:30 onward; zero physical access during the 21:44–21:48 power transfer.",
-      exoneration: "Grand Vestibule security cameras and sworn diplomatic statements confirm he exited Hall 4 at 20:30. Biometric turnstile badge #408 proves he never re-entered the exhibition wing during the blackout."
+      role: "Director del Archivo (Museum Archive Director)",
+      avatar: "🏛️",
+      snippet: "Custodio de las llaves maestras del archivo. Estuvo con directivos en el vestíbulo principal.",
+      motive: "Conflictos sobre la desclasificación de archivos reservados.",
+      alibi: "Reunido con diplomáticos en el vestíbulo principal entre las 10:00 y las 10:45 HRS.",
+      testimony: "Estuve toda la mañana con los directivos en el vestíbulo revisando el catálogo; las cámaras y tres testigos confirman que jamás me acerqué a la sala de archivo.",
+      redHerring: "Poseía copia de las llaves y fue visto cerca del pasillo a las 09:50 HRS.",
+      redHerringExplanation: "Estaba verificando la iluminación del pasillo antes de recibir a los directivos. El torniquete biométrico #01 prueba que no entró al archivo.",
+      exoneration: "Verificado por torniquete de acceso biométrico #01 y declaraciones juradas de tres diplomáticos en el vestíbulo."
     },
     {
       id: "suspect-2",
       name: "Héctor Delgado",
-      role: "Night Security Supervisor (*Guardia Nocturno*)",
+      role: "Supervisor de Seguridad (Security Supervisor)",
       avatar: "👮",
-      snippet: "Patrolled the South Wing perimeter. Received an acoustic pipe alert in the basement at 21:15, temporarily leaving Hall 4 unmonitored.",
-      motive: "Strained labor relations following uncompensated overtime during the gala preparations.",
-      alibi: "Dispatched by Central Control to inspect water hammer vibrations in Sub-Level -2.",
-      testimony: "Central Control radioed me directly about heavy water-hammer rattling down in Sub-Level -2 pipes. I ran downstairs because a burst pipe would flood the basement storage. By the time I checked the valves and rode the freight lift back up, the sirens were already wailing. I don't touch ancient gold—my job is keeping kids off the stanchions.",
-      redHerring: "Abandoned post right before the theft, and his master patrol fob showed unlogged movement on Sub-Level -2.",
-      redHerringExplanation: "The acoustic anomaly was an intentional perpetrator diversion. Central Control radio logs and elevator telemetry prove he was trapped in Sub-Level -2, and his security card lacked the cryptographic codes needed to open display vitrines.",
-      access: "Perimeter patrol card and service corridor keys; no cryptographic cabinet access or solvent knowledge.",
-      opportunity: "Dispatched away from Hall 4 at 21:15; confirmed physically in Sub-Level -2 between 21:14 and 21:52.",
-      exoneration: "Central Control audio radio transcripts and freight elevator telemetry corroborate his descent to Level -2 between 21:14 and 21:52. Though in violation of guard post protocol, his credentials lacked access to the vitrine lock codes."
+      snippet: "Patrullaba galerías. Atendió un sensor de puerta en la planta baja a las 10:00 HRS.",
+      motive: "Inconformidad laboral por turnos extraordinarios sin compensar.",
+      alibi: "Inspeccionando una puerta de emergencia en la planta baja entre las 10:00 y las 10:25 HRS.",
+      testimony: "La central me avisó por radio de una puerta abierta en la planta baja. Bajé a cerrarla y cuando volví a subir ya habían dado la alarma por el documento.",
+      redHerring: "Abandonó su puesto de vigilancia habitual justo a las 10:00 HRS.",
+      redHerringExplanation: "Atendió una orden legítima de la central de seguridad. Las grabaciones de radio certifican su presencia en la planta baja.",
+      exoneration: "Grabaciones de radio institucional y cámaras del montacargas corroboran su presencia en la planta baja hasta las 10:25 HRS."
     },
     {
       id: "suspect-3",
-      name: "Valeria Sotomayor", // The True Culprit
-      role: "Senior Materials Conservator & Restorer (*Restauradora de Arte*)",
-      avatar: "🔬",
-      snippet: "Forensic specialist in synthetic polymers and adhesive solvents. Signed out analytical-grade DMF solvent 24 hours prior to clean ceramic seals.",
-      motive: "Crushing financial debt and an illicit contract with an overseas black-market antiquities broker.",
-      alibi: "Claimed to be calibrating microscopic imaging equipment alone in the conservation lab throughout the gala.",
-      testimony: "I requisitioned fifty milliliters of dimethylformamide on Wednesday specifically to dissolve aged Paraloid B-72 consolidation varnish on a fractured Muisca ceramic urn. Solvents are standard conservation consumables. I spent the gala alone in the clean room calibrating the stereo-microscope; I cannot help that the lab has no corridor-facing cameras.",
-      redHerring: "Requisitioned DMF solvent 24 hours earlier; no witness to confirm her lone presence in the clean room.",
-      redHerringExplanation: "This was not an innocent coincidence—it was the actual execution of the crime. GC-MS spectrometry matched the vitrine residue uniquely to her reagent lot, and the resin replica in the vent carried her cyanoacrylate-fumed ridge impressions.",
-      access: "Full biometric access to conservation chemical storage, solvent hoods, and Hall 4 vitrine seal maintenance.",
-      opportunity: "Unsupervised in conservation wing directly abutting Hall 4 service duct during the 21:44–21:48 power transfer.",
-      exoneration: "CONFIRMED CULPRIT! She has no corroborating witness or camera footage between 21:30 and 22:00. Micro-spectroscopy links the solvent on the display case exclusively to her lab requisition, and her latent fingerprints were recovered from the molding putty in the vent."
+      name: "Elena Castillo (Alias: Isabel Martín)", // CULPABLE
+      role: "Investigadora Visitante (Visiting Researcher & Descendant)",
+      avatar: "🕵️‍♀️",
+      snippet: "Registrada a las 10:05 HRS. Identificada en las fotografías de 1932 y 1941 con nombres distintos.",
+      motive: "Ocultar el secreto familiar y proteger la herencia privada de su estirpe.",
+      alibi: "Alegó haber salido a los jardines exteriores a las 10:10 HRS tras no encontrar al bibliotecario.",
+      testimony: "Entré a las 10:05 para consultar bibliografía. Como el encargado no estaba, salí a caminar a los jardines a las diez y diez. No tengo nada que ver con el robo.",
+      redHerring: "Alegó una salida apresurada por falta de atención del personal.",
+      redHerringExplanation: "¡No salió! El registro prueba que permaneció dentro del archivo hasta después de las 10:20 HRS. Las fotografías de 1932 y 1941 y la carta confidencial comprueban su autoría.",
+      exoneration: "¡CULPABLE CONFIRMADA! No tiene testigos de su supuesta salida. Las fotografías A y B prueban su identidad encubierta, el registro de acceso la ubica durante el robo (10:05–10:25) y la carta confidencial revela su móvil."
     },
     {
       id: "suspect-4",
-      name: "Dr. Elena Morales",
-      role: "Visiting Archeologist & Pre-Columbian Historian (*Historiadora Visitante*)",
+      name: "Sofía Morales",
+      role: "Archivera y Catalogadora (Archive Cataloguer)",
       avatar: "📚",
-      snippet: "International expert in Calima gold iconography; had requested permission to photograph the pectoral's reverse inscription.",
-      motive: "Ambition to publish a career-defining monograph identifying previously unknown solar glyphs.",
-      alibi: "Delivering an international keynote livestream from the North Auditorium between 21:00 and 22:30.",
-      testimony: "The Calima-Yotoco solar pectoral contains geometric glyphs that dismantle the orthodox chronology of Southwestern metallurgy. Of course I argued vehemently with Dr. Valenzuela for permission to photograph the reverse casing! But I spent that entire evening delivering our keynote to the Andean Archaeological Congress via streaming video from Auditorium B.",
-      redHerring: "Overheard in a heated academic dispute with Curator Valenzuela over access to photograph the pectoral's reverse glyphs.",
-      redHerringExplanation: "Her passionate argument was purely intellectual ambition. Over 140 webinar participants, continuous timestamped video archive, and auditorium router IP telemetry conclusively verify her alibi 400 meters away.",
-      access: "Temporary visitor research credentials; zero physical keys, cabinet codes, or chemical supplies access.",
-      opportunity: "Stationed in North Auditorium B from 21:00 to 22:30; completely isolated from Hall 4.",
-      exoneration: "Over 140 remote university attendees, continuous timestamped video archive, and authenticated router IP telemetry conclusively place her 400 meters away in Auditorium B throughout the theft window."
+      snippet: "Encargada de catalogar manuscritos. Fue quien reportó la desaparición a las 10:30 HRS.",
+      motive: "Interés académico en fondos reservados para su tesis doctoral.",
+      alibi: "Trabajando en el taller de encuadernación con dos pasantes de 09:30 a 10:30 HRS.",
+      testimony: "Estuve toda la mañana restaurando pergaminos junto a dos pasantes. A las 10:30 entré al archivo para guardar pliegos y descubrí que la carpeta no estaba.",
+      redHerring: "Descubrió y reportó la desaparición, y tenía huellas en la carpeta por labores matutinas.",
+      redHerringExplanation: "Manipuló la carpeta en la catalogación rutinaria de las 08:30 HRS. Dos pasantes testificaron que no abandonó el taller de restauración.",
+      exoneration: "Testimonios coincidentes de dos pasantes universitarios y el registro digital del escáner confirman su presencia continua en el taller."
     },
     {
       id: "suspect-5",
       name: "Carlos Mendoza",
-      role: "CCTV & Security Networks Technician (*Técnico de Redes*)",
+      role: "Técnico de Instalaciones (Maintenance Technician)",
       avatar: "🔧",
-      snippet: "Serviced CCTV multiplex fiber wiring on the morning of the exhibition; knew camera angles and blind spots intimately.",
-      motive: "Technical capability to manipulate server feeds and familiarity with security blind spots.",
-      alibi: "Dining in the third-floor staff cafeteria with facilities personnel between 21:35 and 22:05.",
-      testimony: "I was replacing a damaged Cat-6 transceiver on CAM-03 at ten in the morning—that is why my fingerprint was on the external bracket! If I wanted to steal the piece, why would I violently hack the physical wire with pliers like an amateur when I could simply loop the RTSP video feed from my terminal? Besides, I was eating empanadas in the cafeteria with the HVAC techs.",
-      redHerring: "Latent fingerprint identified on CAM-03 external housing, and possessed intimate knowledge of surveillance blind spots.",
-      redHerringExplanation: "His fingerprint was left during a logged maintenance ticket (#IT-402) at 10:15 AM. Digital audit confirmed CAM-03 was severed physically with pliers, while server logs show zero software manipulation, and three cafeteria witnesses corroborate his presence.",
-      access: "Digital administrative access to CCTV server racks; no physical keys to exhibition vitrines or chemical reagents.",
-      opportunity: "Third-floor cafeteria from 21:35 to 22:05; corroborated by point-of-sale timestamps and facility staff.",
-      exoneration: "Digital forensic audit of the server room showed Camera #03 was severed physically with a hand cutter at the Hall 4 wall junction box, while server network logs confirm zero remote software tampering occurred."
+      snippet: "Visto cerca del archivo a las 10:00 HRS con una escalera y herramientas para cambiar luces.",
+      motive: "Acceso a llaves de servicio y conocimiento de los horarios del museo.",
+      alibi: "Reparando fluorescentes en la Sala 2 de Historia desde las 10:05 hasta las 10:40 HRS.",
+      testimony: "Estuve en una escalera cambiando tubos de luz en la Sala 2 frente al personal de limpieza. No toqué ningún documento ni me acerqué al archivo.",
+      redHerring: "Fue visto cerca del archivo a las 10:00 HRS cargando herramientas.",
+      redHerringExplanation: "Transportaba material hacia la Sala 2 según la orden de trabajo #OT-104. Dos empleados de limpieza confirmaron que estuvo subido en la escalera.",
+      exoneration: "Orden de trabajo firmada y testimonio de dos empleados de limpieza confirman que estuvo en la Sala 2 de 10:05 a 10:40 HRS."
     }
   ],
 
-  // Decisive Forensic Evidence Files (Chemical, Documentary, Physical)
+  // Archivo de Evidencias Decisivas (Idéntico a la Página 1 con Traducción Integrada)
   evidence: [
     {
       id: "clue-1",
-      title: "Chemical Solvent Residue (DMF Traces)",
-      type: "Chemical Analysis • Crime Lab Report",
-      discovery: "Gas chromatography-mass spectrometry (GC-MS) identified micro-residues of analytical-grade dimethylformamide (DMF) along the vitrine's acoustic silicone gasket.",
-      connection: "Laboratory Requisition Log #RQ-882 confirms that only Valeria Sotomayor checked out analytical-grade DMF solvent from central supply within the past 48 hours.",
-      significance: "Explains how the vitrine was opened silently without shattering glass or tripping the piezoelectric acoustic and seismic impact sensors.",
-      proves: "Proves that the vitrine was breached silently through targeted chemical dissolution of the silicone polymer rather than physical blunt force.",
-      doesNotProve: "Does not prove by itself that Valeria applied the solvent at 21:45 HRS, as another party could theoretically have stolen the solvent from her bench without corroborating evidence."
+      title: "Las Fotografías y la Evidencia Visual (Photographs & Visual Evidence)",
+      type: "ARCHIVO FOTOGRÁFICO · 01 (VISUAL EVIDENCE)",
+      discovery: "Compara los registros históricos: Fotografía A registrada en 1932 como Isabel Martín y Fotografía B registrada en 1941 como Elena Castillo.",
+      connection: "El cotejo facial pericial demuestra que ambas fichas utilizan nombres diferentes para ocultar la verdad sobre la identidad de la sospechosa.",
+      significance: "Demuestra que la investigadora Elena Castillo y la figura de Isabel Martín son la misma persona utilizando identidades alternas.",
+      proves: "Prueba que la sospechosa utilizó múltiples nombres para ocultar su verdadera identidad familiar.",
+      photoA: {
+        src: "images/sp_3.png",
+        alt: "Retrato antiguo de Isabel Martín (1932)",
+        name: "Isabel Martín",
+        nameEn: "Registered name: Isabel Martín",
+        stamp: "1932",
+        label: "Fotografía A (Photo A)"
+      },
+      photoB: {
+        src: "images/sp2.jpg",
+        alt: "Retrato registrado con otro nombre (1941)",
+        name: "Elena Castillo",
+        nameEn: "Registered name: Elena Castillo",
+        stamp: "1941",
+        label: "Fotografía B (Photo B)"
+      },
+      findingEs: "La evidencia fotográfica muestra que ambas fichas utilizan nombres diferentes para ocultar la verdad sobre la identidad del sospechoso en la historia.",
+      findingEn: "Photographic evidence proves both files use different names to conceal the suspect's true family identity."
     },
     {
       id: "clue-2",
-      title: "Handwritten Shift Schedule Fragment",
-      type: "Documentary Evidence • Forensic Graphology",
-      discovery: "A torn notebook page recovered from the service stairwell bearing handwritten Spanish notes: '21:40 cambio de turno — corte auxiliar 180s — ducto norte'.",
-      connection: "Graphological comparison and paper-fiber spectroscopy match the proprietary gridded field notebooks issued exclusively to the Conservation Department.",
-      significance: "Establishes criminal premeditation, detailed reconnaissance of guard patrol intervals, and technical knowledge of the auxiliary power grid transfer.",
-      proves: "Proves that the theft was premeditated with exact foreknowledge of the 4-minute auxiliary electrical transfer window and guard patrol blind spots.",
-      doesNotProve: "Does not prove the author's identity conclusively on its own without matching handwriting samples and physical fingerprint identification."
+      title: "El Registro Administrativo de Acceso (Administrative Access Log)",
+      type: "DOCUMENTO A · 02 (ADMINISTRATIVE RECORD)",
+      discovery: "Registro de acceso del 14 de octubre con las horas críticas: 10:05 entrada del sospechoso, 10:20 tesoro visto por última vez, 10:30 reporte de desaparición.",
+      connection: "Elena Castillo fue la única persona ajena al personal que ingresó a las 10:05 HRS, permaneciendo en el recinto durante el robo a las 10:20 HRS.",
+      significance: "Fija con precisión la ventana de 25 minutos (10:05 a 10:30 HRS) en que se cometió la sustracción del documento.",
+      proves: "Prueba la oportunidad cronológica exacta y la presencia física del sospechoso en la sala durante el robo.",
+      findingEs: "Este documento revela una coincidencia sospechosa que impulsa nuestra investigación para encontrar al responsable del robo.",
+      findingEn: "This log establishes that Elena Castillo was inside the archive precisely when the document disappeared."
     },
     {
       id: "clue-3",
-      title: "Concealed Resin Replica & Latent Fingerprints",
-      type: "Physical Evidence • Latent Ridge Analysis",
-      discovery: "An uncured polyurethane resin and plaster replica of the sun pectoral hidden inside the HVAC air return duct in the staff corridor adjacent to Hall 4.",
-      connection: "Cyanoacrylate fuming revealed three clear latent ridge impressions on the casting putty matching the right index finger and thumb of Valeria Sotomayor.",
-      significance: "Demonstrates the perpetrator's modus operandi to swap the genuine gold pectoral with an undetectable painted cast, preventing immediate discovery.",
-      proves: "Conclusively links Valeria Sotomayor's physical hands to the fabrication and concealment of the counterfeit artefact intended for the swap.",
-      doesNotProve: "Does not prove whether she acted alone or in conspiracy with an overseas antiquities trafficking syndicate to transport the original piece."
+      title: "La Carta Confidencial (Confidential Family Letter)",
+      type: "DOCUMENTO B · 03 (CONFIDENTIAL LETTER)",
+      discovery: "Carta confidencial manuscrita sin firma: “Debemos proteger este recuerdo y la herencia de nuestra familia. El pasado histórico no debe salir a la luz.”",
+      connection: "El texto explica la urgencia de Elena Castillo por sustraer el documento antes de que fuera expuesto en la muestra del museo.",
+      significance: "Aporta la prueba irrefutable del móvil: ocultar un secreto familiar vinculado al patrimonio histórico de América Latina.",
+      proves: "Prueba de manera definitiva la motivación familiar e histórica que impulsó la sustracción.",
+      findingEs: "La carta demuestra que alguien intentó ocultar un secreto familiar vinculado al patrimonio cultural de América Latina.",
+      findingEn: "The letter proves someone acted to protect an ancestral family secret from being publicly exposed."
     }
   ],
 
-  // Verified Institutional Bibliographic Citations (Academic Integrity)
+  // Fuentes Institucionales Simplificadas
   culturalSources: [
     {
-      title: "Pre-Hispanic Metallurgy in the Colombian Southwest: Calima and Malagana Traditions",
-      institution: "Banco de la República — Museo del Oro (Bogotá, Colombia)",
-      citation: "Lleras Pérez, Roberto (2007). Pre-Hispanic Metallurgy in the Colombian Southwest: Calima and Malagana Traditions. Boletín Museo del Oro, No. 54, pp. 12–47. ISSN: 0120-7296.",
-      notes: "Primary academic catalog documenting hammered sheet gold pectorals, tumbaga casting methods, and ceremonial solar iconography of the Yotoco period."
+      title: "El Archivo de las Identidades Perdidas (Archive of Lost Identities)",
+      institution: "Archivo Histórico y Cultural de América Latina",
+      citation: "Castillo & Martín, F. (1932–1941). Registros Documentales y Memoria Familiar. Revista de Historia y Sociedad.",
+      notes: "Metodología pericial para cotejar fichas fotográficas históricas y salvaguarda de patrimonio documental."
     },
     {
-      title: "Convention on the Means of Prohibiting and Preventing the Illicit Import, Export and Transfer of Ownership of Cultural Property",
-      institution: "United Nations Educational, Scientific and Cultural Organization (UNESCO)",
-      citation: "UNESCO General Conference, 16th Session (1970). Convention on Illicit Antiquities Trade, Resolution 3.121, 823 U.N.T.S. 231. Paris: UNESCO Publishing.",
-      notes: "International legal framework governing the recovery of stolen Latin American antiquities, museum custody protocols, and forensic provenance tracking."
-    },
-    {
-      title: "Norma Técnica para la Conservación Preventiva de Bienes Metálicos Prehispánicos",
-      institution: "Instituto Colombiano de Antropología e Historia (ICANH)",
-      citation: "ICANH (2019). Manual de Conservación Preventiva y Seguridad Museográfica para Orfebrería Prehispánica, Guía Técnica No. 12, Bogotá: Imprenta Nacional.",
-      notes: "Official security, climate control, and anti-tamper standards for displaying pre-Columbian gold collections in national exhibitions."
+      title: "Convención para la Protección del Patrimonio Cultural (UNESCO Convention)",
+      institution: "UNESCO (1972)",
+      citation: "UNESCO (1972). Tratado Internacional de Preservación de Archivos Históricos y Bienes Culturales. París.",
+      notes: "Marco legal internacional sobre la custodia de documentos de valor histórico en museos y archivos públicos."
     }
   ],
 
-  // Educational Spanish Glossary (30 Distinct Forensic & Cultural Terms with Examples)
+  // Glosario de 30 Términos Bilingüe Conciso
   vocabulary: [
-    {
-      spanish: "El culpable",
-      english: "The culprit / guilty party",
-      pos: "Noun (masculine)",
-      context: "The individual legally proven to have planned and executed the museum theft.",
-      example: "El culpable utilizó un solvente químico para abrir la vitrina.",
-      exampleTranslation: "The culprit used a chemical solvent to open the display case."
-    },
-    {
-      spanish: "El sospechoso / La sospechosa",
-      english: "The suspect",
-      pos: "Noun (masc. / fem.)",
-      context: "A person of interest under active police investigation due to circumstantial evidence.",
-      example: "Cada sospechoso tenía una coartada durante el apagón.",
-      exampleTranslation: "Each suspect had an alibi during the blackout."
-    },
-    {
-      spanish: "La evidencia",
-      english: "The evidence",
-      pos: "Noun (feminine)",
-      context: "Objective material exhibit or forensic trace examined by crime laboratory scientists.",
-      example: "La evidencia forense desmintió el testimonio del guardia.",
-      exampleTranslation: "The forensic evidence disproved the guard's testimony."
-    },
-    {
-      spanish: "La pista",
-      english: "The clue / lead",
-      pos: "Noun (feminine)",
-      context: "A critical piece of information that guides detectives toward reconstructing the truth.",
-      example: "La nota encontrada en la escalera fue una pista decisiva.",
-      exampleTranslation: "The note found in the stairwell was a decisive clue."
-    },
-    {
-      spanish: "El artefacto",
-      english: "The artefact / artifact",
-      pos: "Noun (masculine)",
-      context: "An archaeological masterpiece of high historical and ceremonial significance.",
-      example: "El artefacto de oro fue devuelto a la bóveda del museo.",
-      exampleTranslation: "The gold artefact was returned to the museum vault."
-    },
-    {
-      spanish: "El museo",
-      english: "The museum",
-      pos: "Noun (masculine)",
-      context: "The public cultural institution safeguarding the pre-Columbian heritage collection.",
-      example: "El museo reforzó sus protocolos de seguridad tras el robo.",
-      exampleTranslation: "The museum reinforced its security protocols after the theft."
-    },
-    {
-      spanish: "La investigación",
-      english: "The investigation",
-      pos: "Noun (feminine)",
-      context: "The methodical inquiry combining alibi verification, chemistry, and timeline analysis.",
-      example: "La investigación policial se centró en cinco personas.",
-      exampleTranslation: "The police investigation focused on five people."
-    },
-    {
-      spanish: "El motivo",
-      english: "The motive",
-      pos: "Noun (masculine)",
-      context: "The underlying psychological or financial cause that incites criminal behavior.",
-      example: "Las deudas financieras fueron el motivo principal del crimen.",
-      exampleTranslation: "Financial debts were the primary motive for the crime."
-    },
-    {
-      spanish: "La coartada",
-      english: "The alibi",
-      pos: "Noun (feminine)",
-      context: "Corroborated proof that a suspect was physically elsewhere when the crime occurred.",
-      example: "La historiadora presentó una coartada verificada por video.",
-      exampleTranslation: "The historian presented a video-verified alibi."
-    },
-    {
-      spanish: "Acusar",
-      english: "To accuse / charge",
-      pos: "Verb",
-      context: "To formally name an individual as the perpetrator before the judicial magistrate.",
-      example: "El detective decidió acusar formalmente a la restauradora.",
-      exampleTranslation: "The detective decided to formally accuse the conservator."
-    },
-    {
-      spanish: "El testigo / La testigo",
-      english: "The witness",
-      pos: "Noun (masc. / fem.)",
-      context: "A person who observed or heard relevant anomalies on the night of the incident.",
-      example: "El testigo confirmó haber visto luces en la sala cuatro.",
-      exampleTranslation: "The witness confirmed seeing lights in Hall 4."
-    },
-    {
-      spanish: "La huella",
-      english: "The fingerprint / impression",
-      pos: "Noun (feminine)",
-      context: "A latent friction ridge mark left involuntarily on physical evidence at the scene.",
-      example: "La huella dactilar coincidió con la restauradora.",
-      exampleTranslation: "The fingerprint matched the conservator."
-    },
-    {
-      spanish: "El robo",
-      english: "The theft / robbery",
-      pos: "Noun (masculine)",
-      context: "The unlawful extraction and misappropriation of protected national treasures.",
-      example: "El robo ocurrió durante un apagón eléctrico de tres minutos.",
-      exampleTranslation: "The theft occurred during a three-minute electrical blackout."
-    },
-    {
-      spanish: "Descubrir",
-      english: "To discover / uncover",
-      pos: "Verb",
-      context: "To expose hidden motives, concealed tools, or decisive forensic connections.",
-      example: "El equipo logró descubrir la réplica oculta en el ducto.",
-      exampleTranslation: "The team managed to discover the replica hidden in the duct."
-    },
-    {
-      spanish: "El misterio",
-      english: "The mystery",
-      pos: "Noun (masculine)",
-      context: "The complex puzzle of the darkened gallery that requires deductive reasoning.",
-      example: "El misterio del pectoral dorado quedó completamente resuelto.",
-      exampleTranslation: "The mystery of the golden pectoral was completely solved."
-    },
-    {
-      spanish: "La verdad",
-      english: "The truth",
-      pos: "Noun (feminine)",
-      context: "The factual reality established through incontrovertible forensic proof.",
-      example: "El análisis químico reveló la verdad detrás del incidente.",
-      exampleTranslation: "Chemical analysis revealed the truth behind the incident."
-    },
-    {
-      spanish: "Inocente",
-      english: "Innocent",
-      pos: "Adjective",
-      context: "Free from legal culpability after verified alibi verification and timeline audits.",
-      example: "Cuatro de los cinco sospechosos resultaron ser inocentes.",
-      exampleTranslation: "Four of the five suspects turned out to be innocent."
-    },
-    {
-      spanish: "Culpable",
-      english: "Guilty",
-      pos: "Adjective",
-      context: "Proven responsible beyond reasonable doubt for committing the crime.",
-      example: "La evidencia demostró quién era el culpable del delito.",
-      exampleTranslation: "The evidence demonstrated who was guilty of the crime."
-    },
-    {
-      spanish: "La exposición",
-      english: "The exhibition",
-      pos: "Noun (feminine)",
-      context: "The public or gala display of antiquities curated for cultural appreciation.",
-      example: "La exposición de orfebrería prehispánica cerró temprano.",
-      exampleTranslation: "The pre-Hispanic goldwork exhibition closed early."
-    },
-    {
-      spanish: "El guardia",
-      english: "The security guard",
-      pos: "Noun (masculine)",
-      context: "The patrol personnel entrusted with physical surveillance and visitor security.",
-      example: "El guardia descendió al sótano tras escuchar una alarma acústica.",
-      exampleTranslation: "The guard descended to the basement after hearing an acoustic alarm."
-    },
-    {
-      spanish: "La vitrina",
-      english: "The display case / vitrine",
-      pos: "Noun (feminine)",
-      context: "The reinforced, sensor-equipped glass enclosure shielding the artefact.",
-      example: "La vitrina hermética fue abierta sin romper el cristal.",
-      exampleTranslation: "The hermetic display case was opened without breaking the glass."
-    },
-    {
-      spanish: "El informe",
-      english: "The official report",
-      pos: "Noun (masculine)",
-      context: "The formal technical document recording lab discoveries and police conclusions.",
-      example: "El informe pericial detalló los restos de solvente DMF.",
-      exampleTranslation: "The forensic report detailed the DMF solvent residue."
-    },
-    {
-      spanish: "La confesión",
-      english: "The confession",
-      pos: "Noun (feminine)",
-      context: "The voluntary formal admission of guilt and modus operandi given by the perpetrator.",
-      example: "La sospechosa firmó una confesión completa ante las autoridades.",
-      exampleTranslation: "The suspect signed a full confession before authorities."
-    },
-    {
-      spanish: "El enigma",
-      english: "The enigma / riddle",
-      pos: "Noun (masculine)",
-      context: "A coded Spanish cipher or cryptic inscription requiring linguistic decoding.",
-      example: "El enigma de la vitrina requirió razonamiento deductivo.",
-      exampleTranslation: "The vitrine enigma required deductive reasoning."
-    },
-    {
-      spanish: "La recompensa",
-      english: "The reward / score",
-      pos: "Noun (feminine)",
-      context: "The academic rating and quantitative score achieved through sound deduction.",
-      example: "El detective recibió una alta recompensa por su precisión.",
-      exampleTranslation: "The detective received a high score for their accuracy."
-    },
-    {
-      spanish: "Puntuación",
-      english: "Score / Rating",
-      pos: "Noun (feminine)",
-      context: "The transparent evaluation score measuring deductive and investigative accuracy.",
-      example: "La puntuación final refleja las deducciones comprobadas.",
-      exampleTranslation: "The final score reflects verified deductions."
-    },
-    {
-      spanish: "Deducción",
-      english: "Deduction / Reasoning",
-      pos: "Noun (feminine)",
-      context: "The analytical process of deriving logical conclusions from physical premises.",
-      example: "Una deducción lógica descartó a los sospechosos inocentes.",
-      exampleTranslation: "A logical deduction ruled out innocent suspects."
-    },
-    {
-      spanish: "Revisar",
-      english: "To review / examine",
-      pos: "Verb",
-      context: "To thoroughly audit evidence logs, alibis, and timeline discrepancies.",
-      example: "Es necesario revisar todas las pistas antes de acusar.",
-      exampleTranslation: "It is necessary to review all clues before accusing."
-    },
-    {
-      spanish: "Reiniciar",
-      english: "To restart / reset",
-      pos: "Verb",
-      context: "To reset the investigation session to test alternate investigative hypotheses.",
-      example: "El jugador puede reiniciar el caso para probar otra hipótesis.",
-      exampleTranslation: "The player can restart the case to test another hypothesis."
-    },
-    {
-      spanish: "El archivo",
-      english: "The archive / case file",
-      pos: "Noun (masculine)",
-      context: "The organized repository of testimonies, chemical spectra, and case records.",
-      example: "El archivo judicial contiene las actas de interrogatorio.",
-      exampleTranslation: "The judicial file contains the interrogation transcripts."
-    }
+    { spanish: "El culpable / La culpable", english: "The culprit / guilty person", pos: "Sustantivo", context: "Persona responsable legal del delito.", example: "La culpable utilizó dos nombres para ocultar su identidad.", exampleTranslation: "The culprit used two names to hide her identity." },
+    { spanish: "El sospechoso / La sospechosa", english: "The suspect", pos: "Sustantivo", context: "Persona de interés bajo investigación.", example: "Cada sospechoso fue interrogado sobre su horario el 14 de octubre.", exampleTranslation: "Each suspect was interrogated about their schedule on Oct 14." },
+    { spanish: "La evidencia", english: "The evidence", pos: "Sustantivo", context: "Prueba material analizada por los detectives.", example: "La evidencia fotográfica demostró la doble identidad.", exampleTranslation: "The photographic evidence proved the double identity." },
+    { spanish: "La pista", english: "The clue / lead", pos: "Sustantivo", context: "Dato clave que orienta la resolución.", example: "La carta confidencial fue una pista decisiva.", exampleTranslation: "The confidential letter was a decisive clue." },
+    { spanish: "El artefacto / El tesoro", english: "The artifact / cultural treasure", pos: "Sustantivo", context: "Documento histórico de gran valor patrimonial.", example: "El tesoro cultural desapareció de la vitrina del archivo.", exampleTranslation: "The cultural treasure disappeared from the display case." },
+    { spanish: "El museo", english: "The museum", pos: "Sustantivo", context: "Institución que resguarda el patrimonio histórico.", example: "El museo custodia valiosos archivos de la historia.", exampleTranslation: "The museum safeguards valuable historical archives." },
+    { spanish: "La investigación", english: "The investigation", pos: "Sustantivo", context: "Proceso metódico de análisis del caso.", example: "Nuestra investigación reveló una coincidencia sospechosa.", exampleTranslation: "Our investigation revealed a suspicious coincidence." },
+    { spanish: "El motivo", english: "The motive", pos: "Sustantivo", context: "La razón familiar que impulsó el robo.", example: "El motivo principal era proteger un secreto familiar.", exampleTranslation: "The main motive was to protect a family secret." },
+    { spanish: "La coartada", english: "The alibi", pos: "Sustantivo", context: "Prueba de estar en otro lugar durante el robo.", example: "El director presentó una coartada comprobada por testigos.", exampleTranslation: "The director presented an alibi verified by witnesses." },
+    { spanish: "Acusar", english: "To accuse / formalize charge", pos: "Verbo", context: "Señalar formalmente a la persona culpable.", example: "El detective decidió acusar formalmente a Elena Castillo.", exampleTranslation: "The detective decided to formally accuse Elena Castillo." },
+    { spanish: "El testigo / La testigo", english: "The witness", pos: "Sustantivo", context: "Persona que presenció hechos o valida una coartada.", example: "Los testigos confirmaron la presencia del técnico en la Sala 2.", exampleTranslation: "Witnesses confirmed the technician was in Room 2." },
+    { spanish: "La huella", english: "The fingerprint / trace", pos: "Sustantivo", context: "Marca física dejada en la escena.", example: "No se encontró ninguna huella forzada en la cerradura.", exampleTranslation: "No forced mark was found on the lock." },
+    { spanish: "El robo", english: "The theft / robbery", pos: "Sustantivo", context: "Sustracción ilícita de un documento protegido.", example: "El robo ocurrió entre las diez y cinco y las diez y media.", exampleTranslation: "The theft occurred between 10:05 and 10:30." },
+    { spanish: "Descubrir", english: "To discover / uncover", pos: "Verbo", context: "Revelar información oculta o identidades falsas.", example: "Logramos descubrir el significado oculto de la carta.", exampleTranslation: "We managed to discover the hidden meaning of the letter." },
+    { spanish: "El misterio", english: "The mystery", pos: "Sustantivo", context: "Enigma sobre la desaparición del tesoro.", example: "El misterio de las identidades perdidas quedó resuelto.", exampleTranslation: "The mystery of the lost identities was solved." },
+    { spanish: "La verdad", english: "The truth", pos: "Sustantivo", context: "Realidad demostrada mediante pruebas periciales.", example: "El pasado no debe salir a la luz, pero la verdad triunfó.", exampleTranslation: "The past must not come to light, but the truth triumphed." },
+    { spanish: "Inocente", english: "Innocent", pos: "Adjetivo", context: "Libre de culpa tras verificarse las coartadas.", example: "Cuatro de los cinco sospechosos resultaron ser inocentes.", exampleTranslation: "Four of the five suspects turned out to be innocent." },
+    { spanish: "Culpable", english: "Guilty", pos: "Adjetivo", context: "Responsable comprobado de cometer el delito.", example: "La evidencia fotográfica demostró quién era la culpable.", exampleTranslation: "The photographic evidence demonstrated who was guilty." },
+    { spanish: "La identidad", english: "The identity", pos: "Sustantivo", context: "Datos legales que definen a un individuo.", example: "Elena Castillo ocultó su identidad bajo el nombre de Isabel.", exampleTranslation: "Elena Castillo concealed her identity under the name Isabel." },
+    { spanish: "El archivo", english: "The archive / file", pos: "Sustantivo", context: "Recinto donde se custodian documentos de valor.", example: "El sospechoso entró en el archivo del museo a las 10:05.", exampleTranslation: "The suspect entered the museum archive at 10:05." },
+    { spanish: "La vitrina", english: "The display case / vitrine", pos: "Sustantivo", context: "Mueble de cristal donde se exhibe el tesoro.", example: "El tesoro se vio por última vez en la vitrina a las 10:20.", exampleTranslation: "The treasure was last seen in the display case at 10:20." },
+    { spanish: "El registro", english: "The administrative record / log", pos: "Sustantivo", context: "Bitácora oficial de entradas y salidas.", example: "El registro administrativo confirmó la entrada a las 10:05.", exampleTranslation: "The administrative log confirmed entry at 10:05." },
+    { spanish: "La carta", english: "The letter", pos: "Sustantivo", context: "Manuscrito que revela pensamientos o secretos.", example: "La carta confidencial demostró el pacto familiar.", exampleTranslation: "The confidential letter demonstrated the family pact." },
+    { spanish: "La herencia", english: "The inheritance / heritage", pos: "Sustantivo", context: "Bienes o recuerdos transmitidos de generación en generación.", example: "Debemos proteger este recuerdo y la herencia de la familia.", exampleTranslation: "We must protect this memory and our family heritage." },
+    { spanish: "El patrimonio", english: "The cultural heritage", pos: "Sustantivo", context: "Bienes históricos que pertenecen a una nación.", example: "El documento está vinculado al patrimonio cultural.", exampleTranslation: "The document is linked to cultural heritage." },
+    { spanish: "La confesión", english: "The confession", pos: "Sustantivo", context: "Declaración donde el culpable admite los hechos.", example: "La culpable firmó una confesión detallando su móvil.", exampleTranslation: "The culprit signed a confession detailing her motive." },
+    { spanish: "El veredicto", english: "The verdict", pos: "Sustantivo", context: "Resolución formal emitida tras analizar las pruebas.", example: "El veredicto final confirmó la culpabilidad de Elena.", exampleTranslation: "The final verdict confirmed Elena's guilt." },
+    { spanish: "La deducción", english: "The deduction / reasoning", pos: "Sustantivo", context: "Razonamiento lógico basado en evidencias.", example: "Una deducción rigurosa conectó las dos fotografías.", exampleTranslation: "A rigorous deduction connected both photographs." },
+    { spanish: "Puntuación", english: "Score / Rating", pos: "Sustantivo", context: "Evaluación del desempeño del detective.", example: "Obtuviste la máxima puntuación por tu deducción.", exampleTranslation: "You earned the maximum score for your deduction." },
+    { spanish: "Reiniciar", english: "To restart / reset", pos: "Verbo", context: "Restablecer el expediente para una nueva prueba.", example: "Puedes reiniciar el caso para revisar las pistas.", exampleTranslation: "You can restart the case to review the clues." }
   ]
 };
 
 /**
  * ------------------------------------------------------------------------------
- * REACTIVE GAME STATE (GAME_STATE)
+ * ESTADO REACTIVO DEL JUEGO (GAME_STATE)
  * ------------------------------------------------------------------------------
  */
 const GAME_STATE = {
@@ -503,15 +295,13 @@ const GAME_STATE = {
   accusationSubmitted: false,
   accusationReason: "",
   finalScore: 0,
-  
-  // Integration parameters (from Modules 1–4 or Sandbox Drawer)
-  priorCluesDiscovered: 3,  // 0 to 3 clues discovered in previous modules
-  priorPuzzleSolved: true   // Spanish cipher solved
+  priorCluesDiscovered: 3,
+  priorPuzzleSolved: true
 };
 
 /**
  * ------------------------------------------------------------------------------
- * DOM INITIALIZATION
+ * INICIALIZACIÓN DEL DOM
  * ------------------------------------------------------------------------------
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -529,13 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNavigationInteractions();
 });
 
-/**
- * ------------------------------------------------------------------------------
- * 1. INTEGRATION PARAMETER DETECTION (MODULES 1–4)
- * ------------------------------------------------------------------------------
- */
 function detectIntegrationParameters() {
-  // 1. URL Query Parameters (e.g., reveal.html?clues=3&puzzle=1)
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has("clues")) {
     const cluesVal = parseInt(urlParams.get("clues"), 10);
@@ -547,7 +331,6 @@ function detectIntegrationParameters() {
     GAME_STATE.priorPuzzleSolved = urlParams.get("puzzle") === "1" || urlParams.get("puzzle") === "true";
   }
 
-  // 2. localStorage Integration
   try {
     const savedState = localStorage.getItem("quienFueGameState");
     if (savedState) {
@@ -556,58 +339,31 @@ function detectIntegrationParameters() {
       if (typeof parsed.puzzleSolved === "boolean") GAME_STATE.priorPuzzleSolved = parsed.puzzleSolved;
     }
   } catch (e) {
-    // Standalone fallback
+    // Modo autónomo
   }
 
-  // 3. Shared Global Window Object
-  if (window.quienFueSharedData) {
-    if (typeof window.quienFueSharedData.cluesDiscovered === "number") {
-      GAME_STATE.priorCluesDiscovered = window.quienFueSharedData.cluesDiscovered;
-    }
-    if (typeof window.quienFueSharedData.puzzleSolved === "boolean") {
-      GAME_STATE.priorPuzzleSolved = window.quienFueSharedData.puzzleSolved;
-    }
-  }
-
-  // Sync Simulator Controls
   const simCluesInput = document.getElementById("simCluesCount");
   const simPuzzleCheck = document.getElementById("simPuzzleCheckbox");
   if (simCluesInput) simCluesInput.value = GAME_STATE.priorCluesDiscovered;
   if (simPuzzleCheck) simPuzzleCheck.checked = GAME_STATE.priorPuzzleSolved;
 }
 
-/**
- * ------------------------------------------------------------------------------
- * 2. DOM POPULATION FROM STORY_CONFIG
- * ------------------------------------------------------------------------------
- */
 function populateStoryPlaceholders() {
-  // Author Identification
   document.querySelectorAll(".author-inline-name").forEach(el => {
     el.textContent = STORY_CONFIG.author.name;
   });
 
-  // Artefact Metadata
   document.querySelectorAll(".artefact-inline-name").forEach(el => {
     el.textContent = STORY_CONFIG.artefact.name;
   });
 
   const statsArtefact = document.getElementById("statsArtefactName");
   if (statsArtefact) statsArtefact.textContent = STORY_CONFIG.artefact.name;
-
-  const displayCultureName = document.getElementById("displayCultureName");
-  if (displayCultureName) displayCultureName.textContent = STORY_CONFIG.artefact.originCulture;
-
-  const displayArtefactPeriod = document.getElementById("displayArtefactPeriod");
-  if (displayArtefactPeriod) displayArtefactPeriod.textContent = STORY_CONFIG.artefact.estimatedDate;
-
-  const displayArtefactContext = document.getElementById("displayArtefactContext");
-  if (displayArtefactContext) displayArtefactContext.textContent = STORY_CONFIG.artefact.historicalContext;
 }
 
 /**
  * ------------------------------------------------------------------------------
- * 2B. INCIDENT TIMELINE (SECTION D)
+ * 3. CRONOLOGÍA HISTÓRICA (TIMELINE)
  * ------------------------------------------------------------------------------
  */
 function renderIncidentTimeline() {
@@ -616,22 +372,23 @@ function renderIncidentTimeline() {
 
   container.innerHTML = "";
   STORY_CONFIG.timeline.forEach((entry) => {
-    const div = document.createElement("div");
-    div.className = "timeline-entry";
-    div.setAttribute("role", "listitem");
-    div.innerHTML = `
-      <span class="timeline-time">${entry.time}</span>
-      <div class="timeline-body">
-        <strong>${entry.title}:</strong> ${entry.body}
+    const article = document.createElement("article");
+    article.className = "timeline-item";
+    article.setAttribute("role", "listitem");
+    article.innerHTML = `
+      <span class="timeline-badge">${entry.time}</span>
+      <div class="timeline-content">
+        <h4 class="timeline-entry-title">${entry.title}</h4>
+        <p class="timeline-entry-desc">${entry.body}</p>
       </div>
     `;
-    container.appendChild(div);
+    container.appendChild(article);
   });
 }
 
 /**
  * ------------------------------------------------------------------------------
- * 3. EDITORIAL SUSPECT GALLERY (SECTION E)
+ * 4. GALERÍA DE SOSPECHOSOS (SUSPECT GALLERY)
  * ------------------------------------------------------------------------------
  */
 function renderEditorialSuspects() {
@@ -645,8 +402,8 @@ function renderEditorialSuspects() {
     card.className = "editorial-suspect-card";
     card.innerHTML = `
       <div class="suspect-card-meta">
-        <span class="suspect-id-tag">SOSPECHOSO #0${idx + 1} (Suspect File)</span>
-        <span>INTERROGATION FILE</span>
+        <span class="eyebrow">FICHA · 0${idx + 1} (FILE 0${idx + 1})</span>
+        <span class="case-label-small">EXP. 047</span>
       </div>
       <div class="suspect-avatar-box" aria-hidden="true">${suspect.avatar}</div>
       <h3 class="editorial-suspect-name">${suspect.name}</h3>
@@ -654,27 +411,20 @@ function renderEditorialSuspects() {
       <p class="editorial-suspect-snippet">${suspect.snippet}</p>
 
       ${suspect.testimony ? `
-      <div class="suspect-testimony-box">
-        <span class="suspect-testimony-label">First-Person Testimony:</span>
-        <blockquote class="suspect-testimony-quote">“${suspect.testimony}”</blockquote>
-      </div>` : ""}
+      <blockquote class="suspect-testimony-quote">
+        “${suspect.testimony}”
+      </blockquote>` : ""}
 
       <div class="suspect-alibi-preview">
-        <strong>Stated Alibi:</strong> ${suspect.alibi}
+        <strong>Coartada (Alibi):</strong> ${suspect.alibi}
       </div>
 
-      ${suspect.redHerring ? `
-      <div class="suspect-herring-note">
-        <strong>Suspicious Circumstance:</strong> ${suspect.redHerring}
-      </div>` : ""}
-
-      <a href="#veredicto" class="suspect-dossier-link" data-select-suspect="${suspect.id}">
-        <span>INSPECT & ACCUSE</span>
+      <a href="#veredicto" class="button suspect-dossier-link" data-select-suspect="${suspect.id}">
+        <span>Acusar a este sospechoso · Accuse Suspect</span>
         <span aria-hidden="true">→</span>
       </a>
     `;
 
-    // Connect link to form pre-selection
     const link = card.querySelector(".suspect-dossier-link");
     if (link) {
       link.addEventListener("click", () => {
@@ -688,7 +438,7 @@ function renderEditorialSuspects() {
 
 /**
  * ------------------------------------------------------------------------------
- * 4. ACCUSATION SUSPECT SELECTION (SECTION G — CORE MODULE)
+ * 5. SELECCIÓN DE SOSPECHOSOS (RADIO GROUP ACCESIBLE)
  * ------------------------------------------------------------------------------
  */
 function renderSelectionSuspects() {
@@ -707,14 +457,14 @@ function renderSelectionSuspects() {
     card.dataset.suspectId = suspect.id;
 
     card.innerHTML = `
-      <span class="selected-badge">SELECTED</span>
+      <span class="selected-badge">SELECCIONADO (SELECTED)</span>
       <input
         type="radio"
         id="radio-${suspect.id}"
         name="suspectSelection"
         value="${suspect.id}"
         tabindex="-1"
-        aria-label="Suspect ${index + 1}: ${suspect.name}, ${suspect.role}"
+        aria-label="Sospechoso ${index + 1}: ${suspect.name}, ${suspect.role}"
       >
       <div class="selection-avatar" aria-hidden="true">${suspect.avatar}</div>
       <h4 class="selection-name">${suspect.name}</h4>
@@ -726,7 +476,6 @@ function renderSelectionSuspects() {
       selectSuspect(suspect.id);
     });
 
-    // Keyboard Navigation (WAI-ARIA Radio Group)
     card.addEventListener("keydown", (e) => {
       if (e.key === " " || e.key === "Enter") {
         e.preventDefault();
@@ -774,7 +523,7 @@ function selectSuspect(suspectId) {
 
 /**
  * ------------------------------------------------------------------------------
- * 5. EVIDENCE ARCHIVE (SECTION F)
+ * 6. ARCHIVO DE EVIDENCIAS (FORMATO EXACTO CON TRADUCCIÓN INTEGRADA)
  * ------------------------------------------------------------------------------
  */
 function renderEvidenceArchive() {
@@ -783,45 +532,125 @@ function renderEvidenceArchive() {
 
   container.innerHTML = "";
 
-  STORY_CONFIG.evidence.forEach((item, index) => {
-    const card = document.createElement("article");
-    card.className = "editorial-evidence-card";
-    card.innerHTML = `
-      <div class="evidence-meta-header">
-        <span class="evidence-id-code">EVIDENCIA #0${index + 1} (Evidence Exhibit)</span>
-        <span class="evidence-category">${item.type}</span>
-      </div>
-      <h3 class="editorial-evidence-title">${item.title}</h3>
-      <div class="evidence-fact-group">
-        <h6>🔍 DISCOVERY AT CRIME SCENE:</h6>
-        <p class="evidence-fact-text">${item.discovery}</p>
-      </div>
-      <div class="evidence-fact-group">
-        <h6>🔗 CONNECTION TO PRIME SUSPECT:</h6>
-        <p class="evidence-fact-text">${item.connection}</p>
-      </div>
-      <div class="evidence-fact-group">
-        <h6>⚖️ LEGAL & PROBATIVE VALUE:</h6>
-        <p class="evidence-fact-text">${item.significance}</p>
-      </div>
-      ${item.proves ? `
-      <div class="evidence-proves-box">
-        <span class="evidence-proves-label">✓ What This Clue Proves:</span>
-        <p class="evidence-fact-text">${item.proves}</p>
-      </div>` : ""}
-      ${item.doesNotProve ? `
-      <div class="evidence-limits-box">
-        <span class="evidence-limits-label">⚠ Limitations / Corroboration Needed:</span>
-        <p class="evidence-fact-text">${item.doesNotProve}</p>
-      </div>` : ""}
-    `;
-    container.appendChild(card);
+  // 1. Evidencia Fotográfica (Photographic Evidence)
+  const photoEvidence = STORY_CONFIG.evidence[0];
+  const photoPanel = document.createElement("section");
+  photoPanel.className = "panel";
+  photoPanel.innerHTML = `
+    <p class="eyebrow">ARCHIVO FOTOGRÁFICO · 01 (PHOTOGRAPHIC ARCHIVE)</p>
+    <h2>${photoEvidence.title}</h2>
+    <p style="color: var(--muted); margin-bottom: 20px;">
+      Compara los registros de la investigación y analiza cada pista del museo.<br>
+      <span class="lang-sub">(Compare the investigative records and analyze each museum clue.)</span>
+    </p>
+
+    <div class="photo-grid">
+      <article class="photo-card">
+        <div class="photo portrait">
+          <img src="${photoEvidence.photoA.src}" alt="${photoEvidence.photoA.alt}">
+          <span class="photo-stamp">${photoEvidence.photoA.stamp}</span>
+        </div>
+        <h3>${photoEvidence.photoA.label}</h3>
+        <p>Nombre registrado (Registered name): <strong>${photoEvidence.photoA.name}</strong></p>
+      </article>
+
+      <article class="photo-card">
+        <div class="photo portrait">
+          <img src="${photoEvidence.photoB.src}" alt="${photoEvidence.photoB.alt}">
+          <span class="photo-stamp">${photoEvidence.photoB.stamp}</span>
+        </div>
+        <h3>${photoEvidence.photoB.label}</h3>
+        <p>Nombre registrado (Registered name): <strong>${photoEvidence.photoB.name}</strong></p>
+      </article>
+    </div>
+
+    <button type="button" class="button" data-reveal="photo-clue" aria-expanded="false" aria-controls="photo-clue">
+      <span>Comparar las fotografías · Compare Photographs</span>
+    </button>
+
+    <div class="clue" id="photo-clue" hidden>
+      <h3>Hallazgo de la investigación (Investigation Finding)</h3>
+      <p>${photoEvidence.findingEs}</p>
+      <p class="lang-sub">${photoEvidence.findingEn}</p>
+    </div>
+  `;
+  container.appendChild(photoPanel);
+
+  // 2. Registro Administrativo de Acceso (Administrative Access Log)
+  const docEvidence = STORY_CONFIG.evidence[1];
+  const docPanel = document.createElement("section");
+  docPanel.className = "panel";
+  docPanel.innerHTML = `
+    <p class="eyebrow">DOCUMENTO A · 02 (ADMINISTRATIVE RECORD)</p>
+    <h2>${docEvidence.title}</h2>
+
+    <div class="document">
+      <p class="document-title">
+        REGISTRO DE ACCESO · HISTORIA Y CULTURA<br>
+        <span style="font-size: 13px; font-weight: normal; color: #5a452e;">ACCESS LOG · HISTORY & CULTURE</span>
+      </p>
+      <p>14 de octubre (October 14)</p>
+      <hr>
+      <p><span>10:05</span> El sospechoso entra en el archivo del museo. <em class="doc-sub">(Suspect enters archive)</em></p>
+      <p><span>10:20</span> El tesoro cultural se ve por última vez. <em class="doc-sub">(Treasure last seen)</em></p>
+      <p><span>10:30</span> Se descubre la desaparición del documento. <em class="doc-sub">(Theft discovered)</em></p>
+      <p class="signature">Archivo administrativo (Administrative Archive)</p>
+    </div>
+
+    <button type="button" class="button" data-reveal="record-clue" aria-expanded="false" aria-controls="record-clue">
+      <span>Analizar el registro · Analyze Record</span>
+    </button>
+
+    <div class="clue" id="record-clue" hidden>
+      <h3>Pista clave (Key Clue)</h3>
+      <p>${docEvidence.findingEs}</p>
+      <p class="lang-sub">${docEvidence.findingEn}</p>
+    </div>
+  `;
+  container.appendChild(docPanel);
+
+  // 3. Carta Confidencial (Confidential Family Letter)
+  const letterEvidence = STORY_CONFIG.evidence[2];
+  const letterPanel = document.createElement("section");
+  letterPanel.className = "panel";
+  letterPanel.innerHTML = `
+    <p class="eyebrow">DOCUMENTO B · 03 (CONFIDENTIAL LETTER)</p>
+    <h2>${letterEvidence.title}</h2>
+
+    <blockquote class="letter">
+      “Debemos proteger este recuerdo y la herencia de nuestra familia. El pasado histórico no debe salir a la luz.”
+      <span class="letter-en">“We must protect this memory and our family inheritance. The historical past must not come to light.”</span>
+      <span class="letter-sig">— Carta ficticia sin firma (Unsigned confidential letter)</span>
+    </blockquote>
+
+    <button type="button" class="button" data-reveal="letter-clue" aria-expanded="false" aria-controls="letter-clue">
+      <span>Descubrir el significado · Discover Meaning</span>
+    </button>
+
+    <div class="clue" id="letter-clue" hidden>
+      <h3>Móvil de la investigación (Investigation Motive)</h3>
+      <p>${letterEvidence.findingEs}</p>
+      <p class="lang-sub">${letterEvidence.findingEn}</p>
+    </div>
+  `;
+  container.appendChild(letterPanel);
+
+  // Comportamiento idéntico de alternancia interactiva [data-reveal]
+  container.querySelectorAll("[data-reveal]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const clueId = button.dataset.reveal;
+      const clue = document.getElementById(clueId);
+      if (!clue) return;
+
+      clue.hidden = !clue.hidden;
+      button.setAttribute("aria-expanded", clue.hidden ? "false" : "true");
+    });
   });
 }
 
 /**
  * ------------------------------------------------------------------------------
- * 6. EXONERATION OF INNOCENT SUSPECTS (SECTION G)
+ * 7. EXONERACIÓN DE SOSPECHOSOS INOCENTES
  * ------------------------------------------------------------------------------
  */
 function renderExonerationList() {
@@ -831,23 +660,18 @@ function renderExonerationList() {
   container.innerHTML = "";
 
   STORY_CONFIG.suspects.forEach((suspect) => {
-    if (suspect.id === STORY_CONFIG.culpritId) return; // Culprit displayed in master card
+    if (suspect.id === STORY_CONFIG.culpritId) return;
 
     const item = document.createElement("div");
     item.className = "exoneration-card";
     item.innerHTML = `
       <div class="exoneration-card-header">
-        <span class="exoneration-name">👤 ${suspect.name} (${suspect.role})</span>
-        <span class="badge-cleared">EXONERATED (Alibi Verified)</span>
+        <span class="exoneration-name">👤 ${suspect.name}</span>
+        <span class="badge-cleared">EXONERADO (ALIBI VERIFIED)</span>
       </div>
       <p class="exoneration-reason-text">
-        <strong>Forensic Exoneration Grounds:</strong> ${suspect.exoneration}
+        <strong>Fundamento (Evidence):</strong> ${suspect.exoneration}
       </p>
-      ${suspect.redHerringExplanation ? `
-      <div class="exoneration-herring-box">
-        <span class="exoneration-herring-label">Red Herring Explanation:</span>
-        <p class="exoneration-reason-text">${suspect.redHerringExplanation}</p>
-      </div>` : ""}
     `;
     container.appendChild(item);
   });
@@ -855,14 +679,14 @@ function renderExonerationList() {
 
 /**
  * ------------------------------------------------------------------------------
- * 7. ACCUSATION SUBMISSION & VALIDATION
+ * 8. ENVÍO Y VALIDACIÓN DE LA ACUSACIÓN
  * ------------------------------------------------------------------------------
  */
 function handleAccusationSubmit(event) {
   event.preventDefault();
 
   if (!GAME_STATE.selectedSuspectId) {
-    showValidationError("You must select one of the five suspects before formalizing your judicial accusation.");
+    showValidationError("Debes seleccionar a uno de los cinco sospechosos antes de formalizar tu acusación. (You must select one of the suspects before submitting.)");
     return;
   }
 
@@ -891,7 +715,7 @@ function hideValidationError() {
 
 /**
  * ------------------------------------------------------------------------------
- * 8. DRAMATIC VERDICT REVEAL
+ * 9. REVELACIÓN DEL VEREDICTO (DRAMATIC VERDICT REVEAL)
  * ------------------------------------------------------------------------------
  */
 function revealCulpritOutcome() {
@@ -906,28 +730,33 @@ function revealCulpritOutcome() {
   const outcomeTitle = document.getElementById("revealHeading");
   const outcomeMessage = document.getElementById("outcomeMessage");
 
-  // Populate Culprit Dossier
   document.getElementById("revealCulpritAvatar").textContent = trueCulprit.avatar || STORY_CONFIG.culprit.avatar;
   document.getElementById("revealCulpritName").textContent = STORY_CONFIG.culprit.name;
   document.getElementById("revealCulpritRole").textContent = STORY_CONFIG.culprit.role;
   document.getElementById("revealCulpritMotive").textContent = STORY_CONFIG.culprit.motive;
   document.getElementById("revealCulpritModus").textContent = STORY_CONFIG.culprit.modusOperandi;
-  document.getElementById("revealCulpritConfession").textContent = `"${STORY_CONFIG.culprit.confession}"`;
+  document.getElementById("revealCulpritConfession").textContent = `${STORY_CONFIG.culprit.confession}`;
 
   outcomeBanner.classList.remove("outcome-correct", "outcome-incorrect");
 
   if (isCorrect) {
     outcomeBanner.classList.add("outcome-correct");
     outcomeIcon.textContent = "⚖️";
-    outcomeTag.textContent = "CASE SOLVED • ACCUSATION VERIFIED";
-    outcomeTitle.textContent = `Correct Verdict! The perpetrator is ${STORY_CONFIG.culprit.name}`;
-    outcomeMessage.textContent = `Your deduction against ${chosenSuspect.name} was impeccable. The chemical solvent analysis, shift notes, and latent fingerprints conclusively prove her guilt. The sun pectoral has been secured and returned to museum vaults.`;
+    outcomeTag.textContent = "¡CASO RESUELTO! (CASE SOLVED · ACCUSATION VERIFIED)";
+    outcomeTitle.textContent = `¡Veredicto Correcto! La responsable es ${STORY_CONFIG.culprit.name}`;
+    outcomeMessage.innerHTML = `
+      Tu deducción judicial contra <strong>${chosenSuspect.name}</strong> ha sido impecable. El cotejo de las fotografías de 1932 (Isabel Martín) y 1941 (Elena Castillo), junto con el registro de acceso (10:05) y la carta confidencial, demuestran su culpabilidad. El documento histórico ha sido devuelto al museo.<br>
+      <span class="lang-sub">(Your deduction was verified. The 1932 & 1941 photographs, 10:05 access log, and family letter prove Elena Castillo stole the document to protect her lineage secret. The document is safely recovered.)</span>
+    `;
   } else {
     outcomeBanner.classList.add("outcome-incorrect");
     outcomeIcon.textContent = "❌";
-    outcomeTag.textContent = "WRONGFUL ACCUSATION • CASE FILE CLOSED";
-    outcomeTitle.textContent = `Your accusation against ${chosenSuspect ? chosenSuspect.name : "the suspect"} was disproven`;
-    outcomeMessage.textContent = `Although circumstantial suspicions existed, ${chosenSuspect ? chosenSuspect.name : "this suspect"} possessed an airtight alibi. Forensic evidence conclusively identified the real culprit as ${STORY_CONFIG.culprit.name}. Examine her full confession and decisive evidence below.`;
+    outcomeTag.textContent = "ACUSACIÓN ERRÓNEA (WRONGFUL ACCUSATION)";
+    outcomeTitle.textContent = `La acusación contra ${chosenSuspect ? chosenSuspect.name : "el sospechoso"} fue desestimada`;
+    outcomeMessage.innerHTML = `
+      ${chosenSuspect ? chosenSuspect.name : "Este sospechoso"} contaba con una coartada comprobada. La verdadera culpable es <strong>${STORY_CONFIG.culprit.name}</strong>. Examina a continuación su confesión y las pruebas.<br>
+      <span class="lang-sub">(This suspect has a verified alibi. Forensic evidence conclusively identified the true culprit as Elena Castillo. Review her confession and decisive clues below.)</span>
+    `;
   }
 
   calculateAndRenderScore(isCorrect);
@@ -937,28 +766,25 @@ function revealCulpritOutcome() {
 
 /**
  * ------------------------------------------------------------------------------
- * 9. TRANSPARENT MATHEMATICAL SCORING ENGINE
+ * 10. SISTEMA DE PUNTUACIÓN MATEMÁTICA TRANSPARENTE
  * ------------------------------------------------------------------------------
  */
 function calculateAndRenderScore(isAccusationCorrect) {
-  // Criterion 1: Correct Accusation (50 pts)
   const accusationPoints = isAccusationCorrect ? 50 : 0;
 
-  // Criterion 2: Detective Forensic Reasoning Bonus (20 pts)
   const reasonLen = GAME_STATE.accusationReason.length;
   let reasonPoints = 0;
-  let reasonStatus = "No reasoning provided (0 pts)";
+  let reasonStatus = "Sin justificación / No reasoning (0 pts)";
   if (reasonLen >= 20) {
     reasonPoints = 20;
-    reasonStatus = `Comprehensive deduction documented (${reasonLen} characters)`;
+    reasonStatus = `Deducción argumentada / Valid reasoning (${reasonLen} chars)`;
   } else if (reasonLen > 0) {
     reasonPoints = 10;
-    reasonStatus = `Brief deduction note (${reasonLen} characters)`;
+    reasonStatus = `Justificación breve / Brief note (${reasonLen} chars)`;
   }
 
-  // Criterion 3: Discovered Physical Evidence (30 pts: 10 pts per clue)
   const cluesPoints = Math.min(3, Math.max(0, GAME_STATE.priorCluesDiscovered)) * 10;
-  const cluesStatus = `${GAME_STATE.priorCluesDiscovered} of 3 forensic exhibits analyzed`;
+  const cluesStatus = `${GAME_STATE.priorCluesDiscovered}/3 evidencias examinadas (clues analyzed)`;
 
   let totalScore = accusationPoints + reasonPoints + cluesPoints;
   if (totalScore > 100) totalScore = 100;
@@ -973,27 +799,27 @@ function calculateAndRenderScore(isAccusationCorrect) {
   if (tbody) {
     tbody.innerHTML = `
       <tr>
-        <td><strong>IDENTIFICATION OF THE TRUE CULPRIT</strong><br><small>Formal judicial verdict in court</small></td>
-        <td>${isAccusationCorrect ? "✅ Correct (+50 pts)" : "❌ Incorrect (0 pts)"}</td>
+        <td><strong>IDENTIFICACIÓN DE LA CULPABLE (CULPRIT ID)</strong><br><small>Acusación formal (Formal Accusation)</small></td>
+        <td>${isAccusationCorrect ? "✅ Correcto / Correct (+50 pts)" : "❌ Incorrecto / Wrong (0 pts)"}</td>
         <td class="text-right">50</td>
         <td class="text-right points-assigned">${accusationPoints}</td>
       </tr>
       <tr>
-        <td><strong>FORENSIC DEDUCTION & REASONING</strong><br><small>Analytical argument written by the detective</small></td>
+        <td><strong>DEDUCCIÓN DEL DETECTIVE (FORENSIC REASONING)</strong><br><small>Argumentación escrita (Written justification)</small></td>
         <td>${reasonStatus}</td>
         <td class="text-right">20</td>
         <td class="text-right points-assigned">${reasonPoints}</td>
       </tr>
       <tr>
-        <td><strong>FORENSIC EVIDENCE UNDER CUSTODY</strong><br><small>Exhibits synthesized during the investigation</small></td>
+        <td><strong>EVIDENCIAS ANALIZADAS (EVIDENCE ANALYZED)</strong><br><small>Fotografías, Registro y Carta (Exhibits analyzed)</small></td>
         <td>${cluesStatus}</td>
         <td class="text-right">30</td>
         <td class="text-right points-assigned">${cluesPoints}</td>
       </tr>
-      <tr style="background: rgba(129, 59, 45, 0.15); font-weight: bold;">
-        <td colspan="2">TOTAL AUDITED INVESTIGATION SCORE</td>
+      <tr style="background: rgba(201, 166, 107, 0.15); font-weight: bold;">
+        <td colspan="2">PUNTUACIÓN TOTAL (TOTAL INVESTIGATION SCORE)</td>
         <td class="text-right">100</td>
-        <td class="text-right points-assigned" style="font-size: 1.2rem; color: var(--color-rust-light);">${totalScore}</td>
+        <td class="text-right points-assigned" style="font-size: 1.25rem; color: var(--gold);">${totalScore}</td>
       </tr>
     `;
   }
@@ -1002,30 +828,30 @@ function calculateAndRenderScore(isAccusationCorrect) {
 function getRankDetails(score) {
   if (score >= 90) {
     return {
-      title: "🏆 Master Antiquities Investigator",
-      feedback: "Exceptional detective work! You solved the museum heist with flawless evidentiary synthesis and airtight logical reasoning."
+      title: "🏆 Detective Maestro (Master Detective)",
+      feedback: "¡Investigación impecable! Has resuelto el Expediente 047 conectando las fotografías de 1932 y 1941 con una deducción brillante. (Flawless deduction!)"
     };
   } else if (score >= 70) {
     return {
-      title: "🔍 Shrewd Forensic Detective",
-      feedback: "Strong forensic analysis. You identified critical clues and unraveled the core methodology of the crime."
+      title: "🔍 Investigador Sagaz (Shrewd Investigator)",
+      feedback: "Excelente análisis. Identificaste las evidencias clave del museo y desenmascaraste la doble identidad. (Strong forensic analysis.)"
     };
   } else if (score >= 50) {
     return {
-      title: "📋 Police Assistant Investigator",
-      feedback: "You identified the culprit or provided useful deductions, though deeper examination of chemical evidence was needed."
+      title: "📋 Asistente Judicial (Assistant Investigator)",
+      feedback: "Identificaste elementos del caso, pero faltó profundizar en el análisis de las pistas fotográficas. (Useful deductions provided.)"
     };
   } else {
     return {
-      title: "⚠️ Trainee Detective (Cold Case)",
-      feedback: "The accusation collapsed under cross-examination. Re-examine the timeline and exhibits, then try again."
+      title: "⚠️ Detective en Formación (Trainee Detective)",
+      feedback: "La acusación fue desestimada frente a las coartadas. Revisa las fotografías y el registro de acceso, y vuelve a intentarlo. (Try again.)"
     };
   }
 }
 
 /**
  * ------------------------------------------------------------------------------
- * 10. REPLAY & STATE RESET ENGINE
+ * 11. REINICIO DE LA INVESTIGACIÓN (REPLAY)
  * ------------------------------------------------------------------------------
  */
 function handleReplay() {
@@ -1068,7 +894,7 @@ function handleReplay() {
 
 /**
  * ------------------------------------------------------------------------------
- * 11. BILINGUAL SPANISH GLOSSARY (30 TERMS)
+ * 12. GLOSARIO DE 30 TÉRMINOS BILINGÜE
  * ------------------------------------------------------------------------------
  */
 function renderGlossary(wordsToRender) {
@@ -1078,7 +904,7 @@ function renderGlossary(wordsToRender) {
   container.innerHTML = "";
 
   if (wordsToRender.length === 0) {
-    container.innerHTML = `<p style="grid-column: 1 / -1; color: var(--color-text-muted); text-align: center; padding: 2rem;">No matching vocabulary terms found.</p>`;
+    container.innerHTML = `<p style="grid-column: 1 / -1; color: var(--muted); text-align: center; padding: 2rem;">No se encontraron términos coincidentes. (No matching terms found.)</p>`;
     return;
   }
 
@@ -1115,13 +941,13 @@ function handleGlossarySearch(event) {
 
   const badge = document.getElementById("glossaryWordCountBadge");
   if (badge) {
-    badge.textContent = `${filtered.length} of ${STORY_CONFIG.vocabulary.length} terms`;
+    badge.textContent = `${filtered.length} / ${STORY_CONFIG.vocabulary.length} terms`;
   }
 }
 
 /**
  * ------------------------------------------------------------------------------
- * 12. CULTURAL SOURCES RENDERING
+ * 13. FUENTES CULTURALES
  * ------------------------------------------------------------------------------
  */
 function renderCulturalSources() {
@@ -1135,8 +961,8 @@ function renderCulturalSources() {
     item.className = "source-dossier-item";
     item.innerHTML = `
       <h4 class="source-title-text">${source.title} — <em>${source.institution}</em></h4>
-      <p class="source-citation-text"><strong>Academic Citation:</strong> ${source.citation}</p>
-      <p class="source-citation-text" style="margin-top: 0.35rem; color: var(--color-text-muted);"><strong>Archival Provenance:</strong> ${source.notes}</p>
+      <p class="source-citation-text"><strong>Cita:</strong> ${source.citation}</p>
+      <p class="source-citation-text" style="margin-top: 0.35rem; color: var(--muted);">${source.notes}</p>
     `;
     container.appendChild(item);
   });
@@ -1144,7 +970,7 @@ function renderCulturalSources() {
 
 /**
  * ------------------------------------------------------------------------------
- * 13. CHAR COUNTER FOR DEDUCTION FIELD
+ * 14. CONTADOR DE CARACTERES
  * ------------------------------------------------------------------------------
  */
 function updateCharCounter() {
@@ -1153,20 +979,184 @@ function updateCharCounter() {
   if (!reasonInput || !counterSpan) return;
 
   const len = reasonInput.value.length;
-  counterSpan.textContent = `${len} characters entered`;
+  counterSpan.textContent = `${len} caracteres ingresados (${len} chars)`;
 
   if (len >= 20) {
-    counterSpan.style.color = "var(--color-rust-light)";
+    counterSpan.style.color = "var(--gold)";
     counterSpan.style.fontWeight = "bold";
   } else {
-    counterSpan.style.color = "var(--color-text-muted)";
+    counterSpan.style.color = "var(--muted)";
     counterSpan.style.fontWeight = "normal";
   }
 }
 
 /**
  * ------------------------------------------------------------------------------
- * 14. EVENT LISTENERS & NAVIGATION
+ * 15. PRÁCTICA FORMATIVA DE VOCABULARIO
+ * ------------------------------------------------------------------------------
+ */
+const PRACTICE_CHALLENGE = {
+  terms: [
+    { id: "vitrina", spanish: "La vitrina", english: "Display case / Vitrine" },
+    { id: "huella", spanish: "La huella", english: "Fingerprint / Trace" },
+    { id: "motivo", spanish: "El motivo", english: "Motive / Reason" },
+    { id: "coartada", spanish: "La coartada", english: "Verified alibi" }
+  ],
+  selectedSpanishId: null,
+  matchedIds: new Set()
+};
+
+function setupSpanishPracticeChallenge() {
+  renderPracticeButtons();
+  const resetBtn = document.getElementById("resetPracticeBtn");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", resetPracticeChallenge);
+  }
+}
+
+function renderPracticeButtons() {
+  const spanishList = document.getElementById("spanishTermsList");
+  const englishList = document.getElementById("englishTermsList");
+  if (!spanishList || !englishList) return;
+
+  spanishList.innerHTML = "";
+  englishList.innerHTML = "";
+
+  PRACTICE_CHALLENGE.terms.forEach(item => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "term-match-btn";
+    btn.id = `practice-es-${item.id}`;
+    btn.dataset.termId = item.id;
+    btn.setAttribute("aria-pressed", "false");
+    btn.innerHTML = `<span>${item.spanish}</span><span class="match-icon" aria-hidden="true">➜</span>`;
+    btn.addEventListener("click", () => handleSpanishTermClick(item.id));
+    spanishList.appendChild(btn);
+  });
+
+  const shuffledEnglish = [
+    PRACTICE_CHALLENGE.terms[3], // coartada
+    PRACTICE_CHALLENGE.terms[0], // vitrina
+    PRACTICE_CHALLENGE.terms[2], // motivo
+    PRACTICE_CHALLENGE.terms[1]  // huella
+  ];
+
+  shuffledEnglish.forEach(item => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "term-match-btn";
+    btn.id = `practice-en-${item.id}`;
+    btn.dataset.termId = item.id;
+    btn.setAttribute("aria-pressed", "false");
+    btn.innerHTML = `<span>${item.english}</span><span class="match-icon" aria-hidden="true">➜</span>`;
+    btn.addEventListener("click", () => handleEnglishMeaningClick(item.id));
+    englishList.appendChild(btn);
+  });
+
+  updatePracticeStatus("Selecciona un término en español a la izquierda y su significado en inglés a la derecha. (Select Spanish term on left, English on right.)");
+  updatePracticeCounter();
+}
+
+function handleSpanishTermClick(termId) {
+  if (PRACTICE_CHALLENGE.matchedIds.has(termId)) return;
+
+  PRACTICE_CHALLENGE.selectedSpanishId = termId;
+
+  document.querySelectorAll("#spanishTermsList .term-match-btn").forEach(btn => {
+    const isSelected = btn.dataset.termId === termId;
+    btn.classList.toggle("is-active", isSelected);
+    btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
+  });
+
+  const termObj = PRACTICE_CHALLENGE.terms.find(t => t.id === termId);
+  updatePracticeStatus(`Has seleccionado "${termObj.spanish}". Ahora pulsa su traducción en inglés.`);
+}
+
+function handleEnglishMeaningClick(termId) {
+  if (PRACTICE_CHALLENGE.matchedIds.has(termId)) return;
+
+  if (!PRACTICE_CHALLENGE.selectedSpanishId) {
+    updatePracticeStatus("Por favor, selecciona primero un término en español a la izquierda. (Select a Spanish term first.)");
+    return;
+  }
+
+  const selectedSpanishId = PRACTICE_CHALLENGE.selectedSpanishId;
+  const esBtn = document.getElementById(`practice-es-${selectedSpanishId}`);
+  const enBtn = document.getElementById(`practice-en-${termId}`);
+
+  if (selectedSpanishId === termId) {
+    PRACTICE_CHALLENGE.matchedIds.add(termId);
+    PRACTICE_CHALLENGE.selectedSpanishId = null;
+
+    if (esBtn) {
+      esBtn.classList.remove("is-active");
+      esBtn.classList.add("is-matched");
+      esBtn.disabled = true;
+      esBtn.setAttribute("aria-pressed", "false");
+      const icon = esBtn.querySelector(".match-icon");
+      if (icon) icon.textContent = "✓";
+    }
+    if (enBtn) {
+      enBtn.classList.add("is-matched");
+      enBtn.disabled = true;
+      enBtn.setAttribute("aria-pressed", "false");
+      const icon = enBtn.querySelector(".match-icon");
+      if (icon) icon.textContent = "✓";
+    }
+
+    updatePracticeCounter();
+
+    if (PRACTICE_CHALLENGE.matchedIds.size === PRACTICE_CHALLENGE.terms.length) {
+      updatePracticeStatus("✓ ¡Excelente! Has descifrado los 4 términos del cuaderno de campo. (All terms decrypted!)");
+      const banner = document.getElementById("practiceCompleteBanner");
+      if (banner) banner.classList.remove("practice-hidden");
+    } else {
+      const matchedObj = PRACTICE_CHALLENGE.terms.find(t => t.id === termId);
+      updatePracticeStatus(`✓ ¡Correcto! "${matchedObj.spanish}" = "${matchedObj.english}".`);
+    }
+  } else {
+    if (esBtn) esBtn.classList.add("is-mismatch");
+    if (enBtn) enBtn.classList.add("is-mismatch");
+
+    updatePracticeStatus("❌ No coinciden. Revisa el texto de la pista e inténtalo de nuevo. (Not a match, try again.)");
+
+    setTimeout(() => {
+      if (esBtn) {
+        esBtn.classList.remove("is-mismatch", "is-active");
+        esBtn.setAttribute("aria-pressed", "false");
+      }
+      if (enBtn) {
+        enBtn.classList.remove("is-mismatch");
+        enBtn.setAttribute("aria-pressed", "false");
+      }
+      PRACTICE_CHALLENGE.selectedSpanishId = null;
+    }, 500);
+  }
+}
+
+function updatePracticeStatus(msg) {
+  const statusText = document.getElementById("practiceStatusText");
+  if (statusText) statusText.textContent = msg;
+}
+
+function updatePracticeCounter() {
+  const counter = document.getElementById("practiceSolvedCount");
+  if (counter) counter.textContent = PRACTICE_CHALLENGE.matchedIds.size;
+}
+
+function resetPracticeChallenge() {
+  PRACTICE_CHALLENGE.selectedSpanishId = null;
+  PRACTICE_CHALLENGE.matchedIds.clear();
+
+  const banner = document.getElementById("practiceCompleteBanner");
+  if (banner) banner.classList.add("practice-hidden");
+
+  renderPracticeButtons();
+}
+
+/**
+ * ------------------------------------------------------------------------------
+ * 16. LISTENERS DE EVENTOS Y NAVEGACIÓN SUAVE
  * ------------------------------------------------------------------------------
  */
 function setupEventListeners() {
@@ -1205,7 +1195,7 @@ function setupEventListeners() {
       }
 
       if (statusMsg) {
-        statusMsg.textContent = "✓ Integration parameters updated.";
+        statusMsg.textContent = "✓ Actualizado (Updated).";
         setTimeout(() => { statusMsg.textContent = ""; }, 3000);
       }
 
@@ -1247,179 +1237,6 @@ function setupNavigationInteractions() {
   });
 }
 
-/**
- * ------------------------------------------------------------------------------
- * 15. OPTIONAL SPANISH PRACTICE CHALLENGE (FIELD NOTE DECRYPTION)
- * ------------------------------------------------------------------------------
- */
-const PRACTICE_CHALLENGE = {
-  terms: [
-    { id: "vitrina", spanish: "La vitrina", english: "Display case / Vitrine" },
-    { id: "huella", spanish: "La huella", english: "Fingerprint / Ridge impression" },
-    { id: "motivo", spanish: "El motivo", english: "Criminal motive" },
-    { id: "coartada", spanish: "La coartada", english: "Verified alibi" }
-  ],
-  selectedSpanishId: null,
-  matchedIds: new Set()
-};
-
-function setupSpanishPracticeChallenge() {
-  renderPracticeButtons();
-  const resetBtn = document.getElementById("resetPracticeBtn");
-  if (resetBtn) {
-    resetBtn.addEventListener("click", resetPracticeChallenge);
-  }
-}
-
-function renderPracticeButtons() {
-  const spanishList = document.getElementById("spanishTermsList");
-  const englishList = document.getElementById("englishTermsList");
-  if (!spanishList || !englishList) return;
-
-  spanishList.innerHTML = "";
-  englishList.innerHTML = "";
-
-  // Fixed order for Spanish terms
-  PRACTICE_CHALLENGE.terms.forEach(item => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "term-match-btn";
-    btn.id = `practice-es-${item.id}`;
-    btn.dataset.termId = item.id;
-    btn.setAttribute("aria-pressed", "false");
-    btn.innerHTML = `<span>${item.spanish}</span><span class="match-icon" aria-hidden="true">➜</span>`;
-    btn.addEventListener("click", () => handleSpanishTermClick(item.id));
-    spanishList.appendChild(btn);
-  });
-
-  // Shuffled order for English meanings
-  const shuffledEnglish = [
-    PRACTICE_CHALLENGE.terms[3], // coartada
-    PRACTICE_CHALLENGE.terms[0], // vitrina
-    PRACTICE_CHALLENGE.terms[2], // motivo
-    PRACTICE_CHALLENGE.terms[1]  // huella
-  ];
-
-  shuffledEnglish.forEach(item => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "term-match-btn";
-    btn.id = `practice-en-${item.id}`;
-    btn.dataset.termId = item.id;
-    btn.setAttribute("aria-pressed", "false");
-    btn.innerHTML = `<span>${item.english}</span><span class="match-icon" aria-hidden="true">➜</span>`;
-    btn.addEventListener("click", () => handleEnglishMeaningClick(item.id));
-    englishList.appendChild(btn);
-  });
-
-  updatePracticeStatus("Select a Spanish term on the left, then select its matching English meaning on the right.");
-  updatePracticeCounter();
-}
-
-function handleSpanishTermClick(termId) {
-  if (PRACTICE_CHALLENGE.matchedIds.has(termId)) return;
-
-  PRACTICE_CHALLENGE.selectedSpanishId = termId;
-
-  document.querySelectorAll("#spanishTermsList .term-match-btn").forEach(btn => {
-    const isSelected = btn.dataset.termId === termId;
-    btn.classList.toggle("is-active", isSelected);
-    btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
-  });
-
-  const termObj = PRACTICE_CHALLENGE.terms.find(t => t.id === termId);
-  updatePracticeStatus(`Selected "${termObj.spanish}". Now select its matching English meaning on the right.`);
-}
-
-function handleEnglishMeaningClick(termId) {
-  if (PRACTICE_CHALLENGE.matchedIds.has(termId)) return;
-
-  if (!PRACTICE_CHALLENGE.selectedSpanishId) {
-    updatePracticeStatus("Please select a Spanish term on the left first.");
-    return;
-  }
-
-  const selectedSpanishId = PRACTICE_CHALLENGE.selectedSpanishId;
-  const esBtn = document.getElementById(`practice-es-${selectedSpanishId}`);
-  const enBtn = document.getElementById(`practice-en-${termId}`);
-
-  if (selectedSpanishId === termId) {
-    // Correct Match
-    PRACTICE_CHALLENGE.matchedIds.add(termId);
-    PRACTICE_CHALLENGE.selectedSpanishId = null;
-
-    if (esBtn) {
-      esBtn.classList.remove("is-active");
-      esBtn.classList.add("is-matched");
-      esBtn.disabled = true;
-      esBtn.setAttribute("aria-pressed", "false");
-      const icon = esBtn.querySelector(".match-icon");
-      if (icon) icon.textContent = "✓";
-    }
-    if (enBtn) {
-      enBtn.classList.add("is-matched");
-      enBtn.disabled = true;
-      enBtn.setAttribute("aria-pressed", "false");
-      const icon = enBtn.querySelector(".match-icon");
-      if (icon) icon.textContent = "✓";
-    }
-
-    updatePracticeCounter();
-
-    if (PRACTICE_CHALLENGE.matchedIds.size === PRACTICE_CHALLENGE.terms.length) {
-      updatePracticeStatus("✓ Excellent! All 4 forensic terms decrypted successfully.");
-      const banner = document.getElementById("practiceCompleteBanner");
-      if (banner) banner.classList.remove("practice-hidden");
-    } else {
-      const matchedObj = PRACTICE_CHALLENGE.terms.find(t => t.id === termId);
-      updatePracticeStatus(`✓ Correct! "${matchedObj.spanish}" matches "${matchedObj.english}". Select another term.`);
-    }
-  } else {
-    // Mismatch
-    if (esBtn) esBtn.classList.add("is-mismatch");
-    if (enBtn) enBtn.classList.add("is-mismatch");
-
-    updatePracticeStatus("❌ Not a match. Review the field note clue and try again.");
-
-    setTimeout(() => {
-      if (esBtn) {
-        esBtn.classList.remove("is-mismatch", "is-active");
-        esBtn.setAttribute("aria-pressed", "false");
-      }
-      if (enBtn) {
-        enBtn.classList.remove("is-mismatch");
-        enBtn.setAttribute("aria-pressed", "false");
-      }
-      PRACTICE_CHALLENGE.selectedSpanishId = null;
-    }, 500);
-  }
-}
-
-function updatePracticeStatus(msg) {
-  const statusText = document.getElementById("practiceStatusText");
-  if (statusText) statusText.textContent = msg;
-}
-
-function updatePracticeCounter() {
-  const counter = document.getElementById("practiceSolvedCount");
-  if (counter) counter.textContent = PRACTICE_CHALLENGE.matchedIds.size;
-}
-
-function resetPracticeChallenge() {
-  PRACTICE_CHALLENGE.selectedSpanishId = null;
-  PRACTICE_CHALLENGE.matchedIds.clear();
-
-  const banner = document.getElementById("practiceCompleteBanner");
-  if (banner) banner.classList.add("practice-hidden");
-
-  renderPracticeButtons();
-}
-
-/**
- * ------------------------------------------------------------------------------
- * TEAM INTEGRATION API (MODULES 1–4)
- * ------------------------------------------------------------------------------
- */
 window.QuienFueRevealModule = {
   setInvestigationData: function(cluesCount, puzzleSolved) {
     if (typeof cluesCount === "number") GAME_STATE.priorCluesDiscovered = cluesCount;
