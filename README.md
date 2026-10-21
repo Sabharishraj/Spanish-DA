@@ -1,114 +1,81 @@
-# ¿Quién Fue? — Expediente Confidencial N.º 047
-## Veredicto Final, Revelación de la Culpable, Síntesis de Evidencias y Sistema de Puntuación
+# ¿Quién Fue? (Who Was It?) — Confidential Case File #047
+## Interactive Forensic Mystery: Final Accusation & Verdict Reveal
 
-> **Rol del Proyecto:** Miembro 5 — Veredicto Final, Revelación de la Culpable, Síntesis de Evidencias, Sistema de Puntuación y Rejugabilidad  
-> **Autor & Diseñador Principal:** Sabharish Raj G K  
-> **Integración Colaborativa:** Página 1 desarrollada por **Shaik Annu** (Miembro 3 — *Archivo de Evidencias e Identidades Perdidas*)  
-> **Expediente Oficial:** `EXPEDIENTE CONFIDENCIAL · N.º 047`  
-> **Dirección Visual:** Estética Archivo Noir idéntica a la Página 1 (Verde Bosque `#0b1713`, Paneles Degradados `#12231c`, Oro Envejecido `#c9a66b`, Crema `#f0e5d0` y Papel Pergamino `#e0cba5`)  
-> **Tipografía:** *Cormorant Garamond* y *Special Elite*  
-> **Stack Técnico:** HTML5 Semántico, CSS3 Modular y Vanilla JavaScript Puro (Cero Dependencias Externas)
-
----
-
-## 1. Estructura del Proyecto
-
-El proyecto está autocontenido dentro del directorio `quien-fue-final-reveal`:
-
-```text
-quien-fue-final-reveal/
-├── images/
-│   ├── sp_3.png      # Fotografía A (1932): Retrato histórico bajo el nombre de Isabel Martín
-│   └── sp2.jpg       # Fotografía B (1941): Retrato histórico bajo el nombre de Elena Castillo
-├── reveal.html       # Estructura semántica completa (Nav, Hero, Stats, Cronología, Sospechosos, Evidencias, Veredicto, Glosario, Reflexión)
-├── reveal.css        # Paleta y estilos tomados de la Página 1: Verde bosque, oro, pergamino, Cormorant Garamond y Special Elite
-├── reveal.js         # Máquina de estados reactiva, STORY_CONFIG del Expediente 047, validaciones accesibles, scoring y replay
-└── README.md         # Documentación técnica, canon del caso, matriz forense y guía de evaluación
-```
+> **Project Role:** Member 5 — Final Accusation, Culprit Reveal, Evidence Synthesis, Scoring Engine & Replay  
+> **Author & Lead Developer:** Sabharish Raj G K  
+> **Collaborative Integration:** Synthesizes evidence from Page 1 developed by **Shaik Annu** (Member 3 — *Evidence Archive & Lost Identities*)  
+> **Case Identity:** Confidential Case File #047 (*El archivo de las identidades perdidas*)  
+> **Aesthetic Direction:** Classic Noir Archive (Forest Green `#0b1713`, Deep Moss Panels `#12231c`, Aged Gold `#c9a66b`, Cream `#f0e5d0`, and Vintage Parchment `#e0cba5`)  
+> **Typography:** *Cormorant Garamond* (Serif) & *Special Elite* (Typewriter Monospace)  
+> **Tech Stack:** Semantic HTML5, Modular CSS3, and Pure Vanilla JavaScript (Zero External Dependencies)
 
 ---
 
-## 2. Cómo Ejecutar Localmente
+## 1. Quick Start
 
-1. Abre **Visual Studio Code**.
-2. Selecciona **Archivo > Abrir Carpeta...** y elige `/Users/sabharish/quien-fue-final-reveal`.
-3. **Opción A (Live Server):**
-   - Haz clic derecho sobre [`reveal.html`](file:///Users/sabharish/quien-fue-final-reveal/reveal.html) y pulsa **"Open with Live Server"**.
-   - Se abrirá en tu navegador en `http://127.0.0.1:5500/reveal.html`.
-4. **Opción B (Navegador Directo):**
-   - Haz doble clic sobre [`reveal.html`](file:///Users/sabharish/quien-fue-final-reveal/reveal.html) en el Finder de macOS o arrástralo a cualquier navegador web moderno (Chrome, Safari, Firefox). Funciona 100% offline sin servidores ni compilación previa.
+Run completely offline in any modern browser without servers or build tools:
 
----
-
-## 3. Canon Oficial del Expediente Confidencial 047
-
-El caso está sincronizado de forma fidedigna con la Página 1 de Shaik Annu:
-
-### El Objeto del Robo
-- **Bien Cultural:** Documento Histórico y Tesoro Patrimonial Familiar (*El archivo de las identidades perdidas*)
-- **Procedencia:** Patrimonio Cultural y Memoria Histórica de América Latina
-- **Ubicación del Suceso:** Archivo Administrativo y Sala de Fondos Reservados del Museo de Historia y Cultura
-- **Fecha del Delito:** 14 de octubre (Intervalo pericial: 10:05 a 10:30 HRS)
-- **Descripción:** Un valioso documento histórico que salvaguarda la genealogía, títulos y secretos fundacionales de una prominente familia histórica, cuya exhibición pública amenazaba con exponer un secreto celosamente guardado por generaciones.
+1. **Option A (VS Code Live Server — Recommended):**
+   - Open `/Users/sabharish/quien-fue-final-reveal` in VS Code.
+   - Right-click [`reveal.html`](file:///Users/sabharish/quien-fue-final-reveal/reveal.html) and select **"Open with Live Server"**.
+   - Accessible at `http://127.0.0.1:5500/reveal.html`.
+2. **Option B (Direct Browser Launch):**
+   - Double-click [`reveal.html`](file:///Users/sabharish/quien-fue-final-reveal/reveal.html) in macOS Finder or drag it into Chrome, Safari, or Firefox.
 
 ---
 
-### Matriz Forense de los Cinco Sospechosos
+## 2. Case Summary & Core Canon
 
-| ID | Nombre & Rol Institucional | Coartada Declarada | Resolución y Hallazgos Periciales |
+* **Stolen Item:** Valuable Historical Family Document & Cultural Heirloom (*The Archive of Lost Identities*).
+* **Location:** Administrative Archive & Vault, Museum of History & Culture.
+* **Incident Time:** October 14, between 10:05 and 10:30 HRS (25-minute critical window).
+* **The Crime:** The document was extracted from the archive vitrine right before an upcoming exhibition.
+* **The Motive:** Preventing an ancestral family secret from being publicly exposed.
+
+---
+
+## 3. Decisive Evidence Matrix
+
+1. **Exhibit #01 — Photographic Evidence (1932 vs 1941):**
+   - **Photo A (1932):** Historical portrait registered as *Isabel Martín* (`images/sp_3.png`).
+   - **Photo B (1941):** Official record using an identical portrait under the name *Elena Castillo* (`images/sp2.jpg`).
+   - **Finding:** Facial matching proves the suspect used dual identities across decades to conceal her family lineage.
+2. **Exhibit #02 — Administrative Access Log (October 14):**
+   - `10:05` Suspect enters the museum archive.
+   - `10:20` Cultural treasure seen for the last time.
+   - `10:30` Disappearance discovered by staff.
+   - **Finding:** Places Elena Castillo inside the archive during the exact window of the theft.
+3. **Exhibit #03 — Confidential Family Letter:**
+   - Unsigned letter: *“We must protect this memory and our family inheritance. The historical past must not come to light.”*
+   - **Finding:** Establishes the non-monetary motive: suppressing a private family secret linked to Latin American heritage.
+
+---
+
+## 4. Suspect Profiles & Verified Alibis
+
+| Suspect | Institutional Role | Stated Alibi | Case Resolution |
 | :--- | :--- | :--- | :--- |
-| **`suspect-1`** | **Dr. Mateo Valenzuela**<br>*Director del Archivo del Museo* | Reunido con el comité de adquisiciones en el vestíbulo principal de 10:00 a 10:45 HRS. | **Exonerado:** El torniquete biométrico #01 y testimonios de diplomáticos certifican que permaneció en el vestíbulo durante todo el lapso del robo. |
-| **`suspect-2`** | **Héctor Delgado**<br>*Supervisor de Seguridad del Museo* | Atendiendo una alerta de contacto de puerta en la planta baja entre 10:00 y 10:25 HRS. | **Exonerado:** Las bitácoras de audio de la radiofrecuencia y las grabaciones del montacargas corroboran su presencia en la planta baja, lejos del archivo. |
-| **`suspect-3`** | **Elena Castillo (Alias: Isabel Martín)**<br>*Investigadora Visitante e Historiadora* | Alegó haber salido a los jardines exteriores a las 10:10 HRS por no encontrar al bibliotecario. | **CULPABLE CONFIRMADA:** El cotejo facial pericial demuestra que las fotografías de 1932 (Isabel Martín) y 1941 (Elena Castillo) corresponden a su linaje encubierto. El registro de acceso prueba su presencia entre las 10:05 y 10:25 HRS, y la carta confidencial revela su móvil familiar. |
-| **`suspect-4`** | **Sofía Morales**<br>*Archivera y Catalogadora de Documentos* | Trabajando en el taller de encuadernación con dos pasantes de 09:30 a 10:30 HRS. | **Exonerada:** Dos pasantes juraron bajo testimonio haber estado junto a Sofía restaurando pergaminos; el escáner digital muestra actividad ininterrumpida. |
-| **`suspect-5`** | **Carlos Mendoza**<br>*Técnico de Instalaciones del Museo* | Cambiando luminarias en la Sala 2 de Historia desde las 10:05 hasta las 10:40 HRS. | **Exonerado:** La orden de trabajo #OT-104 y dos empleados del equipo de limpieza testificaron que estuvo subido en una escalera reparando luces durante todo el intervalo del robo. |
+| **Dr. Mateo Valenzuela** | Archive Director | Meeting with university board in the main lobby (10:00–10:45). | **Exonerated:** Turnstile badge #01 and diplomatic witnesses confirm presence in the lobby. |
+| **Héctor Delgado** | Security Supervisor | Responding to a door sensor alert on the ground floor (10:00–10:25). | **Exonerated:** Central radio recordings and elevator telemetry confirm presence on the ground floor. |
+| **Elena Castillo (Alias: Isabel Martín)** | Visiting Researcher & Family Descendant | Claimed she left for the gardens at 10:10 due to unattended staff. | **TRUE CULPRIT:** Lacks witnesses. Photos A & B prove her alias history, access log proves she remained inside during the theft (10:05–10:25), and the letter reveals her family motive. |
+| **Sofía Morales** | Archive Cataloguer | Restoring manuscripts with two student interns (09:30–10:30). | **Exonerated:** Both interns testified under oath, and scanner activity logs confirm continuous lab work. |
+| **Carlos Mendoza** | Maintenance Technician | Replacing fluorescent lights in Exhibition Room 2 (10:05–10:40). | **Exonerated:** Signed work order #OT-104 and two cleaning staff eyewitnesses verify his presence on a ladder. |
 
 ---
 
-### Evidencias Decisivas (Copiadas del Formato de la Página 1)
+## 5. Core Interactive Features
 
-1. **Evidencia #01 (Archivo Fotográfico · 01):**
-   - **Fotografía A (1932):** Registrada como *Isabel Martín* (`images/sp_3.png`, sello 1932).
-   - **Fotografía B (1941):** Registrada como *Elena Castillo* (`images/sp2.jpg`, sello 1941).
-   - **Hallazgo:** Ambas fichas utilizan nombres diferentes para ocultar la verdadera identidad del linaje de la sospechosa.
-2. **Evidencia #02 (Documento A · 02 — Registro Administrativo de Acceso):**
-   - Registro oficial con sello pericial del 14 de octubre:
-     - `10:05` Entrada del sospechoso al archivo del museo.
-     - `10:20` El tesoro cultural se ve por última vez.
-     - `10:30` Se descubre la desaparición del documento.
-   - **Hallazgo:** Establece la presencia física de Elena Castillo dentro del archivo durante la sustracción.
-3. **Evidencia #03 (Documento B · 03 — Carta Confidencial sin Firma):**
-   - Manuscrito epistolar: *“Debemos proteger este recuerdo y la herencia de nuestra familia. El pasado histórico no debe salir a la luz.”*
-   - **Hallazgo:** Revela el móvil familiar de proteger la memoria y el patrimonio ancestral de América Latina ante la exposición pública.
-
----
-
-## 4. Funciones Clave en JavaScript (`reveal.js`)
-
-1. **`detectIntegrationParameters()`**: Lee parámetros de URL (`?clues=3&puzzle=1`), `localStorage` y `window.quienFueSharedData` para sincronizar el estado transferido desde la Página 1 de Shaik Annu.
-2. **`renderEvidenceArchive()`**: Renderiza las tres evidencias con el formato visual exacto de la Página 1 (fotografías con filtro sepia, sellos angulados, documento mecanografiado con líneas repetitivas, carta en papel pergamino y botones con `data-reveal`).
-3. **`selectSuspect(suspectId)`**: Gestiona la selección accesible del sospechoso mediante teclado (`role="radio"`, flechas de dirección y barra espaciadora).
-4. **`handleAccusationSubmit(event)`**: Valida la selección del usuario. Si no se selecciona sospechoso, muestra una alerta con `role="alert"`. Si es válido, evalúa el veredicto.
-5. **`revealCulpritOutcome()`**:
-   - **Correcto:** Muestra el banner verde esmeralda (`¡CASO RESUELTO!`), confirma la culpabilidad de Elena Castillo, su confesión íntegra y la restitución del bien patrimonial.
-   - **Incorrecto:** Muestra el banner carmesí (`ACUSACIÓN ERRÓNEA`), explica por qué el sospechoso elegido es inocente y revela a Elena Castillo como la culpable real con sus pruebas.
-6. **`calculateAndRenderScore(isCorrect)`**: Fórmula matemática transparente:
-   - Acusación de la culpable real: **50 pts**
-   - Deducción forense documentada: **20 pts** (mín. 20 caracteres)
-   - Evidencias analizadas: **30 pts** (10 pts por evidencia examinada)
-   - Total: **100 pts** mapeados a rangos periciales oficiales.
-7. **`handleReplay()`**: Restablece el formulario, limpia deducciones y devuelve la página a su estado original para una nueva prueba.
-8. **`renderGlossary()` & `handleGlossarySearch()`**: Glosario de 30 términos en español e inglés con filtrado dinámico en tiempo real.
-9. **`setupSpanishPracticeChallenge()`**: Práctica formativa de emparejamiento de 4 términos forenses (*la vitrina*, *la huella*, *el motivo*, *la coartada*).
-
----
-
-## 5. Lista de Verificación y Defensa Académica
-
-- [x] **Identidad del Expediente:** Expediente Confidencial N.º 047 (*El archivo de las identidades perdidas*).
-- [x] **Alineación con la Página 1:** Adopta fielmente las fotografías A y B (`sp_3.png` y `sp2.jpg`), las fechas de 1932 y 1941, los nombres Isabel Martín y Elena Castillo, el registro de acceso del 14 de octubre (10:05 – 10:30) y la carta confidencial del secreto familiar.
-- [x] **Diferenciación de Propósitos:** La Página 1 (Shaik Annu, Miembro 3) es el archivo de evidencias y exposición de pistas, mientras que esta página (Sabharish Raj G K, Miembro 5) es el **Veredicto Final**, la acusación judicial interactiva, la revelación de la culpable, la exoneración pericial y el sistema de puntuación.
-- [x] **Diseño Visual:** Idéntico a la Página 1: Verde bosque `#0b1713`, paneles en degradado, marcos de oro `#c9a66b`, tipografía *Cormorant Garamond* y *Special Elite*.
-- [x] **Accesibilidad WCAG AA:** Teclado completo, etiquetas ARIA, enlaces de salto, alto contraste y diseño adaptable a pantallas móviles.
-- [x] **Glosario Educativo:** 30 términos en español con traducción, categoría gramatical y ejemplos contextualizados del robo en el museo.
-- [x] **Reflexión Personal:** Documentada por Sabharish Raj G K reconociendo la colaboración con Shaik Annu y el aprendizaje arquitectónico del sistema.
+* **Evidence Dossier (Page 1 Format):** Interactive clues toggleable with `[data-reveal]` buttons, displaying vintage sepia photo comparisons, striped administrative documents, and parchment letter quotes.
+* **Accessible Accusation System:** Keyboard-accessible radio group (`role="radio"`, arrow navigation) with live validation alerts.
+* **Forensic Deduction Field:** Optional text area rewarding +20 points for reasoned explanations ($\ge 20$ chars).
+* **Dramatic Verdict Reveal:**
+  * **Correct Verdict:** Displays success banner (`CASE SOLVED`), reveals Elena Castillo's full signed confession, and confirms recovery of the document.
+  * **Incorrect Verdict:** Displays disproven notice, explains why the accused is innocent, and presents the true culprit's dossier.
+* **Exoneration Audit:** Detailed breakdown demonstrating why the other 4 suspects are completely cleared.
+* **Transparent Scoring Engine (100 Pts Max):**
+  * Culprit Identification: **50 pts**
+  * Forensic Deduction Reasoning: **20 pts**
+  * Evidence Discovered / Analyzed: **30 pts**
+* **Replay Engine:** Cleans all inputs and resets state for a fresh investigation run.
+* **30-Term Bilingual Glossary:** Educational Spanish-English dictionary with real-time live search.
+* **Field Note Decryption:** Formative 4-term matching exercise (*la vitrina*, *la huella*, *el motivo*, *la coartada*).
