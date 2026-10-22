@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solve Spanish language puzzles and investigate a mysterious Colombian treasure theft. Case File #047.">
+    <title>¿Quién Fue? | Acertijos y Desafíos (Language Puzzles)</title>
+    <link rel="stylesheet" href="puzzles.css">
+    <link rel="stylesheet" href="unified-dark.css">
+    <script src="puzzles.js" defer></script>
+</head>
+<body>
+
+<!-- Unified Accessible Navigation Bar -->
+<header>
+    <nav class="site-nav" aria-label="Navegación principal / Main Navigation">
+        <a href="index.html" class="nav-brand">¿QUIÉN FUE? <span class="badge-clean">EXP. 047</span></a>
+
+        <div class="nav-links">
+            <a href="index.html">Inicio <span class="nav-sub">(Home)</span></a>
+            <a href="suspects.html">Sospechosos <span class="nav-sub">(Suspects)</span></a>
+            <a href="evidence.html">Evidencias <span class="nav-sub">(Evidence)</span></a>
+            <a href="puzzles.html" class="active">Acertijos <span class="nav-sub">(Puzzles)</span></a>
+            <a href="reveal.html">Revelación <span class="nav-sub">(Verdict)</span></a>
+        </div>
+    </nav>
+</header>
+
+<header class="hero">
+    <p class="case-label">EXPEDIENTE CONFIDENCIAL · BOGOTÁ, COLOMBIA (CONFIDENTIAL CASE FILE · BOGOTÁ)</p>
+    <h1>¿Quién Fue? <span class="lang-sub" style="font-size: 1.4rem; margin-top: 4px;">(The Spanish Detective Experience)</span></h1>
+    <p class="subtitle">Acertijos y Desafíos de Lenguaje · Language Challenges</p>
+    <p class="intro">
+        Un documento antiguo ha desaparecido del archivo. Cuatro desafíos de investigación se interponen entre tú y la verdad. Lee con atención, detective: cada palabra importa — every word matters.
+        <span class="lang-sub">(An old document has disappeared. Four investigative challenges stand between you and the truth. Read carefully, detective: cada palabra importa — every word matters.)</span>
+    </p>
+    <div class="hero-stats">
+        <span>4 Desafíos (Challenges)</span>
+        <span>25+ Palabras en Español</span>
+        <span id="top-score">Puntuación / Score: 0 / 100</span>
+    </div>
+</header>
+
+<nav class="nav-bar" aria-label="Puzzle section navigation">
+    <a href="#mission">Misión (Mission)</a>
+    <a href="#puzzle1">Descifrado (Decode)</a>
+    <a href="#puzzle2">Vocabulario (Vocabulary)</a>
+    <a href="#puzzle3">Cifrado (Cipher)</a>
+    <a href="#puzzle4">Cultura (Culture)</a>
+    <a href="#reflection">Reflexión (Reflection)</a>
+</nav>
+
+<main>
+    <section id="mission" class="panel">
+        <p class="eyebrow">TU MISIÓN DETECTIVESCA · YOUR MISSION</p>
+        <h2>Conviértete en detective <span class="lang-sub">(Become the Detective)</span></h2>
+        <p>
+            Durante una exposición cultural en Bogotá, Colombia, un valioso documento histórico y pieza patrimonial desapareció del archivo. La investigación ha revelado notas manuscritas, movimientos sospechosos y testimonios contradictorios.
+        </p>
+        <p class="lang-sub">
+            (During a cultural exhibition in Bogotá, Colombia, a valuable historical document and heritage piece vanished from the archive. The investigation has uncovered handwritten notes, suspicious movements, and conflicting testimonies.)
+        </p>
+        <p>
+            Completa los cuatro desafíos en español para sumar hasta <strong>100 puntos</strong>. Utiliza las pistas cuando sea necesario, aprende el vocabulario y comprueba tu puntuación.
+        </p>
+        <p class="lang-sub">
+            (Complete the four Spanish challenges to earn up to 100 points. Use hints when needed, master the forensic vocabulary, and verify your progress.)
+        </p>
+        <div class="mission-note">
+            <strong>Regla del detective (Detective's rule):</strong>
+            No adivines a ciegas. Comprende el español antes de responder.
+            <span class="lang-sub">(Do not guess blindly. Understand the Spanish before deciding.)</span>
+        </div>
+    </section>
+
+    <!-- Challenge 01 -->
+    <section id="puzzle1" class="panel puzzle-card">
+        <p class="eyebrow">DESAFÍO 01 · 20 PUNTOS (CHALLENGE 01 · 20 POINTS)</p>
+        <h2>Descifra el mensaje secreto <span class="lang-sub">(Decode the Secret Message)</span></h2>
+        <p class="story">
+            Se halló una nota doblada cerca de la sala del archivo. Contiene una advertencia escrita en español:
+        </p>
+        <p class="lang-sub">
+            (A folded note was discovered near the archive room containing a warning written in Spanish:)
+        </p>
+
+        <blockquote lang="es">
+            "No busques donde brillaba; busca donde se conserva."
+        </blockquote>
+
+        <p class="translation-prompt">
+            ¿Qué significa este mensaje en inglés? <span class="inline-en">(What does the message mean in English?)</span>
+        </p>
+
+        <form id="cipher-form">
+            <label for="cipher-answer">Selecciona tu traducción (Choose your translation):</label>
+            <select id="cipher-answer" required>
+                <option value="">Selecciona una opción / Select an answer...</option>
+                <option value="wrong1">Look where everyone is dancing.</option>
+                <option value="correct">Don't look where it shone; look where it is preserved.</option>
+                <option value="wrong2">The treasure was sold yesterday.</option>
+            </select>
+            <button type="submit">Enviar traducción · Submit Translation</button>
+        </form>
+
+        <button class="secondary-button" id="hint-button" type="button">
+            Mostrar pista · Reveal Hint
+        </button>
+        <p id="hint-text" class="hint-box" hidden>
+            "Brillaba" = "it shone". "Busca" = "look for / search". "Se conserva" = "is preserved / kept".
+        </p>
+        <p id="cipher-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <!-- Challenge 02 -->
+    <section id="puzzle2" class="panel puzzle-card">
+        <p class="eyebrow">DESAFÍO 02 · 30 PUNTOS (CHALLENGE 02 · 30 POINTS)</p>
+        <h2>Vocabulario detectivesco <span class="lang-sub">(Detective Vocabulary)</span></h2>
+        <p>
+            Un buen detective debe comprender el lenguaje de la investigación. Empareja cada término en español con su significado correcto en inglés:
+        </p>
+        <p class="lang-sub">
+            (An investigator must understand key terms. Match each Spanish term with its correct English meaning:)
+        </p>
+
+        <form id="vocabulary-form">
+            <div id="vocabulary-questions" class="question-list"></div>
+            <button type="submit">Verificar vocabulario · Check Vocabulary</button>
+        </form>
+
+        <button class="secondary-button" id="vocab-hint-button" type="button">
+            ¿Necesitas una pista? · Need a Hint?
+        </button>
+        <p id="vocab-hint" class="hint-box" hidden>
+            "Huella" es un rastro dejado en la escena. "Coartada" explica dónde estuvo el sospechoso. "Testigo" es quien vio algo.
+        </p>
+        <p id="vocab-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <!-- Challenge 03 -->
+    <section id="puzzle3" class="panel puzzle-card">
+        <p class="eyebrow">DESAFÍO 03 · 25 PUNTOS (CHALLENGE 03 · 25 POINTS)</p>
+        <h2>Descifra el código secreto <span class="lang-sub">(Crack the Secret Cipher)</span></h2>
+        <p class="story">
+            La siguiente pista estaba cifrada con el método César. Cada letra ha avanzado una posición en el alfabeto (+1). Retrocede una letra (-1) para revelar la palabra en español:
+        </p>
+        <p class="lang-sub">
+            (The next clue was encrypted with a Caesar shift. Each letter was moved one place forward (+1). Shift each letter back one place (-1) to decode the Spanish word:)
+        </p>
+
+        <div class="cipher-display" aria-label="Palabra cifrada / Encrypted word">
+            D B T B
+        </div>
+
+        <p class="muted">
+            Ejemplo: B retrocede a A, D retrocede a C.
+            <span class="lang-sub">(Example: B becomes A, D becomes C. The decoded word is a common Spanish noun.)</span>
+        </p>
+
+        <form id="code-form">
+            <label for="code-answer">Ingresa la palabra descifrada en español (Enter the decoded word):</label>
+            <input id="code-answer" type="text" placeholder="Tu respuesta / Your answer..." autocomplete="off" required>
+            <button type="submit">Desbloquear pista · Unlock Clue</button>
+        </form>
+
+        <button class="secondary-button" id="code-hint-button" type="button">
+            Mostrar pista · Reveal Hint
+        </button>
+        <p id="code-hint" class="hint-box" hidden>
+            Pista: D→C, B→A, T→S, B→A. Significa "house / dwelling".
+        </p>
+        <p id="code-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <!-- Challenge 04 -->
+    <section id="puzzle4" class="panel puzzle-card">
+        <p class="eyebrow">DESAFÍO 04 · 25 PUNTOS (CHALLENGE 04 · 25 POINTS)</p>
+        <h2>Cultura y patrimonio colombiano <span class="lang-sub">(Explore Colombian Culture)</span></h2>
+        <p>
+            La historia del documento nos lleva al rico patrimonio histórico y cultural de Colombia. Responde estas preguntas para finalizar tus pesquisas:
+        </p>
+        <p class="lang-sub">
+            (The artifact's context connects to Colombia's heritage. Answer these questions to complete your training:)
+        </p>
+
+        <form id="culture-form">
+            <div class="quiz-question">
+                <label for="culture1">
+                    1. ¿Cuál es el idioma oficial de Colombia? <span class="inline-en">(What is the official language of Colombia?)</span>
+                </label>
+                <select id="culture1" required>
+                    <option value="">Selecciona / Choose...</option>
+                    <option value="portuguese">Portuguese</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                </select>
+            </div>
+
+            <div class="quiz-question">
+                <label for="culture2">
+                    2. ¿Qué museo en Bogotá es famoso por su colección de piezas prehispánicas de oro? <span class="inline-en">(Famous gold museum in Bogotá?)</span>
+                </label>
+                <select id="culture2" required>
+                    <option value="">Selecciona / Choose...</option>
+                    <option value="gold">Museo del Oro</option>
+                    <option value="louvre">The Louvre</option>
+                    <option value="prado">Museo del Prado</option>
+                </select>
+            </div>
+
+            <div class="quiz-question">
+                <label for="culture3">
+                    3. ¿Qué pueblo indígena está vinculado a la leyenda de El Dorado en la Laguna de Guatavita? <span class="inline-en">(Indigenous culture linked to El Dorado?)</span>
+                </label>
+                <select id="culture3" required>
+                    <option value="">Selecciona / Choose...</option>
+                    <option value="maya">Maya</option>
+                    <option value="muisca">Muisca</option>
+                    <option value="inca">Inca</option>
+                </select>
+            </div>
+
+            <div class="quiz-question">
+                <label for="culture4">
+                    4. ¿Qué significa "el patrimonio cultural"? <span class="inline-en">(What does "el patrimonio cultural" mean?)</span>
+                </label>
+                <select id="culture4" required>
+                    <option value="">Selecciona / Choose...</option>
+                    <option value="food">Traditional food only</option>
+                    <option value="heritage">Cultural heritage</option>
+                    <option value="weather">The weather</option>
+                </select>
+            </div>
+
+            <div class="quiz-question">
+                <label for="culture5">
+                    5. ¿Qué significa "la pieza de oro"? <span class="inline-en">(What does "la pieza de oro" mean?)</span>
+                </label>
+                <select id="culture5" required>
+                    <option value="">Selecciona / Choose...</option>
+                    <option value="goldpiece">The gold object / artifact</option>
+                    <option value="goldenhour">The golden hour</option>
+                    <option value="goldenbook">The golden book</option>
+                </select>
+            </div>
+
+            <button type="submit">Enviar cuestionario cultural · Submit Culture Quiz</button>
+        </form>
+
+        <button class="secondary-button" id="culture-hint-button" type="button">
+            Mostrar pista · Reveal Hint
+        </button>
+        <p id="culture-hint" class="hint-box" hidden>
+            El Museo del Oro está en Bogotá. El pueblo Muisca se asocia con El Dorado. El español es el idioma oficial de Colombia.
+        </p>
+        <p id="culture-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="panel results-panel">
+        <p class="eyebrow">PROGRESO DE LA INVESTIGACIÓN · CASE PROGRESS</p>
+        <h2>Puntuación de los desafíos <span class="lang-sub">(Your Investigation Score)</span></h2>
+
+        <div class="score-number" id="final-score" aria-live="polite">
+            0 / 100
+        </div>
+
+        <div class="progress-track" role="progressbar"
+             aria-label="Progreso de la investigación / Progress" aria-valuemin="0"
+             aria-valuemax="100" aria-valuenow="0" id="score-progress">
+            <div id="progress-fill"></div>
+        </div>
+
+        <p id="result-message">
+            Resuelve los desafíos para descubrir tu rango detectivesco. (Solve challenges to reveal your score.)
+        </p>
+
+        <button id="replay-button" class="button" type="button">Jugar de nuevo · Play Again</button>
+    </section>
+
+    <!-- Reflection Section -->
+    <section id="reflection" class="panel">
+        <p class="eyebrow">REFLEXIÓN PERSONAL · MIEMBRO 4 (CREATOR REFLECTION · MEMBER 4)</p>
+        <h2>Mi Experiencia y Aprendizaje <span class="lang-sub">(Personal Reflection)</span></h2>
+        <p>
+            <strong>Estudiante / Miembro 4:</strong> Abhishek
+        </p>
+        <p>
+            Al diseñar los desafíos lingüísticos e interactivos, exploré cómo la traducción, los acertijos con claves César y el vocabulario técnico en español pueden integrarse en una experiencia gamificada y accesible. Analizar el patrimonio cultural colombiano me permitió vincular el aprendizaje del idioma con la historia real, haciendo que cada pista resulte didáctica, estimulante y comprensible para todos los usuarios.
+        </p>
+        <p class="lang-sub">
+            (Designing these interactive language challenges taught me how translation, Caesar ciphers, and Spanish forensic terms can be merged into a gamified, accessible experience. Exploring Colombian cultural heritage allowed me to connect language learning with real history, ensuring each clue is educational, engaging, and easy to grasp for all learners.)
+        </p>
+    </section>
+
+    <!-- Institutional Sources -->
+    <section class="sources panel">
+        <h2>Fuentes de consulta · Research Sources</h2>
+        <p>
+            Recursos institucionales sobre patrimonio cultural e historia:
+            <span class="lang-sub">(Institutional resources on cultural heritage and history:)</span>
+        </p>
+        <ul>
+            <li>
+                <a href="https://www.banrepcultural.org/bogota/museo-del-oro"
+                   target="_blank" rel="noopener noreferrer">
+                    Banco de la República — Museo del Oro (Bogotá)
+                </a>
+            </li>
+            <li>
+                <a href="https://ich.unesco.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    UNESCO — Patrimonio Cultural Inmaterial (Intangible Cultural Heritage)
+                </a>
+            </li>
+        </ul>
+        <p class="muted">
+            El caso del robo y las pistas son de carácter ficticio y educativo.
+            <span class="lang-sub">(The case investigation is fictional and educational.)</span>
+        </p>
+    </section>
+</main>
+
+<footer class="team-credits-bar">
+    <p>¿QUIÉN FUE? · EXPEDIENTE N.º 047 | Módulo 4 desarrollado por: <strong>Abhishek</strong></p>
+    <p>Equipo: Anushka (M1) · Surender (M2) · Annu (M3) · Abhishek (M4) · Sabharish Raj (M5)</p>
+</footer>
+
+</body>
+</html>

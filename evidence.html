@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="¿Quién Fue? — Archivo de Evidencias (Evidence Archive). Análisis de fotografías, registros y cartas del Caso 047.">
+    <title>¿Quién Fue? | Archivo de Evidencias (Evidence Archive)</title>
+    <link rel="stylesheet" href="evidence.css">
+    <link rel="stylesheet" href="unified-dark.css">
+    <script src="evidence.js" defer></script>
+</head>
+<body>
+
+    <!-- Unified Accessible Navigation Bar -->
+    <header>
+        <nav class="site-nav" aria-label="Navegación principal / Main Navigation">
+            <a href="index.html" class="nav-brand">¿QUIÉN FUE? <span class="badge-clean">EXP. 047</span></a>
+
+            <div class="nav-links">
+                <a href="index.html">Inicio <span class="nav-sub">(Home)</span></a>
+                <a href="suspects.html">Sospechosos <span class="nav-sub">(Suspects)</span></a>
+                <a href="evidence.html" class="active">Evidencias <span class="nav-sub">(Evidence)</span></a>
+                <a href="puzzles.html">Acertijos <span class="nav-sub">(Puzzles)</span></a>
+                <a href="reveal.html">Revelación <span class="nav-sub">(Verdict)</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <header class="hero">
+        <p class="eyebrow">EXPEDIENTE CONFIDENCIAL · N.º 047 (CONFIDENTIAL CASE FILE #047)</p>
+        <h1>¿Quién Fue? <span class="lang-sub" style="font-size: 1.5rem; margin-top: 4px;">(Who Was It?)</span></h1>
+        <p class="subtitle">El archivo de las identidades perdidas <span class="inline-en">— The Archive of Lost Identities</span></p>
+        <p class="intro">
+            Una antigua fotografía y un documento histórico han desaparecido del archivo del museo, dejando sospechas y un enigma por descifrar.
+            <span class="lang-sub">(An old photograph and a historical family document have vanished from the museum archive, leaving suspicion and an unsolved mystery.)</span>
+        </p>
+        <span class="case-label">CASO ABIERTO · FASE DE ANÁLISIS PERICIAL (OPEN CASE · FORENSIC ANALYSIS)</span>
+    </header>
+
+    <main>
+        <!-- Section 01: Photo Evidence -->
+        <section class="panel">
+            <p class="eyebrow">ARCHIVO FOTOGRÁFICO · 01 (PHOTOGRAPHIC ARCHIVE · 01)</p>
+            <h2>Las fotografías y la evidencia visual <span class="lang-sub">(Photographs & Visual Evidence)</span></h2>
+            <p>
+                Compara los registros históricos de la investigación y analiza cada detalle del archivo del museo.
+                <span class="lang-sub">(Compare the historical case records and analyze every archive portrait.)</span>
+            </p>
+
+            <div class="photo-grid">
+                <article class="photo-card">
+                    <div class="photo portrait">
+                        <img src="images/sp_3.png" alt="Retrato antiguo de Isabel Martín en 1932">
+                        <span class="photo-stamp">1932</span>
+                    </div>
+                    <h3>Fotografía A <span class="inline-en">(Photo A)</span></h3>
+                    <p>Nombre registrado: <strong>Isabel Martín</strong></p>
+                    <span class="lang-sub">Registered name in 1932: Isabel Martín</span>
+                </article>
+
+                <article class="photo-card">
+                    <div class="photo portrait">
+                        <img src="images/sp2.jpg" alt="Retrato registrado en 1941 con el nombre de Elena Castillo">
+                        <span class="photo-stamp">1941</span>
+                    </div>
+                    <h3>Fotografía B <span class="inline-en">(Photo B)</span></h3>
+                    <p>Nombre registrado: <strong>Elena Castillo</strong></p>
+                    <span class="lang-sub">Registered name in 1941: Elena Castillo</span>
+                </article>
+            </div>
+
+            <button class="button" data-reveal="photo-clue" aria-expanded="false" aria-controls="photo-clue">
+                Comparar las fotografías · Compare Photographs
+            </button>
+
+            <div class="clue" id="photo-clue" hidden>
+                <h3>Hallazgo pericial · Forensic Finding</h3>
+                <p>
+                    La evidencia fotográfica demuestra que ambas fichas históricas retratan a la misma persona con nombres distintos (Isabel Martín en 1932 y Elena Castillo en 1941) para ocultar su identidad familiar en la historia.
+                </p>
+                <p class="lang-sub">
+                    (Photographic evidence confirms both historical files portray the same person using different names (Isabel Martín in 1932 and Elena Castillo in 1941) to conceal her family identity.)
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 02: Administrative Log -->
+        <section class="panel">
+            <p class="eyebrow">DOCUMENTO A · 02 (ADMINISTRATIVE LOG · 02)</p>
+            <h2>El registro administrativo de acceso <span class="lang-sub">(Administrative Access Log)</span></h2>
+            <p>
+                Registro horario oficial de las entradas al archivo del museo durante la mañana del 14 de octubre:
+                <span class="lang-sub">(Official time log of archive access on the morning of October 14:)</span>
+            </p>
+
+            <div class="document">
+                <p class="document-title">REGISTRO DE ACCESO · HISTORIA Y CULTURA (ACCESS LOG · HISTORY & CULTURE)</p>
+                <p><strong>Fecha / Date:</strong> 14 de octubre (October 14)</p>
+                <hr>
+                <p><span>10:05</span> El sospechoso entra en el archivo del museo. <span class="inline-en">(Suspect enters archive.)</span></p>
+                <p><span>10:20</span> El tesoro cultural se ve por última vez en la vitrina. <span class="inline-en">(Artifact last seen in display case.)</span></p>
+                <p><span>10:30</span> Se descubre la desaparición del documento. <span class="inline-en">(Document disappearance is detected.)</span></p>
+                <p class="signature">Archivo administrativo · Museo de Historia</p>
+            </div>
+
+            <button class="button" data-reveal="record-clue" aria-expanded="false" aria-controls="record-clue">
+                Analizar el registro · Analyze Log
+            </button>
+
+            <div class="clue" id="record-clue" hidden>
+                <h3>Pista cronológica clave · Key Timeline Clue</h3>
+                <p>
+                    El registro fija una ventana crítica de 25 minutos (entre las 10:05 y las 10:30). Elena Castillo permaneció dentro del archivo justo en el lapso en que la vitrina quedó desatendida.
+                </p>
+                <p class="lang-sub">
+                    (The log narrows down a 25-minute window (10:05 to 10:30). Elena Castillo was inside the archive during the exact period the display case was left unattended.)
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 03: Confidential Letter -->
+        <section class="panel">
+            <p class="eyebrow">DOCUMENTO B · 03 (CONFIDENTIAL LETTER · 03)</p>
+            <h2>La carta confidencial <span class="lang-sub">(The Confidential Family Letter)</span></h2>
+            <p>
+                Manuscrito sin firma hallado entre los legajos del archivo:
+                <span class="lang-sub">(Unsigned manuscript discovered among archive dossiers:)</span>
+            </p>
+
+            <blockquote class="letter">
+                “Debemos proteger este recuerdo y la herencia de nuestra familia. El pasado histórico no debe salir a la luz.”
+                <span class="lang-sub">“We must protect this memory and our family heritage. The historical past must not come to light.”</span>
+                <span>— Carta confidencial sin firma · Unsigned Family Note</span>
+            </blockquote>
+
+            <button class="button" data-reveal="letter-clue" aria-expanded="false" aria-controls="letter-clue">
+                Descubrir el significado · Reveal Meaning
+            </button>
+
+            <div class="clue" id="letter-clue" hidden>
+                <h3>Móvil de la sustracción · Motive Revealed</h3>
+                <p>
+                    La carta demuestra que el robo no fue por lucro económico, sino para proteger un secreto familiar ancestral vinculado al patrimonio histórico expuesto en el museo.
+                </p>
+                <p class="lang-sub">
+                    (The letter demonstrates the theft was not driven by money, but rather to protect an ancestral family secret connected to the museum's exhibition.)
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 04: Timeline -->
+        <section class="panel">
+            <p class="eyebrow">CRONOLOGÍA · 04 (HISTORICAL TIMELINE · 04)</p>
+            <h2>Línea del tiempo histórica <span class="lang-sub">(Chronological Sequence)</span></h2>
+
+            <div class="timeline">
+                <article>
+                    <span>1932</span>
+                    <p>La mujer aparece registrada formalmente como Isabel Martín (Fotografía A).</p>
+                    <span class="lang-sub">Woman formally registered as Isabel Martín in archive files.</span>
+                </article>
+                <article>
+                    <span>1941</span>
+                    <p>Nueve años después, otro documento utiliza el nombre Elena Castillo con el mismo rostro (Fotografía B).</p>
+                    <span class="lang-sub">Nine years later, another document uses Elena Castillo with identical portrait.</span>
+                </article>
+                <article>
+                    <span>14 OCT.</span>
+                    <p>El documento patrimonial desaparece del archivo del museo tras la entrada de las 10:05.</p>
+                    <span class="lang-sub">The historical heritage document vanishes from the archive following the 10:05 entry.</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 05: Creator Reflection -->
+        <section class="panel">
+            <p class="eyebrow">REFLEXIÓN PERSONAL · MIEMBRO 3 (CREATOR REFLECTION · MEMBER 3)</p>
+            <h2>Mi Experiencia y Aprendizaje <span class="lang-sub">(My Learning Experience)</span></h2>
+            <p><strong>Estudiante / Miembro 3:</strong> Annu</p>
+            <p class="reflection-text">
+                Durante el desarrollo de esta sección de evidencias, aprendí a estructurar la información pericial de manera lógica y accesible, combinando interactividad en JavaScript con una narrativa histórica coherente. Desarrollar las pistas —las fotografías de 1932 y 1941, el registro de acceso y la carta manuscrita— me ayudó a comprender cómo el diseño bilingüe y la claridad visual facilitan el análisis y permiten al usuario conectar las pruebas para resolver el caso.
+            </p>
+            <p class="lang-sub">
+                (During the development of this evidence module, I learned how to structure forensic clues logically and accessibly, combining JavaScript interactivity with a coherent historical narrative. Building the clues — the 1932 and 1941 photos, the access log, and the confidential letter — helped me understand how bilingual design and visual clarity empower users to connect evidence and solve the mystery.)
+            </p>
+        </section>
+    </main>
+
+    <footer class="team-credits-bar">
+        <p>¿QUIÉN FUE? · EXPEDIENTE N.º 047 | Módulo 3 desarrollado por: <strong>Annu</strong></p>
+        <p>Equipo: Anushka (M1) · Surender (M2) · Annu (M3) · Abhishek (M4) · Sabharish Raj (M5)</p>
+    </footer>
+</body>
+</html>

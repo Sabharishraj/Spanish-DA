@@ -4,7 +4,7 @@
  * Archivo: reveal.js
  * Rol del Proyecto: Miembro 5 — Veredicto Final, Revelación de la Culpable, 
  *                   Síntesis de Evidencias, Sistema de Puntuación y Reinicio.
- * Autor: Sabharish Raj G K (En colaboración con Miembro 3: Shaik Annu — Página 1)
+ * Autor: Sabharish Raj (En colaboración con Anushka, Surender, Annu y Abhishek)
  * Expediente: EXPEDIENTE CONFIDENCIAL · N.º 047 (El archivo de las identidades perdidas)
  * ==============================================================================
  */
@@ -15,13 +15,13 @@
  * ------------------------------------------------------------------------------
  * CONFIGURACIÓN CENTRAL DEL CASO (STORY_CONFIG)
  * ------------------------------------------------------------------------------
- * Canon simplificado y directo, sincronizado con el Expediente 047 de Shaik Annu.
+ * Canon unificado y directo, sincronizado con todos los módulos de la investigación.
  * Con traducciones claras al inglés para títulos, botones y conceptos clave.
  */
 const STORY_CONFIG = {
   // Configuración de Autoría y Equipo
   author: {
-    name: "Sabharish Raj G K",
+    name: "Sabharish Raj",
     role: "Miembro 5 — Veredicto Final, Revelación de la Culpable & Puntuación (Final Accusation & Scoring)",
     projectTitle: "¿Quién Fue? — El archivo de las identidades perdidas (The Archive of Lost Identities)",
     caseNumber: "EXPEDIENTE CONFIDENCIAL · N.º 047"
@@ -29,11 +29,11 @@ const STORY_CONFIG = {
 
   // Roster del Equipo de Investigación
   team: [
-    { member: "Miembro 1", name: "Sofia Ramirez", role: "Archivos del Museo (Museum Archives)" },
-    { member: "Miembro 2", name: "Mateo Gomez", role: "Interrogatorios y Coartadas (Suspect Alibis)" },
-    { member: "Miembro 3", name: "Shaik Annu", role: "Archivo de Evidencias y Fotografías (Evidence Archive · Página 1)" },
-    { member: "Miembro 4", name: "Diego Alvarez", role: "Inspección de la Escena (Crime Scene Inspection)" },
-    { member: "Miembro 5", name: "Sabharish Raj G K", role: "Veredicto Final & Revelación (Final Accusation & Verdict Reveal)" }
+    { member: "Miembro 1", name: "Anushka", role: "Inicio & Presentación (Museum Overview & Case Home)" },
+    { member: "Miembro 2", name: "Surender", role: "Interrogatorios y Coartadas (Suspect Alibis & Motives)" },
+    { member: "Miembro 3", name: "Annu", role: "Archivo de Evidencias (Evidence Archive & Forensics)" },
+    { member: "Miembro 4", name: "Abhishek", role: "Acertijos y Desafíos de Lenguaje (Language Puzzles & Ciphers)" },
+    { member: "Miembro 5", name: "Sabharish Raj", role: "Veredicto Final & Revelación (Final Verdict & Culprit Reveal)" }
   ],
 
   // Metadatos Canónicos del Caso
@@ -100,84 +100,84 @@ const STORY_CONFIG = {
   },
 
   // Identificador de la Culpable Real
-  culpritId: "suspect-3",
+  culpritId: "suspect-2",
 
   // Expediente Maestro de la Culpable
   culprit: {
     name: "Elena Castillo (Alias: Isabel Martín)",
-    role: "Investigadora Visitante e Historiadora Familiar (Visiting Researcher & Family Descendant)",
-    avatar: "🕵️‍♀️",
-    motive: "Proteger el secreto ancestral de su linaje familiar para que el pasado no saliera a la luz pública (To protect her ancestral family secret and legacy from being exposed by the museum exhibition).",
-    modusOperandi: "Ingresó al archivo a las 10:05 HRS. Aprovechó la breve ausencia del supervisor a las 10:20 HRS para extraer el documento y retirarse antes de las 10:30 HRS. El cotejo fotográfico de 1932 (Isabel Martín) y 1941 (Elena Castillo) demostró su doble identidad.",
+    role: "La Descendiente e Investigadora (Visiting Researcher & Family Descendant)",
+    avatar: "[EC]",
+    motive: "Ocultar el secreto familiar de su linaje para que el pasado no saliera a la luz pública (To protect her ancestral family secret and legacy from being exposed by the museum exhibition).",
+    modusOperandi: "Ingresó al archivo a las 10:05 HRS. Aprovechó la breve ausencia del personal a las 10:20 HRS para extraer el documento y retirarse antes de las 10:30 HRS. Las fotografías de 1932 (Isabel Martín) y 1941 (Elena Castillo) demostraron su doble identidad.",
     confession: "“Debemos proteger este recuerdo y la herencia de nuestra familia. El pasado histórico no debe salir a la luz... No busqué lucrarme ni dañar el patrimonio; solo quería proteger a mi familia de la exposición pública. Ahora que el archivo fotográfico ha revelado la verdad, devuelvo el documento intacto al museo.”"
   },
 
-  // Los Cinco Sospechosos (Interrogatorios y Coartadas Simplificadas)
+  // Los Cinco Sospechosos (Sincronizados con el Expediente Completo)
   suspects: [
     {
       id: "suspect-1",
-      name: "Dr. Mateo Valenzuela",
-      role: "Director del Archivo (Museum Archive Director)",
-      avatar: "🏛️",
-      snippet: "Custodio de las llaves maestras del archivo. Estuvo con directivos en el vestíbulo principal.",
-      motive: "Conflictos sobre la desclasificación de archivos reservados.",
-      alibi: "Reunido con diplomáticos en el vestíbulo principal entre las 10:00 y las 10:45 HRS.",
-      testimony: "Estuve toda la mañana con los directivos en el vestíbulo revisando el catálogo; las cámaras y tres testigos confirman que jamás me acerqué a la sala de archivo.",
-      redHerring: "Poseía copia de las llaves y fue visto cerca del pasillo a las 09:50 HRS.",
-      redHerringExplanation: "Estaba verificando la iluminación del pasillo antes de recibir a los directivos. El torniquete biométrico #01 prueba que no entró al archivo.",
-      exoneration: "Verificado por torniquete de acceso biométrico #01 y declaraciones juradas de tres diplomáticos en el vestíbulo."
+      name: "Diego Salazar",
+      role: "El Archivista (Museum Archive Specialist)",
+      avatar: "[DS]",
+      snippet: "Entró al archivo a las 10:05 para consultar inventarios. Conoce los registros como nadie.",
+      motive: "Ocultar o alterar un registro del archivo para beneficio propio.",
+      alibi: "Revisando catálogos de préstamos en la mesa de consulta de 10:05 a 10:35 HRS.",
+      testimony: "Entré al archivo a las diez y cinco para buscar un catálogo antiguo; estuve en la mesa de consulta frente a los bibliotecarios toda la mañana.",
+      redHerring: "Aparece registrado en el libro de accesos a las 10:05 HRS.",
+      redHerringExplanation: "Buscaba el inventario de préstamos. Tres bibliotecarios y el registro del terminal validaron que no se acercó a la vitrina del documento.",
+      exoneration: "Coartada verificada por torniquete biométrico y testimonios jurados del personal de biblioteca."
     },
     {
       id: "suspect-2",
-      name: "Héctor Delgado",
-      role: "Supervisor de Seguridad (Security Supervisor)",
-      avatar: "👮",
-      snippet: "Patrullaba galerías. Atendió un sensor de puerta en la planta baja a las 10:00 HRS.",
-      motive: "Inconformidad laboral por turnos extraordinarios sin compensar.",
-      alibi: "Inspeccionando una puerta de emergencia en la planta baja entre las 10:00 y las 10:25 HRS.",
-      testimony: "La central me avisó por radio de una puerta abierta en la planta baja. Bajé a cerrarla y cuando volví a subir ya habían dado la alarma por el documento.",
-      redHerring: "Abandonó su puesto de vigilancia habitual justo a las 10:00 HRS.",
-      redHerringExplanation: "Atendió una orden legítima de la central de seguridad. Las grabaciones de radio certifican su presencia en la planta baja.",
-      exoneration: "Grabaciones de radio institucional y cámaras del montacargas corroboran su presencia en la planta baja hasta las 10:25 HRS."
-    },
-    {
-      id: "suspect-3",
-      name: "Elena Castillo (Alias: Isabel Martín)", // CULPABLE
-      role: "Investigadora Visitante (Visiting Researcher & Descendant)",
-      avatar: "🕵️‍♀️",
+      name: "Elena Castillo (Alias: Isabel Martín)",
+      role: "La Descendiente e Investigadora (Visiting Researcher & Family Descendant)",
+      avatar: "[EC]",
       snippet: "Registrada a las 10:05 HRS. Identificada en las fotografías de 1932 y 1941 con nombres distintos.",
-      motive: "Ocultar el secreto familiar y proteger la herencia privada de su estirpe.",
+      motive: "Ocultar el secreto familiar y proteger la herencia privada de su linaje.",
       alibi: "Alegó haber salido a los jardines exteriores a las 10:10 HRS tras no encontrar al bibliotecario.",
-      testimony: "Entré a las 10:05 para consultar bibliografía. Como el encargado no estaba, salí a caminar a los jardines a las diez y diez. No tengo nada que ver con el robo.",
+      testimony: "Entré a las 10:05 para consultar bibliografía familiar. Como no había nadie, salí a los jardines a las diez y diez. No tengo nada que ver con el robo.",
       redHerring: "Alegó una salida apresurada por falta de atención del personal.",
       redHerringExplanation: "¡No salió! El registro prueba que permaneció dentro del archivo hasta después de las 10:20 HRS. Las fotografías de 1932 y 1941 y la carta confidencial comprueban su autoría.",
       exoneration: "¡CULPABLE CONFIRMADA! No tiene testigos de su supuesta salida. Las fotografías A y B prueban su identidad encubierta, el registro de acceso la ubica durante el robo (10:05–10:25) y la carta confidencial revela su móvil."
     },
     {
+      id: "suspect-3",
+      name: "Rafael Ortega",
+      role: "El Coleccionista (Art Collector)",
+      avatar: "[RO]",
+      snippet: "Coleccionista adinerado que asistió a la inauguración matutina de la exposición.",
+      motive: "Interés económico y prestigio al incorporar una pieza patrimonial única a su colección privada.",
+      alibi: "Acompañado por diplomáticos y directivos en el vestíbulo principal entre las 10:00 y las 10:45 HRS.",
+      testimony: "Estuve toda la mañana en el vestíbulo conversando con directivos; jamás entré al área reservada del archivo.",
+      redHerring: "Consultó sobre el valor del documento semanas antes de la muestra.",
+      redHerringExplanation: "Era un interés legítimo de mecenazgo cultural. Las cámaras del vestíbulo confirman su presencia continua lejos del archivo.",
+      exoneration: "Testimonio unánime de directivos del museo y cámaras de seguridad en el vestíbulo principal confirman su inocencia."
+    },
+    {
       id: "suspect-4",
-      name: "Sofía Morales",
-      role: "Archivera y Catalogadora (Archive Cataloguer)",
-      avatar: "📚",
-      snippet: "Encargada de catalogar manuscritos. Fue quien reportó la desaparición a las 10:30 HRS.",
-      motive: "Interés académico en fondos reservados para su tesis doctoral.",
-      alibi: "Trabajando en el taller de encuadernación con dos pasantes de 09:30 a 10:30 HRS.",
-      testimony: "Estuve toda la mañana restaurando pergaminos junto a dos pasantes. A las 10:30 entré al archivo para guardar pliegos y descubrí que la carpeta no estaba.",
-      redHerring: "Descubrió y reportó la desaparición, y tenía huellas en la carpeta por labores matutinas.",
-      redHerringExplanation: "Manipuló la carpeta en la catalogación rutinaria de las 08:30 HRS. Dos pasantes testificaron que no abandonó el taller de restauración.",
-      exoneration: "Testimonios coincidentes de dos pasantes universitarios y el registro digital del escáner confirman su presencia continua en el taller."
+      name: "Lucía Navarro",
+      role: "La Restauradora (Conservator / Restorer)",
+      avatar: "[LN]",
+      snippet: "Especialista en conservación con acceso técnico a la vitrina y manejo de piezas delicadas.",
+      motive: "Conocía la técnica exacta para retirar el documento sin forzar la vitrina.",
+      alibi: "Trabajando en el taller de encuadernación junto a dos pasantes de 09:30 a 10:30 HRS.",
+      testimony: "Estuve toda la mañana restaurando manuscritos con dos pasantes. No me acerqué al archivo hasta que sonó la alarma.",
+      redHerring: "Poseía la llave técnica de mantenimiento de la vitrina.",
+      redHerringExplanation: "La llave permaneció sellada en el casillero de maestranza según el libro de firmas.",
+      exoneration: "Declaraciones juradas de dos pasantes universitarios confirman su presencia continua en el taller de restauración."
     },
     {
       id: "suspect-5",
-      name: "Carlos Mendoza",
-      role: "Técnico de Instalaciones (Maintenance Technician)",
-      avatar: "🔧",
-      snippet: "Visto cerca del archivo a las 10:00 HRS con una escalera y herramientas para cambiar luces.",
-      motive: "Acceso a llaves de servicio y conocimiento de los horarios del museo.",
-      alibi: "Reparando fluorescentes en la Sala 2 de Historia desde las 10:05 hasta las 10:40 HRS.",
-      testimony: "Estuve en una escalera cambiando tubos de luz en la Sala 2 frente al personal de limpieza. No toqué ningún documento ni me acerqué al archivo.",
-      redHerring: "Fue visto cerca del archivo a las 10:00 HRS cargando herramientas.",
-      redHerringExplanation: "Transportaba material hacia la Sala 2 según la orden de trabajo #OT-104. Dos empleados de limpieza confirmaron que estuvo subido en la escalera.",
-      exoneration: "Orden de trabajo firmada y testimonio de dos empleados de limpieza confirman que estuvo en la Sala 2 de 10:05 a 10:40 HRS."
+      name: "Tomás Vega",
+      role: "El Guardia de Seguridad (Security Guard)",
+      avatar: "[TV]",
+      snippet: "Vigilaba los accesos del museo. Atendió un sensor de puerta en la planta baja a las 10:00 HRS.",
+      motive: "Posible negligencia en la custodia o encubrimiento de lo presenciado.",
+      alibi: "Inspeccionando una salida de emergencia en la planta baja entre las 10:00 y las 10:25 HRS.",
+      testimony: "La central me avisó por radio de una puerta abierta en la planta baja. Bajé a cerrarla y cuando volví a subir ya habían dado la alarma por el documento.",
+      redHerring: "Abandonó temporalmente el pasillo del archivo a las 10:00 HRS.",
+      redHerringExplanation: "Atendió una alerta legítima transmitida por radio. Las grabaciones de audio certifican su presencia en la planta baja.",
+      exoneration: "Registros de radio institucional y cámaras del montacargas corroboran que estuvo en la planta baja hasta las 10:25 HRS."
     }
   ],
 
@@ -666,7 +666,7 @@ function renderExonerationList() {
     item.className = "exoneration-card";
     item.innerHTML = `
       <div class="exoneration-card-header">
-        <span class="exoneration-name">👤 ${suspect.name}</span>
+        <span class="exoneration-name"><span class="badge-clean">${suspect.avatar}</span> ${suspect.name}</span>
         <span class="badge-cleared">EXONERADO (ALIBI VERIFIED)</span>
       </div>
       <p class="exoneration-reason-text">
@@ -741,7 +741,7 @@ function revealCulpritOutcome() {
 
   if (isCorrect) {
     outcomeBanner.classList.add("outcome-correct");
-    outcomeIcon.textContent = "⚖️";
+    outcomeIcon.textContent = "[VEREDICTO VERIFICADO]";
     outcomeTag.textContent = "¡CASO RESUELTO! (CASE SOLVED · ACCUSATION VERIFIED)";
     outcomeTitle.textContent = `¡Veredicto Correcto! La responsable es ${STORY_CONFIG.culprit.name}`;
     outcomeMessage.innerHTML = `
@@ -750,7 +750,7 @@ function revealCulpritOutcome() {
     `;
   } else {
     outcomeBanner.classList.add("outcome-incorrect");
-    outcomeIcon.textContent = "❌";
+    outcomeIcon.textContent = "[ACUSACIÓN DESESTIMADA]";
     outcomeTag.textContent = "ACUSACIÓN ERRÓNEA (WRONGFUL ACCUSATION)";
     outcomeTitle.textContent = `La acusación contra ${chosenSuspect ? chosenSuspect.name : "el sospechoso"} fue desestimada`;
     outcomeMessage.innerHTML = `
@@ -800,7 +800,7 @@ function calculateAndRenderScore(isAccusationCorrect) {
     tbody.innerHTML = `
       <tr>
         <td><strong>IDENTIFICACIÓN DE LA CULPABLE (CULPRIT ID)</strong><br><small>Acusación formal (Formal Accusation)</small></td>
-        <td>${isAccusationCorrect ? "✅ Correcto / Correct (+50 pts)" : "❌ Incorrecto / Wrong (0 pts)"}</td>
+        <td>${isAccusationCorrect ? "Correcto / Correct (+50 pts)" : "Incorrecto / Wrong (0 pts)"}</td>
         <td class="text-right">50</td>
         <td class="text-right points-assigned">${accusationPoints}</td>
       </tr>
@@ -828,22 +828,22 @@ function calculateAndRenderScore(isAccusationCorrect) {
 function getRankDetails(score) {
   if (score >= 90) {
     return {
-      title: "🏆 Detective Maestro (Master Detective)",
+      title: "Detective Maestro (Master Detective)",
       feedback: "¡Investigación impecable! Has resuelto el Expediente 047 conectando las fotografías de 1932 y 1941 con una deducción brillante. (Flawless deduction!)"
     };
   } else if (score >= 70) {
     return {
-      title: "🔍 Investigador Sagaz (Shrewd Investigator)",
+      title: "Investigador Sagaz (Shrewd Investigator)",
       feedback: "Excelente análisis. Identificaste las evidencias clave del museo y desenmascaraste la doble identidad. (Strong forensic analysis.)"
     };
   } else if (score >= 50) {
     return {
-      title: "📋 Asistente Judicial (Assistant Investigator)",
+      title: "Asistente Judicial (Assistant Investigator)",
       feedback: "Identificaste elementos del caso, pero faltó profundizar en el análisis de las pistas fotográficas. (Useful deductions provided.)"
     };
   } else {
     return {
-      title: "⚠️ Detective en Formación (Trainee Detective)",
+      title: "Detective en Formación (Trainee Detective)",
       feedback: "La acusación fue desestimada frente a las coartadas. Revisa las fotografías y el registro de acceso, y vuelve a intentarlo. (Try again.)"
     };
   }
@@ -916,7 +916,7 @@ function renderGlossary(wordsToRender) {
         <h4 class="glossary-spanish-word">${item.spanish}</h4>
         <span class="glossary-pos-tag">${item.pos}</span>
       </div>
-      <p class="glossary-translation">🇬🇧 ${item.english}</p>
+      <p class="glossary-translation"><span class="badge-clean">EN</span> ${item.english}</p>
       <p class="glossary-usage">${item.context}</p>
       <div class="glossary-example-box">
         <p class="glossary-example-es">“${item.example}”</p>
@@ -1029,7 +1029,7 @@ function renderPracticeButtons() {
     btn.id = `practice-es-${item.id}`;
     btn.dataset.termId = item.id;
     btn.setAttribute("aria-pressed", "false");
-    btn.innerHTML = `<span>${item.spanish}</span><span class="match-icon" aria-hidden="true">➜</span>`;
+    btn.innerHTML = `<span>${item.spanish}</span><span class="match-icon" aria-hidden="true">-></span>`;
     btn.addEventListener("click", () => handleSpanishTermClick(item.id));
     spanishList.appendChild(btn);
   });
@@ -1048,7 +1048,7 @@ function renderPracticeButtons() {
     btn.id = `practice-en-${item.id}`;
     btn.dataset.termId = item.id;
     btn.setAttribute("aria-pressed", "false");
-    btn.innerHTML = `<span>${item.english}</span><span class="match-icon" aria-hidden="true">➜</span>`;
+    btn.innerHTML = `<span>${item.english}</span><span class="match-icon" aria-hidden="true">-></span>`;
     btn.addEventListener("click", () => handleEnglishMeaningClick(item.id));
     englishList.appendChild(btn);
   });
@@ -1094,31 +1094,31 @@ function handleEnglishMeaningClick(termId) {
       esBtn.disabled = true;
       esBtn.setAttribute("aria-pressed", "false");
       const icon = esBtn.querySelector(".match-icon");
-      if (icon) icon.textContent = "✓";
+      if (icon) icon.textContent = "[OK]";
     }
     if (enBtn) {
       enBtn.classList.add("is-matched");
       enBtn.disabled = true;
       enBtn.setAttribute("aria-pressed", "false");
       const icon = enBtn.querySelector(".match-icon");
-      if (icon) icon.textContent = "✓";
+      if (icon) icon.textContent = "[OK]";
     }
 
     updatePracticeCounter();
 
     if (PRACTICE_CHALLENGE.matchedIds.size === PRACTICE_CHALLENGE.terms.length) {
-      updatePracticeStatus("✓ ¡Excelente! Has descifrado los 4 términos del cuaderno de campo. (All terms decrypted!)");
+      updatePracticeStatus("¡Excelente! Has descifrado los 4 términos del cuaderno de campo. (All terms decrypted!)");
       const banner = document.getElementById("practiceCompleteBanner");
       if (banner) banner.classList.remove("practice-hidden");
     } else {
       const matchedObj = PRACTICE_CHALLENGE.terms.find(t => t.id === termId);
-      updatePracticeStatus(`✓ ¡Correcto! "${matchedObj.spanish}" = "${matchedObj.english}".`);
+      updatePracticeStatus(`¡Correcto! "${matchedObj.spanish}" = "${matchedObj.english}".`);
     }
   } else {
     if (esBtn) esBtn.classList.add("is-mismatch");
     if (enBtn) enBtn.classList.add("is-mismatch");
 
-    updatePracticeStatus("❌ No coinciden. Revisa el texto de la pista e inténtalo de nuevo. (Not a match, try again.)");
+    updatePracticeStatus("No coinciden. Revisa el texto de la pista e inténtalo de nuevo. (Not a match, try again.)");
 
     setTimeout(() => {
       if (esBtn) {
@@ -1195,7 +1195,7 @@ function setupEventListeners() {
       }
 
       if (statusMsg) {
-        statusMsg.textContent = "✓ Actualizado (Updated).";
+        statusMsg.textContent = "Actualizado (Updated).";
         setTimeout(() => { statusMsg.textContent = ""; }, 3000);
       }
 

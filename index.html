@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="¿Quién Fue? (Who Was It?) — Interactive Spanish mystery investigation game. Case File #047.">
+
+    <title>¿Quién Fue? — La Fotografía de Nadie (The Photograph of Nobody)</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="unified-dark.css">
+</head>
+
+<body>
+
+    <!-- Unified Accessible Navigation Bar -->
+    <header>
+        <nav class="site-nav" aria-label="Navegación principal / Main Navigation">
+            <a href="index.html" class="nav-brand">¿QUIÉN FUE? <span class="badge-clean">EXP. 047</span></a>
+
+            <div class="nav-links">
+                <a href="index.html" class="active">Inicio <span class="nav-sub">(Home)</span></a>
+                <a href="suspects.html">Sospechosos <span class="nav-sub">(Suspects)</span></a>
+                <a href="evidence.html">Evidencias <span class="nav-sub">(Evidence)</span></a>
+                <a href="puzzles.html">Acertijos <span class="nav-sub">(Puzzles)</span></a>
+                <a href="reveal.html">Revelación <span class="nav-sub">(Verdict)</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main opening section -->
+    <main>
+
+        <section class="hero">
+
+            <p class="case-number">
+                EXPEDIENTE CONFIDENCIAL N.º 047 · CASO ABIERTO
+                <span class="lang-sub">(CONFIDENTIAL CASE FILE #047 · OPEN CASE)</span>
+            </p>
+
+            <h1>La Fotografía de Nadie</h1>
+            <p class="lang-sub" style="font-size: 1.25rem; margin-top: -10px; margin-bottom: 20px;">(The Photograph of Nobody)</p>
+
+            <h2>
+                Una fotografía. Cinco sospechosos. Un secreto.
+                <span class="lang-sub">(One photograph. Five suspects. One secret.)</span>
+            </h2>
+
+            <p class="intro">
+                Una antigua fotografía y un valioso documento histórico han desaparecido del archivo de un museo cultural latinoamericano el 14 de octubre. Una persona desconocida aparece en varios registros históricos, siempre con un nombre diferente.
+                <span class="lang-sub">(An old photograph and a valuable historical document vanished from the archive of a Latin American cultural museum on October 14. An unidentified person appears across historical records, always under a different name.)</span>
+            </p>
+
+            <p class="intro">
+                Cinco personas tienen motivos y guardan secretos. Tu misión como detective es interrogar a los sospechosos, examinar las pistas periciales, resolver acertijos en español y desenmascarar al culpable.
+                <span class="lang-sub">(Five people have motives and hold secrets. Your mission as a detective is to interrogate the suspects, examine the evidence, solve Spanish challenges, and unmask the culprit.)</span>
+            </p>
+
+            <button id="startButton" class="button" aria-label="Comenzar la investigación / Start Investigation">
+                Comenzar la investigación · Start Investigation →
+            </button>
+
+        </section>
+
+        <!-- How to play / Your Mission -->
+        <section class="how-to-play">
+
+            <h2>
+                Tu misión en cuatro pasos
+                <span class="lang-sub">(Your Four-Step Investigation Mission)</span>
+            </h2>
+
+            <div class="cards">
+
+                <article class="card">
+                    <h3>01. Investiga <span class="inline-en">(Investigate)</span></h3>
+                    <p>Conoce a los cinco sospechosos y escucha sus declaraciones y coartadas.</p>
+                    <span class="lang-sub">Meet the five suspects and review their alibis and motives.</span>
+                </article>
+
+                <article class="card">
+                    <h3>02. Analiza pistas <span class="inline-en">(Examine Clues)</span></h3>
+                    <p>Examina las fotos de 1932 y 1941, el registro de acceso de las 10:05 y la carta familiar.</p>
+                    <span class="lang-sub">Inspect the 1932/1941 photographs, the 10:05 access log, and the secret letter.</span>
+                </article>
+
+                <article class="card">
+                    <h3>03. Resuelve acertijos <span class="inline-en">(Solve Challenges)</span></h3>
+                    <p>Supera desafíos de vocabulario y traducción en español para obtener pistas clave.</p>
+                    <span class="lang-sub">Complete Spanish vocabulary and translation challenges to test your skills.</span>
+                </article>
+
+                <article class="card">
+                    <h3>04. Dicta el veredicto <span class="inline-en">(Deliver Verdict)</span></h3>
+                    <p>Acusa formalmente al culpable y descubre la verdad detrás de las identidades perdidas.</p>
+                    <span class="lang-sub">Formally accuse the guilty suspect and reveal the full solution.</span>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- About the project -->
+        <section class="about">
+            <h2>
+                ¿Estás listo para resolver el misterio?
+                <span class="lang-sub">(Are You Ready to Solve the Mystery?)</span>
+            </h2>
+
+            <p>
+                Observa cada detalle, analiza las contradicciones en los testimonios y descubre quién sustrajo el documento patrimonial.
+            </p>
+
+            <p class="translation">
+                Look closely, analyze the inconsistencies in each testimony, and discover who stole the historical family document.
+            </p>
+        </section>
+
+        <!-- Team Roster Section -->
+        <section class="panel" style="margin: 40px auto; max-width: 900px; padding: 25px; border-radius: 8px; border: 1px solid var(--qf-border); background: var(--qf-card);">
+            <h2 style="font-size: 1.4rem; margin-bottom: 8px;">
+                Equipo de Investigación · Research Team
+            </h2>
+            <p style="color: var(--qf-muted); margin-bottom: 18px; font-size: 0.95rem;">
+                Proyecto desarrollado de forma colaborativa por los cinco miembros del equipo:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; text-align: left;">
+                <div style="background: var(--qf-nav); padding: 12px; border-radius: 6px; border: 1px solid var(--qf-border);">
+                    <span class="badge-clean">Miembro 1</span>
+                    <strong style="display: block; color: var(--qf-gold); margin-top: 6px;">Anushka</strong>
+                    <span style="font-size: 0.82rem; color: var(--qf-muted);">Inicio & Presentación (Home)</span>
+                </div>
+                <div style="background: var(--qf-nav); padding: 12px; border-radius: 6px; border: 1px solid var(--qf-border);">
+                    <span class="badge-clean">Miembro 2</span>
+                    <strong style="display: block; color: var(--qf-gold); margin-top: 6px;">Surender</strong>
+                    <span style="font-size: 0.82rem; color: var(--qf-muted);">Sospechosos & Coartadas (Suspects)</span>
+                </div>
+                <div style="background: var(--qf-nav); padding: 12px; border-radius: 6px; border: 1px solid var(--qf-border);">
+                    <span class="badge-clean">Miembro 3</span>
+                    <strong style="display: block; color: var(--qf-gold); margin-top: 6px;">Annu</strong>
+                    <span style="font-size: 0.82rem; color: var(--qf-muted);">Archivo de Evidencias (Evidence)</span>
+                </div>
+                <div style="background: var(--qf-nav); padding: 12px; border-radius: 6px; border: 1px solid var(--qf-border);">
+                    <span class="badge-clean">Miembro 4</span>
+                    <strong style="display: block; color: var(--qf-gold); margin-top: 6px;">Abhishek</strong>
+                    <span style="font-size: 0.82rem; color: var(--qf-muted);">Acertijos & Vocabulario (Puzzles)</span>
+                </div>
+                <div style="background: var(--qf-nav); padding: 12px; border-radius: 6px; border: 1px solid var(--qf-border);">
+                    <span class="badge-clean">Miembro 5</span>
+                    <strong style="display: block; color: var(--qf-gold); margin-top: 6px;">Sabharish Raj</strong>
+                    <span style="font-size: 0.82rem; color: var(--qf-muted);">Veredicto & Revelación (Verdict)</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>¿Quién Fue? — Expediente N.º 047 | Módulo 1 desarrollado por: <strong>Anushka</strong></p>
+        <p>Equipo: Anushka · Surender · Annu · Abhishek · Sabharish Raj</p>
+        <p style="font-size: 0.82rem; color: var(--qf-muted); margin-top: 4px;">Una historia de misterio, lengua española y patrimonio cultural latinoamericano.</p>
+    </footer>
+
+    <script src="home.js"></script>
+
+</body>
+</html>

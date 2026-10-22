@@ -1,0 +1,185 @@
+
+/* Basic settings for the whole page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main page design */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #171615;
+    color: #f4eadb;
+    line-height: 1.7;
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 22px 7%;
+    background-color: #211e1b;
+    border-bottom: 1px solid #66513c;
+}
+
+.logo {
+    color: #d8b77c;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #f4eadb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #d8b77c;
+}
+
+/* Main opening section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background:
+        radial-gradient(ellipse at center, #403329 0%, #171615 72%);
+}
+
+.case-number {
+    color: #d8b77c;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    color: #e2c896;
+    font-size: clamp(36px, 6vw, 68px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    font-size: clamp(18px, 3vw, 25px);
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.intro {
+    max-width: 700px;
+    margin: 0 auto 16px;
+    color: #d3c8b8;
+    font-size: 17px;
+}
+
+/* Start button */
+#startButton {
+    margin-top: 25px;
+    padding: 15px 28px;
+    border: 1px solid #d8b77c;
+    border-radius: 4px;
+    background-color: #d8b77c;
+    color: #171615;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#startButton:hover {
+    background-color: transparent;
+    color: #d8b77c;
+}
+
+/* Mission section */
+.how-to-play {
+    padding: 65px 7%;
+    text-align: center;
+}
+
+.how-to-play h2,
+.about h2 {
+    color: #e2c896;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    padding: 28px 22px;
+    background-color: #24211e;
+    border: 1px solid #504235;
+    border-radius: 8px;
+}
+
+.card h3 {
+    color: #d8b77c;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #d3c8b8;
+}
+
+/* About section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #211e1b;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto 15px;
+}
+
+.translation {
+    color: #b9ad9e;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    color: #b9ad9e;
+    font-size: 13px;
+}
+
+/* Responsive design for phones */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 65px 20px;
+    }
+}

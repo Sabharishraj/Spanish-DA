@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B0F0E">
+  <meta name="description" content="¿Quién Fue? — Personas bajo sospecha (Persons of Interest). Interrogatorios y coartadas del Caso 047.">
+  <title>¿Quién Fue? — Personas bajo sospecha (Suspects)</title>
+  <link rel="stylesheet" href="suspects-v2.css">
+  <link rel="stylesheet" href="unified-dark.css">
+  <script src="suspects-v2.js" defer></script>
+</head>
+<body>
+
+  <!-- Unified Accessible Navigation Bar -->
+  <header>
+    <nav class="site-nav" aria-label="Navegación principal / Main Navigation">
+      <a href="index.html" class="nav-brand">¿QUIÉN FUE? <span class="badge-clean">EXP. 047</span></a>
+
+      <div class="nav-links">
+        <a href="index.html">Inicio <span class="nav-sub">(Home)</span></a>
+        <a href="suspects.html" class="active">Sospechosos <span class="nav-sub">(Suspects)</span></a>
+        <a href="evidence.html">Evidencias <span class="nav-sub">(Evidence)</span></a>
+        <a href="puzzles.html">Acertijos <span class="nav-sub">(Puzzles)</span></a>
+        <a href="reveal.html">Revelación <span class="nav-sub">(Verdict)</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="masthead">
+    <div class="topline">
+      <a class="wordmark" href="index.html" aria-label="Volver al expediente principal">QF<span> / </span>047</a>
+      <span class="topline-label">MUSEO · INVESTIGACIÓN ABIERTA (OPEN INVESTIGATION)</span>
+      <a class="back-link" href="index.html">← Expediente principal (Home)</a>
+    </div>
+    <div class="hero">
+      <div class="hero-copy">
+        <p class="kicker"><span class="live-dot"></span> ARCHIVO DE INVESTIGACIÓN / SECCIÓN 02 (INVESTIGATION ARCHIVE · SECTION 02)</p>
+        <h1>Todos tienen<br><em>algo que ocultar.</em></h1>
+        <p class="lang-sub" style="font-size: 1.3rem; margin-top: 6px;">(Everyone has something to hide.)</p>
+        <p class="lede">
+          Cinco personas. Una reliquia patrimonial desaparecida. Ninguna versión completa de la verdad.
+          <span class="lang-sub">(Five individuals. One missing cultural relic. No single complete version of the truth.)</span>
+        </p>
+        <div class="hero-meta">
+          <span>CASO 047 (CASE 047)</span>
+          <span>14 OCTUBRE (OCTOBER 14)</span>
+          <span>5 PERSONAS DE INTERÉS (5 SUSPECTS)</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="artifact-mark">?</div>
+        <div class="art-caption">IDENTIDAD<br>NO VERIFICADA<br><small style="color: var(--qf-muted);">(UNVERIFIED ID)</small></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-note">
+      <div class="note-index">NOTA<br>047-A<br><small>(NOTE)</small></div>
+      <div>
+        <p class="kicker">CONTEXTO DEL CASO · CASE BRIEF</p>
+        <p>
+          El documento histórico desapareció del museo el 14 de octubre. El sospechoso entró en el archivo a las <strong>10:05</strong> y la pieza fue vista por última vez a las <strong>10:20</strong>. Dos fotografías de archivo registran rostros idénticos con nombres distintos —<strong>Isabel Martín (1932)</strong> y <strong>Elena Castillo (1941)</strong>— y una carta manuscrita revela un pacto familiar. Estas cinco personas estuvieron cerca de la escena.
+        </p>
+        <p class="lang-sub">
+          (The historical document disappeared on October 14. A suspect entered the archive at 10:05 and the artifact was last seen at 10:20. Two archive photos show identical portraits under different names — Isabel Martín (1932) and Elena Castillo (1941) — and a handwritten letter reveals a family secret. These five suspects were nearby.)
+        </p>
+      </div>
+    </section>
+
+    <section class="people-section" aria-labelledby="people-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">LOS INVESTIGADOS / 01—05 (PERSONS UNDER INVESTIGATION)</p>
+          <h2 id="people-title">Personas de interés <span class="lang-sub">(Suspect Profiles)</span></h2>
+        </div>
+        <p class="section-aside">
+          Lee sus declaraciones y busca contradicciones.<br>
+          <small style="color: var(--qf-muted);">(Read their statements and spot contradictions.)</small>
+        </p>
+      </div>
+
+      <div class="suspect-grid">
+        <!-- Persona 01 -->
+        <article class="person-card" data-person="diego">
+          <div class="card-banner banner-1">
+            <span class="case-number">PERSONA 01</span>
+            <span class="initials">DS</span>
+            <span class="symbol">[01]</span>
+          </div>
+          <div class="person-content">
+            <p class="occupation">EL ARCHIVISTA <span class="inline-en">(The Archivist)</span></p>
+            <h3>Diego Salazar</h3>
+            <p class="microline">Acceso a documentos · Registro de las 10:05 <span class="lang-sub">(Document access · 10:05 entry log)</span></p>
+            <p class="bio">
+              Conoce el archivo del museo mejor que nadie. Dice que entró para buscar un documento antiguo a las 10:05, pero todavía no ha explicado por qué era tan urgente.
+            </p>
+            <p class="lang-sub">
+              (Knows the museum archive intimately. Claims he entered at 10:05 to locate an old document, but has not explained the urgency.)
+            </p>
+            <div class="motive">
+              <span>MOTIVO POSIBLE (POSSIBLE MOTIVE)</span>
+              <p>Podría haber querido ocultar o alterar un registro del archivo.</p>
+              <p class="lang-sub">(Could have sought to conceal or alter an archive entry.)</p>
+            </div>
+            <button class="reveal-btn" aria-expanded="false" aria-controls="statement-diego">
+              Leer declaración · Read statement <span>＋</span>
+            </button>
+            <div class="statement" id="statement-diego" hidden>
+              <p class="quote">«Estoy en el archivo para buscar un documento. No tengo el tesoro.»</p>
+              <p class="translation"><b>ENGLISH:</b> “I am in the archive to look for a document. I don't have the treasure.”</p>
+              <p class="check"><b>PISTA DE CONTROL (CHECK):</b> ¿Qué documento buscaba exactamente a las 10:05? <span class="lang-sub">(Which document was he looking for at 10:05?)</span></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Persona 02: Elena Castillo (Culpable) -->
+        <article class="person-card" data-person="elena">
+          <div class="card-banner banner-2">
+            <span class="case-number">PERSONA 02</span>
+            <span class="initials">EC</span>
+            <span class="symbol">[02]</span>
+          </div>
+          <div class="person-content">
+            <p class="occupation">LA DESCENDIENTE <span class="inline-en">(The Family Descendant)</span></p>
+            <h3>Elena Castillo</h3>
+            <p class="microline">Historia familiar · Doble identidad · Carta secreta <span class="lang-sub">(Family lineage · Dual identity · Secret letter)</span></p>
+            <p class="bio">
+              Su familia tiene una conexión directa con el documento del museo. Aparece registrada en dos fotografías con identidades distintas: Isabel Martín (1932) y Elena Castillo (1941).
+            </p>
+            <p class="lang-sub">
+              (Her family has a direct link to the museum document. She appears registered in two historical photos under different identities: Isabel Martín in 1932 and Elena Castillo in 1941.)
+            </p>
+            <div class="motive">
+              <span>MOTIVO POSIBLE (POSSIBLE MOTIVE)</span>
+              <p>Ocultar el secreto familiar de su linaje para que no salga a la luz pública.</p>
+              <p class="lang-sub">(Conceal her ancestral family secret to prevent it from being exposed by the exhibition.)</p>
+            </div>
+            <button class="reveal-btn" aria-expanded="false" aria-controls="statement-elena">
+              Leer declaración · Read statement <span>＋</span>
+            </button>
+            <div class="statement" id="statement-elena" hidden>
+              <p class="quote">«Mi familia es importante. Debemos proteger este recuerdo y no quiero hablar de la carta.»</p>
+              <p class="translation"><b>ENGLISH:</b> “My family is important. We must protect this memory and I don't want to talk about the letter.”</p>
+              <p class="check"><b>PISTA DE CONTROL (CHECK):</b> ¿Por qué utilizó dos nombres diferentes en 1932 y 1941? <span class="lang-sub">(Why did she use two different names in 1932 and 1941?)</span></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Persona 03 -->
+        <article class="person-card" data-person="rafael">
+          <div class="card-banner banner-3">
+            <span class="case-number">PERSONA 03</span>
+            <span class="initials">RO</span>
+            <span class="symbol">[03]</span>
+          </div>
+          <div class="person-content">
+            <p class="occupation">EL COLECCIONISTA <span class="inline-en">(The Art Collector)</span></p>
+            <h3>Rafael Ortega</h3>
+            <p class="microline">Mercado de arte · Interés económico <span class="lang-sub">(Art market · Financial interest)</span></p>
+            <p class="bio">
+              Un coleccionista con dinero y contactos internacionales. Afirma que admira el patrimonio cultural, aunque adquirir una pieza tan valiosa beneficiaría su prestigio personal.
+            </p>
+            <p class="lang-sub">
+              (A wealthy collector with extensive contacts. Claims he admires cultural heritage, but acquiring this rare piece could enhance his collection's prestige.)
+            </p>
+            <div class="motive">
+              <span>MOTIVO POSIBLE (POSSIBLE MOTIVE)</span>
+              <p>Podría ganar dinero o prestigio privado con el documento histórico.</p>
+              <p class="lang-sub">(Could gain wealth or private prestige with the historical document.)</p>
+            </div>
+            <button class="reveal-btn" aria-expanded="false" aria-controls="statement-rafael">
+              Leer declaración · Read statement <span>＋</span>
+            </button>
+            <div class="statement" id="statement-rafael" hidden>
+              <p class="quote">«Me gusta el arte, pero hoy no compro nada.»</p>
+              <p class="translation"><b>ENGLISH:</b> “I like art, but today I am not buying anything.”</p>
+              <p class="check"><b>PISTA DE CONTROL (CHECK):</b> ¿Hizo una oferta previa por el documento antes de la muestra? <span class="lang-sub">(Did he make an earlier offer for the piece?)</span></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Persona 04 -->
+        <article class="person-card" data-person="lucia">
+          <div class="card-banner banner-4">
+            <span class="case-number">PERSONA 04</span>
+            <span class="initials">LN</span>
+            <span class="symbol">[04]</span>
+          </div>
+          <div class="person-content">
+            <p class="occupation">LA RESTAURADORA <span class="inline-en">(The Conservator)</span></p>
+            <h3>Lucía Navarro</h3>
+            <p class="microline">Conservación técnica · Acceso físico <span class="lang-sub">(Technical conservation · Physical access)</span></p>
+            <p class="bio">
+              Trabaja con objetos delicados y conoce cómo se conserva y abre la vitrina. Su pericia técnica le permitía manipular el documento sin dañarlo ni dejar señales.
+            </p>
+            <p class="lang-sub">
+              (Works with delicate objects and knows how the display case is secured. Her technical expertise would allow her to handle the document without damage.)
+            </p>
+            <div class="motive">
+              <span>MOTIVO POSIBLE (POSSIBLE MOTIVE)</span>
+              <p>Conocía cómo retirar la pieza de la vitrina sin forzar los seguros.</p>
+              <p class="lang-sub">(Knew how to open the case without forcing the locks.)</p>
+            </div>
+            <button class="reveal-btn" aria-expanded="false" aria-controls="statement-lucia">
+              Leer declaración · Read statement <span>＋</span>
+            </button>
+            <div class="statement" id="statement-lucia" hidden>
+              <p class="quote">«Estoy en el taller de restauración por la mañana. Trabajo con las obras de arte.»</p>
+              <p class="translation"><b>ENGLISH:</b> “I am in the restoration workshop in the morning. I work with the works of art.”</p>
+              <p class="check"><b>PISTA DE CONTROL (CHECK):</b> ¿Dónde estuvo entre las 10:05 y las 10:20? <span class="lang-sub">(Where was she between 10:05 and 10:20?)</span></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Persona 05 -->
+        <article class="person-card" data-person="tomas">
+          <div class="card-banner banner-5">
+            <span class="case-number">PERSONA 05</span>
+            <span class="initials">TV</span>
+            <span class="symbol">[05]</span>
+          </div>
+          <div class="person-content">
+            <p class="occupation">EL GUARDIA DE SEGURIDAD <span class="inline-en">(Security Guard)</span></p>
+            <h3>Tomás Vega</h3>
+            <p class="microline">Control de accesos · Vigilancia perimetral <span class="lang-sub">(Access control · Perimeter patrol)</span></p>
+            <p class="bio">
+              Era responsable de vigilar los accesos durante la exposición. Su horario y rondas determinan quién tuvo oportunidad física de acercarse al archivo.
+            </p>
+            <p class="lang-sub">
+              (Responsible for guarding exhibition galleries. His patrol records determine who had physical opportunity to enter the archive.)
+            </p>
+            <div class="motive">
+              <span>MOTIVO POSIBLE (POSSIBLE MOTIVE)</span>
+              <p>Podría haber desatendido una zona o encubrir lo que observó en la entrada.</p>
+              <p class="lang-sub">(Could have left an area unmonitored or concealed what he saw.)</p>
+            </div>
+            <button class="reveal-btn" aria-expanded="false" aria-controls="statement-tomas">
+              Leer declaración · Read statement <span>＋</span>
+            </button>
+            <div class="statement" id="statement-tomas" hidden>
+              <p class="quote">«Estoy en la entrada principal. No veo nada extraño.»</p>
+              <p class="translation"><b>ENGLISH:</b> “I am at the main entrance. I don't see anything strange.”</p>
+              <p class="check"><b>PISTA DE CONTROL (CHECK):</b> ¿Estaba su puesto cerca del archivo a las 10:05? <span class="lang-sub">(Was his post near the archive at 10:05?)</span></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bilingual Vocabulary Table -->
+    <section class="vocabulary">
+      <div class="section-head">
+        <div>
+          <p class="kicker">ESPAÑOL EN CONTEXTO · SPANISH IN CONTEXT</p>
+          <h2>Palabras clave <span class="lang-sub">(Investigation Vocabulary)</span></h2>
+        </div>
+        <p class="section-aside">
+          Aprende el vocabulario mientras investigas.<br>
+          <small style="color: var(--qf-muted);">(Learn vocabulary as you investigate.)</small>
+        </p>
+      </div>
+      <div class="word-grid">
+        <div><b>el archivo</b><span>the archive</span></div>
+        <div><b>la carta</b><span>the letter</span></div>
+        <div><b>la familia</b><span>the family</span></div>
+        <div><b>el tesoro</b><span>the treasure</span></div>
+        <div><b>la obra de arte</b><span>the work of art</span></div>
+        <div><b>la mañana</b><span>the morning</span></div>
+        <div><b>buscar</b><span>to look for</span></div>
+        <div><b>ocultar</b><span>to hide / conceal</span></div>
+        <div><b>tener</b><span>to have</span></div>
+        <div><b>estar</b><span>to be / located</span></div>
+        <div><b>no quiero</b><span>I don't want</span></div>
+        <div><b>¿Dónde?</b><span>Where?</span></div>
+        <div><b>¿Quién?</b><span>Who?</span></div>
+        <div><b>importante</b><span>important</span></div>
+        <div><b>extraño/a</b><span>strange / unusual</span></div>
+      </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section class="reflection">
+      <p class="kicker">REFLEXIÓN PERSONAL · MIEMBRO 2 (PERSONAL REFLECTION · MEMBER 2)</p>
+      <h2>Mi experiencia y aprendizaje <span class="lang-sub">(My Learning Experience)</span></h2>
+      <p><strong>Estudiante / Miembro 2:</strong> Surender</p>
+      <p>
+        Al crear los perfiles de los sospechosos, aprendí a estructurar descripciones, coartadas y motivos usando vocabulario en español sobre relaciones familiares, profesiones y lugares. Practiqué verbos esenciales como <em>ser</em>, <em>estar</em> y <em>tener</em> para escribir diálogos directos y accesibles. Diseñar esta sección me permitió ver cómo el lenguaje se convierte en una herramienta deductiva que desafía al usuario a contrastar testimonios y descubrir la verdad.
+      </p>
+      <p class="lang-sub">
+        (In creating the suspect profiles, I learned how to structure descriptions, alibis, and motives using Spanish vocabulary covering family relations, professions, and locations. I practiced core verbs like ser, estar, and tener to write clean, accessible dialogue. Designing this module demonstrated how language becomes an investigative tool that engages users in deductive thinking.)
+      </p>
+    </section>
+  </main>
+
+  <footer class="team-credits-bar">
+    <p>¿QUIÉN FUE? · EXPEDIENTE N.º 047 | Módulo 2 desarrollado por: <strong>Surender</strong></p>
+    <p>Equipo: Anushka (M1) · Surender (M2) · Annu (M3) · Abhishek (M4) · Sabharish Raj (M5)</p>
+  </footer>
+
+</body>
+</html>

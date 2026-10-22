@@ -1,81 +1,82 @@
-# ¿Quién Fue? (Who Was It?) — Confidential Case File #047
-## Interactive Forensic Mystery: Final Accusation & Verdict Reveal
+# ¿Quién Fue? (Who Was It?) — Expediente Confidencial N.º 047
+## Interactive Bilingual Spanish Mystery & Forensic Investigation
 
-> **Project Role:** Member 5 — Final Accusation, Culprit Reveal, Evidence Synthesis, Scoring Engine & Replay  
-> **Author & Lead Developer:** Sabharish Raj G K  
-> **Collaborative Integration:** Synthesizes evidence from Page 1 developed by **Shaik Annu** (Member 3 — *Evidence Archive & Lost Identities*)  
-> **Case Identity:** Confidential Case File #047 (*El archivo de las identidades perdidas*)  
-> **Aesthetic Direction:** Classic Noir Archive (Forest Green `#0b1713`, Deep Moss Panels `#12231c`, Aged Gold `#c9a66b`, Cream `#f0e5d0`, and Vintage Parchment `#e0cba5`)  
-> **Typography:** *Cormorant Garamond* (Serif) & *Special Elite* (Typewriter Monospace)  
-> **Tech Stack:** Semantic HTML5, Modular CSS3, and Pure Vanilla JavaScript (Zero External Dependencies)
+> **Live Webpage:** [https://sabharishraj.github.io/Spanish-DA/](https://sabharishraj.github.io/Spanish-DA/)  
+> **Case Identity:** Expediente Confidencial N.º 047 (*El archivo de las identidades perdidas / The Archive of Lost Identities*)  
+> **Aesthetic Direction:** Unified Dark Palette (`#0B0F0E`, `#141A17`, `#1C2520`, `#B89959`)  
+> **Accessibility:** Bilingual (Spanish with clear English translations & subtitles), WCAG AA compliant contrast, semantic HTML5, zero informal symbols or emojis  
+> **Tech Stack:** Semantic HTML5, Modular CSS3, Pure Vanilla JavaScript (Zero External Dependencies)
 
 ---
 
-## 1. Quick Start
+## 1. Project Overview & Team Structure
 
-Run completely offline in any modern browser without servers or build tools:
+*¿Quién Fue?* is an interactive educational mystery game designed to engage learners with Spanish language, historical inquiry, and Latin American cultural heritage. The investigation spans five seamlessly integrated modules:
 
-1. **Option A (VS Code Live Server — Recommended):**
-   - Open `/Users/sabharish/quien-fue-final-reveal` in VS Code.
-   - Right-click [`reveal.html`](file:///Users/sabharish/quien-fue-final-reveal/reveal.html) and select **"Open with Live Server"**.
-   - Accessible at `http://127.0.0.1:5500/reveal.html`.
-2. **Option B (Direct Browser Launch):**
-   - Double-click [`reveal.html`](file:///Users/sabharish/quien-fue-final-reveal/reveal.html) in macOS Finder or drag it into Chrome, Safari, or Firefox.
-
----
-
-## 2. Case Summary & Core Canon
-
-* **Stolen Item:** Valuable Historical Family Document & Cultural Heirloom (*The Archive of Lost Identities*).
-* **Location:** Administrative Archive & Vault, Museum of History & Culture.
-* **Incident Time:** October 14, between 10:05 and 10:30 HRS (25-minute critical window).
-* **The Crime:** The document was extracted from the archive vitrine right before an upcoming exhibition.
-* **The Motive:** Preventing an ancestral family secret from being publicly exposed.
-
----
-
-## 3. Decisive Evidence Matrix
-
-1. **Exhibit #01 — Photographic Evidence (1932 vs 1941):**
-   - **Photo A (1932):** Historical portrait registered as *Isabel Martín* (`images/sp_3.png`).
-   - **Photo B (1941):** Official record using an identical portrait under the name *Elena Castillo* (`images/sp2.jpg`).
-   - **Finding:** Facial matching proves the suspect used dual identities across decades to conceal her family lineage.
-2. **Exhibit #02 — Administrative Access Log (October 14):**
-   - `10:05` Suspect enters the museum archive.
-   - `10:20` Cultural treasure seen for the last time.
-   - `10:30` Disappearance discovered by staff.
-   - **Finding:** Places Elena Castillo inside the archive during the exact window of the theft.
-3. **Exhibit #03 — Confidential Family Letter:**
-   - Unsigned letter: *“We must protect this memory and our family inheritance. The historical past must not come to light.”*
-   - **Finding:** Establishes the non-monetary motive: suppressing a private family secret linked to Latin American heritage.
-
----
-
-## 4. Suspect Profiles & Verified Alibis
-
-| Suspect | Institutional Role | Stated Alibi | Case Resolution |
+| Module | Page | Lead / Member | Primary Focus |
 | :--- | :--- | :--- | :--- |
-| **Dr. Mateo Valenzuela** | Archive Director | Meeting with university board in the main lobby (10:00–10:45). | **Exonerated:** Turnstile badge #01 and diplomatic witnesses confirm presence in the lobby. |
-| **Héctor Delgado** | Security Supervisor | Responding to a door sensor alert on the ground floor (10:00–10:25). | **Exonerated:** Central radio recordings and elevator telemetry confirm presence on the ground floor. |
-| **Elena Castillo (Alias: Isabel Martín)** | Visiting Researcher & Family Descendant | Claimed she left for the gardens at 10:10 due to unattended staff. | **TRUE CULPRIT:** Lacks witnesses. Photos A & B prove her alias history, access log proves she remained inside during the theft (10:05–10:25), and the letter reveals her family motive. |
-| **Sofía Morales** | Archive Cataloguer | Restoring manuscripts with two student interns (09:30–10:30). | **Exonerated:** Both interns testified under oath, and scanner activity logs confirm continuous lab work. |
-| **Carlos Mendoza** | Maintenance Technician | Replacing fluorescent lights in Exhibition Room 2 (10:05–10:40). | **Exonerated:** Signed work order #OT-104 and two cleaning staff eyewitnesses verify his presence on a ladder. |
+| **01. Inicio (Home)** | [`index.html`](index.html) | **Anushka** (Miembro 1) | Narrative introduction, case background, and mission briefing. |
+| **02. Sospechosos (Suspects)** | [`suspects.html`](suspects.html) | **Surender** (Miembro 2) | Interrogation profiles, motive analysis, and stated alibis. |
+| **03. Evidencias (Evidence)** | [`evidence.html`](evidence.html) | **Annu** (Miembro 3) | Visual evidence, 1932/1941 portraits, 10:05 access log, and confidential letter. |
+| **04. Acertijos (Puzzles)** | [`puzzles.html`](puzzles.html) | **Abhishek** (Miembro 4) | Spanish language challenges, Caesar cipher decoding, and Colombian cultural heritage quiz. |
+| **05. Veredicto (Verdict)** | [`reveal.html`](reveal.html) | **Sabharish Raj** (Miembro 5) | Forensic accusation engine, scoring audit, suspect exoneration, and full culprit reveal. |
 
 ---
 
-## 5. Core Interactive Features
+## 2. Case Synopsis & Core Canon
 
-* **Evidence Dossier (Page 1 Format):** Interactive clues toggleable with `[data-reveal]` buttons, displaying vintage sepia photo comparisons, striped administrative documents, and parchment letter quotes.
-* **Accessible Accusation System:** Keyboard-accessible radio group (`role="radio"`, arrow navigation) with live validation alerts.
-* **Forensic Deduction Field:** Optional text area rewarding +20 points for reasoned explanations ($\ge 20$ chars).
-* **Dramatic Verdict Reveal:**
-  * **Correct Verdict:** Displays success banner (`CASE SOLVED`), reveals Elena Castillo's full signed confession, and confirms recovery of the document.
-  * **Incorrect Verdict:** Displays disproven notice, explains why the accused is innocent, and presents the true culprit's dossier.
-* **Exoneration Audit:** Detailed breakdown demonstrating why the other 4 suspects are completely cleared.
-* **Transparent Scoring Engine (100 Pts Max):**
-  * Culprit Identification: **50 pts**
-  * Forensic Deduction Reasoning: **20 pts**
-  * Evidence Discovered / Analyzed: **30 pts**
-* **Replay Engine:** Cleans all inputs and resets state for a fresh investigation run.
-* **30-Term Bilingual Glossary:** Educational Spanish-English dictionary with real-time live search.
-* **Field Note Decryption:** Formative 4-term matching exercise (*la vitrina*, *la huella*, *el motivo*, *la coartada*).
+* **Stolen Heritage Item:** A valuable historical family document and cultural heirloom (*El Documento Histórico Familiar*).
+* **Location:** Archive Vault, Museum of History & Culture (*Museo de Historia y Cultura*).
+* **Incident Window:** October 14, between 10:05 and 10:30 HRS (critical 25-minute timeline).
+* **The Motive:** Preventing an ancestral lineage secret from being publicly exposed by the upcoming museum exhibition.
+
+---
+
+## 3. Persistent Clues & Forensics
+
+1. **Exhibit 01 — Photographic Records (1932 vs 1941):**
+   * **Fotografía A (1932):** Vintage portrait registered under the name **Isabel Martín** (`images/sp_3.png`).
+   * **Fotografía B (1941):** Official museum file containing the identical portrait registered under **Elena Castillo** (`images/sp2.jpg`).
+   * *Forensic Finding:* Confirms the suspect used dual identities across decades to protect her lineage.
+
+2. **Exhibit 02 — Administrative Access Log (October 14):**
+   * `10:05` Suspect enters the museum archive.
+   * `10:20` Historical document seen in the display case for the last time.
+   * `10:30` Disappearance officially detected by archive staff.
+   * *Forensic Finding:* Places Elena Castillo inside the archive during the exact window of the theft.
+
+3. **Exhibit 03 — Confidential Family Letter:**
+   * Unsigned letter: *“Debemos proteger este recuerdo y la herencia de nuestra familia. El pasado histórico no debe salir a la luz.”* (*“We must protect this memory and our family heritage. The historical past must not come to light.”*)
+   * *Forensic Finding:* Proves non-monetary, ancestral motivation to suppress the historical document.
+
+---
+
+## 4. Suspect Roster & Verified Alibis
+
+| Suspect | Role | Stated Alibi | Resolution |
+| :--- | :--- | :--- | :--- |
+| **Diego Salazar** `[DS]` | El Archivista *(The Archivist)* | In the reading room cross-referencing loan catalogs from 10:05 to 10:35. | **Exonerated:** Biometric turnstile log and sworn librarian statements confirm he never approached the display case. |
+| **Elena Castillo (Alias: Isabel Martín)** `[EC]` | La Descendiente e Investigadora *(Visiting Researcher)* | Claimed she walked out to the courtyard at 10:10 due to unattended staff. | **CONFIRMED CULPRIT:** Lacks witnesses. Dual 1932/1941 photos prove alternate identity, 10:05 access log places her inside during the theft, and confidential letter proves her motive. |
+| **Rafael Ortega** `[RO]` | El Coleccionista *(The Art Collector)* | In the main lobby conversing with diplomats and museum board members (10:00–10:45). | **Exonerated:** Eyewitness testimony from museum directors and security cameras in the main lobby confirm presence. |
+| **Lucía Navarro** `[LN]` | La Restauradora *(The Conservator / Restorer)* | In the conservation workshop binding manuscripts with two student interns (09:30–10:30). | **Exonerated:** Sworn affidavits from two university interns and digital scanner logs confirm continuous lab work. |
+| **Tomás Vega** `[TV]` | El Guardia de Seguridad *(The Security Guard)* | Investigating a ground-floor emergency door alert (10:00–10:25). | **Exonerated:** Central dispatch radio logs and elevator telemetry confirm ground-floor presence until 10:25. |
+
+---
+
+## 5. Running the Project
+
+### Option A: Live Website
+Visit the published GitHub Pages site:  
+👉 **[https://sabharishraj.github.io/Spanish-DA/](https://sabharishraj.github.io/Spanish-DA/)**
+
+### Option B: Local Browser Launch
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Sabharishraj/Spanish-DA.git
+   cd Spanish-DA
+   ```
+2. Open [`index.html`](index.html) in any modern web browser or run with Python:
+   ```bash
+   python3 -m http.server 5500
+   ```
+3. Navigate to `http://localhost:5500/` to test all five interactive modules.
